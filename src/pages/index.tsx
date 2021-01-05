@@ -1,5 +1,7 @@
+import Header from './layouts/Header'
+
 const IndexPage = () => {
-  return <h1>HABITTARE</h1>
+  return <Header />
 }
 
 export default IndexPage

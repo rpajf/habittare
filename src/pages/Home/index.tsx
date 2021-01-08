@@ -1,7 +1,7 @@
 import { Container, TitleDiv, HeadText, SubTitle } from './styles'
-import Menu from '../../components/menu'
-import Slider from '../../components/slider'
-import SliderText from '../../components/SliderText'
+import Menu from '../../components/homeComponents/Menu'
+import Slider from '../../components/homeComponents/Slider'
+import SliderText from '../../components/homeComponents/SliderText'
 const Home: React.FC = () => {
   return (
     <Container>

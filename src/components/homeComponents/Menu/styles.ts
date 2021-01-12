@@ -38,6 +38,13 @@ export const QuantityInfo = styled.div`
   background: #fff;
   border: none;
   box-sizing: border-box;
+  cursor: pointer;
+  :checked::before {
+    border: none;
+  }
+  :checked {
+    border: 1px solid #5743d9;
+  }
 `
 export const PriceInfo = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../styles/GlobalStyle'
-import LayoutWrapper from '../components/Header/wrapper'
+import LayoutWrapper from '../components/Wrapper'
 
 import theme from '../styles/theme'
 

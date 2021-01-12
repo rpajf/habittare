@@ -15,4 +15,7 @@ export default createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     font: 400 16px 'Poppins', sans-serif;
   }
+  button{
+    cursor: pointer;
+  }
 `

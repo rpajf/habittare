@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import Header from './index'
+import Header from '../Header/index'
 
 interface WrapperProps {
   children: ReactNode

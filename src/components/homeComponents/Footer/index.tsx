@@ -1,13 +1,12 @@
-import { Container, FooterContent, ContentWrapper, HeaderText } from './styles'
+import * as S from './styles'
 
 const Footer: React.FC = () => {
   return (
-    <Container>
-      <HeaderText>Encontre seu imóvel dos sonhos em apenas 1 clique</HeaderText>
-      <ContentWrapper>
-        <FooterContent></FooterContent>
-      </ContentWrapper>
-    </Container>
+    <S.Container>
+      <S.ContentWrapper>
+        <S.FooterContent></S.FooterContent>
+      </S.ContentWrapper>
+    </S.Container>
   )
 }
 export default Footer

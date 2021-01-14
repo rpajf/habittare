@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import DefaultText from '../../DefaultText'
-
 export const Container = styled.div`
-  max-height: 600px;
+  display: flex;
   justify-content: center;
 
   margin-right: 33px;
@@ -20,4 +18,3 @@ export const FooterContent = styled.div``
 export const ContentWrapper = styled.div`
   display: flex;
 `
-export const HeaderText = styled(DefaultText)``

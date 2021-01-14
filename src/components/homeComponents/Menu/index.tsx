@@ -1,116 +1,78 @@
-import {
-  Container,
-  SearchBar,
-  MenuContainer,
-  InfoDiv,
-  PriceInfo,
-  QuantityInfo,
-  InfoText,
-  InputField,
-  AreaInfo,
-  InfoWrapper,
-  FilterButton,
-  QuantityWrapper
-} from './styles'
+import * as S from './styles'
 
 const Menu: React.FC = () => {
   return (
-    <Container>
-      <MenuContainer>
-        <SearchBar></SearchBar>
-        <InfoDiv>
-          <PriceInfo>
-            <InfoWrapper>
-              <InfoText>Preço Min</InfoText>
-              <InputField placeholder="R$" />
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Preço Máx</InfoText>
-              <InputField placeholder="R$" />
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Qtd. de dormitórios</InfoText>
-              <QuantityWrapper>
-                <QuantityInfo>
-                  <InfoText>1</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>2</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>3</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>4</InfoText>
-                </QuantityInfo>
-              </QuantityWrapper>
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Qtd. de dormitórios</InfoText>
-              <QuantityWrapper>
-                <QuantityInfo>
-                  <InfoText>1</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>2</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>3</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>4</InfoText>
-                </QuantityInfo>
-              </QuantityWrapper>
-            </InfoWrapper>
-          </PriceInfo>
-          <AreaInfo>
-            <InfoWrapper>
-              <InfoText>Área min(m2)</InfoText>
-              <InputField placeholder="" />
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Área max(m2)</InfoText>
-              <InputField placeholder="" />
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Qtd. de suítes</InfoText>
-              <QuantityWrapper>
-                <QuantityInfo>
-                  <InfoText>1</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>2</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>3</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>4</InfoText>
-                </QuantityInfo>
-              </QuantityWrapper>
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoText>Qtd. de vagas</InfoText>
-              <QuantityWrapper>
-                <QuantityInfo>
-                  <InfoText>1</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>2</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>3</InfoText>
-                </QuantityInfo>
-                <QuantityInfo>
-                  <InfoText>4</InfoText>
-                </QuantityInfo>
-              </QuantityWrapper>
-            </InfoWrapper>
-          </AreaInfo>
-        </InfoDiv>
-        <FilterButton>Limpar Filtros</FilterButton>
-      </MenuContainer>
-    </Container>
+    <S.Container>
+      <S.SearchBar>
+        {/* <S.SwitchDiv> */}
+          <S.SwitchLabel1>Comprar</S.SwitchLabel1>
+          <S.SwitchLabel2>Alugar</S.SwitchLabel2>
+        {/* </S.SwitchDiv> */}
+        <S.MainInput placeholder="Onde você quer morar(bairro, endereço ou codigo)?" />
+        <S.SearchLabel>Buscar</S.SearchLabel>
+      </S.SearchBar>
+      <S.ContentWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Preço min</S.MenuContentText>
+          <S.ContentInput placeholder="R$" />
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Preço max</S.MenuContentText>
+          <S.ContentInput placeholder="R$" />
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
+          <S.QuantityWrapper>
+            <S.QuantityInfo>1</S.QuantityInfo>
+            <S.QuantityInfo>2</S.QuantityInfo>
+            <S.QuantityInfo>3</S.QuantityInfo>
+
+            <S.QuantityInfo>4</S.QuantityInfo>
+          </S.QuantityWrapper>
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
+          <S.QuantityWrapper>
+            <S.QuantityInfo>1</S.QuantityInfo>
+            <S.QuantityInfo>2</S.QuantityInfo>
+            <S.QuantityInfo>3</S.QuantityInfo>
+
+            <S.QuantityInfo>4</S.QuantityInfo>
+          </S.QuantityWrapper>
+        </S.InfoWrapper>
+      </S.ContentWrapper>
+      <S.ContentWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Preço min</S.MenuContentText>
+          <S.ContentInput placeholder="R$" />
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Preço max</S.MenuContentText>
+          <S.ContentInput placeholder="R$" />
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
+          <S.QuantityWrapper>
+            <S.QuantityInfo>1</S.QuantityInfo>
+            <S.QuantityInfo>2</S.QuantityInfo>
+            <S.QuantityInfo>3</S.QuantityInfo>
+
+            <S.QuantityInfo>4</S.QuantityInfo>
+          </S.QuantityWrapper>
+        </S.InfoWrapper>
+        <S.InfoWrapper>
+          <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
+          <S.QuantityWrapper>
+            <S.QuantityInfo>1</S.QuantityInfo>
+            <S.QuantityInfo>2</S.QuantityInfo>
+            <S.QuantityInfo>3</S.QuantityInfo>
+
+            <S.QuantityInfo>4</S.QuantityInfo>
+          </S.QuantityWrapper>
+        </S.InfoWrapper>
+      </S.ContentWrapper>
+      <S.FilterLabel>Limpar Filtros</S.FilterLabel>
+    </S.Container>
   )
 }
 

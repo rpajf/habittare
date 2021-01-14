@@ -1,60 +1,41 @@
-import Image from 'next/image'
-import {
-  Container,
-  Card,
-  CardTag,
-  StatusTag,
-  ImgWrapper,
-  CardTitle,
-  HorizontalLine,
-  TitleWrapper,
-  InfoWrapper,
-  CardInfo,
-  CardQuantity,
-  InfoArea
-} from './styles'
+import * as S from './styles'
+
 const MenuCard: React.FC = () => {
   return (
-    <Container>
-      <Card>
-        <ImgWrapper>
-          <CardTag>Apartamento</CardTag>
-          <StatusTag>Venda</StatusTag>
-        </ImgWrapper>
-        <TitleWrapper>
-          <CardTitle>Condominio lunar selo</CardTitle>
-          <HorizontalLine />
-        </TitleWrapper>
-        <InfoArea>
-          <InfoWrapper>
-            <Image src="/card/Area.svg" width={12.5} height={12.5} />
+    <S.Container>
+      <S.Header>
+        <S.topLabel>Apartamento</S.topLabel>
+        <S.BottomLabel>Venda</S.BottomLabel>
+      </S.Header>
+      <S.Content>
+        <S.Title>Condominio Lunar Selo</S.Title>
+        <S.Deion>
+          <S.DeionItem>
+            <S.DeionItemIcon></S.DeionItemIcon>
+            <S.DeionItemMainText>
+              Av. São Luis Rei de França
+            </S.DeionItemMainText>
+          </S.DeionItem>
+          <S.DeionItem>
+            <S.DeionItemIcon></S.DeionItemIcon>
 
-            <CardQuantity>Av. São Luís Rei de França</CardQuantity>
-          </InfoWrapper>
-          <InfoWrapper>
-            <Image src="/card/Area.svg" width={12.5} height={12.5} />
-            <CardInfo>M2</CardInfo>
-            <CardQuantity>72</CardQuantity>
-          </InfoWrapper>
-          <InfoWrapper>
-            <Image src="/card/Area.svg" width={12.5} height={12.5} />
-            <CardInfo>M2</CardInfo>
-            <CardQuantity>72</CardQuantity>
-          </InfoWrapper>
-          <InfoWrapper>
-            <Image src="/card/Area.svg" width={12.5} height={12.5} />
-            <CardInfo>M2</CardInfo>
-            <CardQuantity>72</CardQuantity>
-          </InfoWrapper>
-        </InfoArea>
-      </Card>
-      <Card>
-        <ImgWrapper>
-          <CardTag>Apartamento</CardTag>
-          <StatusTag>Venda</StatusTag>
-        </ImgWrapper>
-      </Card>
-    </Container>
+            <S.DeionItemText>m²</S.DeionItemText>
+            <S.DeionItemMainText>72 </S.DeionItemMainText>
+          </S.DeionItem>
+          <S.DeionItem>
+            <S.DeionItemIcon></S.DeionItemIcon>
+            <S.DeionItemText>banheiros</S.DeionItemText>
+            <S.DeionItemMainText>4</S.DeionItemMainText>
+          </S.DeionItem>
+          <S.DeionItem>
+            <S.DeionItemIcon></S.DeionItemIcon>
+
+            <S.DeionItemText> quartos</S.DeionItemText>
+            <S.DeionItemMainText>2</S.DeionItemMainText>
+          </S.DeionItem>
+        </S.Deion>
+      </S.Content>
+    </S.Container>
   )
 }
 

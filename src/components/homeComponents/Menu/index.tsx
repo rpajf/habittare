@@ -1,12 +1,17 @@
 import * as S from './styles'
+import Select from '../../Select'
 
 const Menu: React.FC = () => {
   return (
     <S.Container>
       <S.SearchBar>
         {/* <S.SwitchDiv> */}
-          <S.SwitchLabel1>Comprar</S.SwitchLabel1>
-          <S.SwitchLabel2>Alugar</S.SwitchLabel2>
+        <S.SwitchLabel1>Comprar</S.SwitchLabel1>
+        <S.SwitchLabel2>Alugar</S.SwitchLabel2>
+        <S.SelectDiv>
+          <Select />
+        </S.SelectDiv>
+
         {/* </S.SwitchDiv> */}
         <S.MainInput placeholder="Onde você quer morar(bairro, endereço ou codigo)?" />
         <S.SearchLabel>Buscar</S.SearchLabel>

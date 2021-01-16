@@ -5,6 +5,7 @@ export const Container = styled.div`
   background: #ffffff;
   border-radius: 5px;
   margin: 15px;
+  flex-wrap: wrap;
 `
 
 export const Header = styled.div`

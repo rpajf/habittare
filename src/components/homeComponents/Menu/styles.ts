@@ -7,12 +7,14 @@ export const Container = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 
   border-radius: 5px;
+  padding: 10px;
   margin: 15px;
+  flex-wrap: wrap;
 `
 export const ContentWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: stretch;
+
   padding: 5px 15px;
 `
 export const SearchBar = styled.div`
@@ -43,14 +45,37 @@ export const SearchLabel = styled.label`
   font-size: 16px;
   color: ${props => props.theme.colors.textPrimary};
 `
+export const SelectDiv = styled.div`
+  background: #fff;
+  border-radius: 0px;
+  padding: 0 10px 0 10px;
+  border-right: 1px solid rgba(138, 138, 138, 0.5);
+  border-left: 1px solid rgba(138, 138, 138, 0.5);
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #8a8a8a;
+`
+export const CustomArrow = styled.div`
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  cursor: pointer;
+  border-top: 5px solid #000;
+`
 
-export const SwitchLabel1 = styled(SearchLabel)``
+export const SwitchLabel1 = styled(SearchLabel)`
+  border-radius: 5px 0px 0px 5px;
+`
 export const SwitchLabel2 = styled(SearchLabel)`
   background: #fff;
 
   color: ${props => props.theme.colors.primary};
-
-  border-right: 1px solid rgba(138, 138, 138, 0.5);
 `
 export const ModalTag = styled(SearchLabel)`
   background: #fff;

@@ -3,8 +3,9 @@ export const Container = styled.div`
   background: #e9eeef;
 
   display: flex;
-
+  /* margin: 0 180px 0 180px; */
   flex-direction: column;
+  align-items: center;
 `
 export const MenuWrapper = styled.div`
   display: flex;

@@ -9,11 +9,15 @@ export const Container = styled.div`
 `
 export const MenuWrapper = styled.div`
   display: flex;
-  margin: 0 auto;
 `
 export const CardWrapper = styled.div`
   display: flex;
   margin: 0 auto;
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export const Content = styled.div``
@@ -28,17 +32,28 @@ export const HeadText = styled.text`
   color: #5743d9;
   text-align: center;
   line-height: 39px;
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `
 export const TextCompWrapper = styled.div`
   display: flex;
 
   justify-content: space-around;
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 `
 export const SubTitle = styled.text`
   font-weight: 300;
   font-size: 18px;
   color: #5743d9;
   text-align: center;
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `
 export const Button = styled.button`
   align-self: center;

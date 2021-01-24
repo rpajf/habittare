@@ -1,11 +1,16 @@
+import { useState } from 'react'
 import * as S from './styles'
 import Select from '../../Select'
-
+import Radio from '../../Radio'
 const Menu: React.FC = () => {
+  const [isActive, setActive] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setActive(!isActive)
+  }
   return (
     <S.Container>
       <S.SearchBar>
-        {/* <S.SwitchDiv> */}
         <S.SwitchLabel1>Comprar</S.SwitchLabel1>
         <S.SwitchLabel2>Alugar</S.SwitchLabel2>
         <S.SelectDiv>
@@ -16,7 +21,11 @@ const Menu: React.FC = () => {
         <S.MainInput placeholder="Onde você quer morar(bairro, endereço ou codigo)?" />
         <S.SearchLabel>Buscar</S.SearchLabel>
       </S.SearchBar>
-      <S.ContentWrapper>
+      <S.FilterLabel className="show-menu" onClick={handleClick}>
+        ExibirFiltros
+      </S.FilterLabel>
+
+      <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
           <S.ContentInput placeholder="R$" />
@@ -28,25 +37,27 @@ const Menu: React.FC = () => {
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
           <S.QuantityWrapper>
-            <S.QuantityInfo>1</S.QuantityInfo>
-            <S.QuantityInfo>2</S.QuantityInfo>
-            <S.QuantityInfo>3</S.QuantityInfo>
+            <Radio />
+            <Radio />
 
-            <S.QuantityInfo>4</S.QuantityInfo>
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
         <S.InfoWrapper>
-          <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
-          <S.QuantityWrapper>
-            <S.QuantityInfo>1</S.QuantityInfo>
-            <S.QuantityInfo>2</S.QuantityInfo>
-            <S.QuantityInfo>3</S.QuantityInfo>
+          <S.InnerWrapper>
+            <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
+            <S.QuantityWrapper>
+              <Radio value="1" />
+              <Radio />
 
-            <S.QuantityInfo>4</S.QuantityInfo>
-          </S.QuantityWrapper>
+              <Radio />
+              <Radio />
+            </S.QuantityWrapper>
+          </S.InnerWrapper>
         </S.InfoWrapper>
       </S.ContentWrapper>
-      <S.ContentWrapper>
+      <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
           <S.ContentInput placeholder="R$" />
@@ -58,25 +69,25 @@ const Menu: React.FC = () => {
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
           <S.QuantityWrapper>
-            <S.QuantityInfo>1</S.QuantityInfo>
-            <S.QuantityInfo>2</S.QuantityInfo>
-            <S.QuantityInfo>3</S.QuantityInfo>
+            <Radio />
+            <Radio />
 
-            <S.QuantityInfo>4</S.QuantityInfo>
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
           <S.QuantityWrapper>
-            <S.QuantityInfo>1</S.QuantityInfo>
-            <S.QuantityInfo>2</S.QuantityInfo>
-            <S.QuantityInfo>3</S.QuantityInfo>
+            <Radio />
+            <Radio />
 
-            <S.QuantityInfo>4</S.QuantityInfo>
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
       </S.ContentWrapper>
-      <S.FilterLabel>Limpar Filtros</S.FilterLabel>
+      <S.FilterLabel className="hidden-menu">Limpar Filtros</S.FilterLabel>
     </S.Container>
   )
 }

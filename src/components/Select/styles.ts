@@ -38,6 +38,10 @@ export const SelectContainer = styled.div`
       cursor: none;
     }
   }
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 export const Arrow = styled.span``

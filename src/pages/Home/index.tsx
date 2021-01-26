@@ -1,12 +1,22 @@
 import * as S from './styles'
-
 import Menu from '../../components/homeComponents/Menu'
 import Slider from '../../components/homeComponents/SliderItem/Slider'
 import SliderText from '../../components/homeComponents/SliderItem/SliderText'
 import TextComp from '../../components/TextComp'
 
 import MenuCard from '../../components/homeComponents/MenuCard'
+// const Redirect = ({ to }) => {
+//   const router = useRouter()
+//   useEffect(() => {
+//     router.push(to)
+//   }, [to])
+//   return null
+// }
 const Home: React.FC = () => {
+  // const [shouldRedirect, setShouldRedirect] = useState(false)
+  // if (shouldRedirect) {
+  //   return <Redirect to="property" />
+  // }
   return (
     <S.Container>
       <S.CardWrapper>

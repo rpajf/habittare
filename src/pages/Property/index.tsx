@@ -8,12 +8,15 @@ const Property: React.FC = () => {
     <S.Container>
       <Slider />
       <S.MainInfo>
-        <S.InfoWrapper>
-          <S.Title>Condominio Portal do saber</S.Title>
-          <S.SubTitle>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, earum!
-          </S.SubTitle>
-        </S.InfoWrapper>
+        <S.MainInfoWrapper>
+          <S.InfoWrapper>
+            <S.Title>Condominio Portal do saber</S.Title>
+            <S.SubTitle>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
+              earum!
+            </S.SubTitle>
+          </S.InfoWrapper>
+        </S.MainInfoWrapper>
         <S.ButtonsWrapper>
           <S.PrimaryBtn>Venda</S.PrimaryBtn>
           <S.SecondaryBtn>Disponivel</S.SecondaryBtn>

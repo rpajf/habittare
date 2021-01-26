@@ -7,14 +7,27 @@ export const Content = styled.div`
   max-width: 789px;
   margin: 0 auto;
 `
+export const MainInfoWrapper = styled.div`
+  max-width: 789px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+`
 export const SliderArea = styled.div``
 export const MainInfo = styled.div`
   background: #fff;
   display: flex;
-  justify-content: space-between;
-
-  align-items: center;
   padding: 20px;
+  align-items: center;
+  @media (min-width: 310px) and (max-width: 480px) {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
 `
 export const Title = styled.text`
   color: ${props => props.theme.colors.primary};
@@ -39,7 +52,11 @@ export const InfoWrapper = styled.div`
 `
 export const ButtonsWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+
+  /* @media (min-width: 310px) and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  } */
 `
 export const InfoText = styled.text`
   font-family: Poppins;
@@ -55,6 +72,9 @@ export const SecondaryBtn = styled(SecondaryButton)``
 export const PropertyInfoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 export const InfoData = styled.text`
   font-style: normal;
@@ -64,13 +84,14 @@ export const InfoData = styled.text`
   line-height: 21px;
   text-transform: uppercase;
   color: #484848;
-  :first-child {
-    /* margin-left: -30px; */
-  }
 `
 export const DataWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 export const InfoQuantity = styled.text`
   font-style: normal;

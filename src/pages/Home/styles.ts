@@ -1,18 +1,16 @@
 import styled from 'styled-components'
 export const Container = styled.div`
   background: #e9eeef;
-
-  display: flex;
-  /* margin: 0 180px 0 180px; */
-  flex-direction: column;
-  align-items: center;
 `
-export const MenuWrapper = styled.div`
-  display: flex;
+export const Content = styled.div`
+  max-width: 1069px;
+  margin: 0 auto;
 `
 export const CardWrapper = styled.div`
   display: flex;
-  margin: 0 auto;
+
+  align-items: center;
+  justify-content: space-between;
   @media (max-width: 480px) {
     flex-wrap: wrap;
     align-items: center;
@@ -20,10 +18,10 @@ export const CardWrapper = styled.div`
   }
 `
 
-export const Content = styled.div``
 export const TitleDiv = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 15px 0 45px 0;
 `
 export const HeadText = styled.text`
@@ -46,11 +44,20 @@ export const TextCompWrapper = styled.div`
     justify-content: center;
   }
 `
+export const HomeCompsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+`
 export const SubTitle = styled.text`
   font-weight: 300;
   font-size: 18px;
   color: #5743d9;
   text-align: center;
+  width: 490px;
+  line-height: 30px;
+  word-break: break-word;
   @media (max-width: 480px) {
     font-size: 14px;
   }

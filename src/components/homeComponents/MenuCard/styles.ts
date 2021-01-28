@@ -4,7 +4,6 @@ export const Container = styled.div`
   flex-direction: column;
   background: #ffffff;
   border-radius: 5px;
-  margin: 15px;
 `
 
 export const Header = styled.div`

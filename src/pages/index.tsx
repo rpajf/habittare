@@ -1,10 +1,8 @@
-import Link from 'next/link'
-
 import Property from './Property'
 import Home from './Home'
 
 const IndexPage = () => {
-  return <Property />
+  return <Home />
 }
 
 export default IndexPage

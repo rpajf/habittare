@@ -1,16 +1,23 @@
 import * as S from './styles'
+import { useRouter } from 'next/router'
 
 import InfoTextComp from '../../components/InfoTextComp'
 
 import Slider from '../../components/homeComponents/SliderItem/Slider'
-const Property: React.FC = () => {
+import { NextPage } from 'next'
+
+const Property: React.FC = props => {
+  const router = useRouter()
+  const { pid } = router.query
+
   return (
     <S.Container>
       <Slider />
       <S.MainInfo>
         <S.MainInfoWrapper>
           <S.InfoWrapper>
-            <S.Title>Condominio Portal do saber</S.Title>
+            <S.Title>Condominio Luz do saber{pid}</S.Title>
+            {router.query.slug}
             <S.SubTitle>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
               earum!

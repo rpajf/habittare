@@ -35,7 +35,7 @@ export const BottomLabel = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 5px 15px;
+  padding: 10px 25px;
 `
 
 export const Title = styled.h4`

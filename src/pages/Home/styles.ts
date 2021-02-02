@@ -9,7 +9,6 @@ export const Content = styled.div`
 export const CardWrapper = styled.div`
   display: flex;
 
-  align-items: center;
   justify-content: space-between;
   @media (max-width: 480px) {
     flex-wrap: wrap;
@@ -48,7 +47,6 @@ export const HomeCompsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `
 export const SubTitle = styled.text`
   font-weight: 300;

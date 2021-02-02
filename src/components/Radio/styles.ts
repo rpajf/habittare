@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
 `
 export const RadioLabel = styled.label`
   color: #8a8a8a;
@@ -21,10 +22,3 @@ export const QuantityInfo = styled.input`
   opacity: 0;
   display: none;
 `
-/*
-
-   <S.Container>
-      <S.QuantityInfo id="quantityRadio" type="radio" />
-      <S.RadioLabel htmlFor="quantityRadio">1</S.RadioLabel>
-    </S.Container>
-*/

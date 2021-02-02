@@ -29,12 +29,14 @@ const Home: React.FC = () => {
           <MenuCard />
           <MenuCard />
         </S.CardWrapper>
-        <S.Button>Ver mais</S.Button>
+        <S.HomeCompsWrapper>
+          <S.Button>Ver mais</S.Button>
 
-        <S.HeadText>
-          Encontre seu imóvel <br />
-          dos sonhos com apenas 1 clique
-        </S.HeadText>
+          <S.HeadText>
+            Encontre seu imóvel <br />
+            dos sonhos com apenas 1 clique
+          </S.HeadText>
+        </S.HomeCompsWrapper>
         <S.TextCompWrapper>
           <TextComp />
           <TextComp />

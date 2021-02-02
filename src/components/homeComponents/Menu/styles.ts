@@ -7,7 +7,6 @@ export const Container = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  margin: 15px;
 
   .hidden-menu {
     list-style: none;
@@ -53,7 +52,6 @@ export const SearchBar = styled.div`
 export const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 `
 export const SelectDiv = styled.div`
   background: #fff;
@@ -113,9 +111,6 @@ export const SwitchLabel2 = styled(SearchLabel)`
     border-radius: 5px;
     border: 1px solid #8a8a8a;
     text-align: center;
-
-    /* border-top: 1px solid #8a8a8a;
-    border-bottom: 1px solid #8a8a8a; */
   }
 `
 
@@ -203,6 +198,4 @@ export const FilterLabel = styled.label`
   margin: 0 auto 12px;
   padding: 3px 9px 2px 9px;
   align-self: center;
-  /* align-self: baseline; */
-  //
 `

@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
-import MapBox from '../../components/Map'
+import MapBox from '../../components/'
 import InfoTextComp from '../../components/InfoTextComp'
 import { FormHandles } from '@unform/core'
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
@@ -76,9 +76,7 @@ const Property: React.FC = () => {
                 amet magna mol
               </S.InfoText>
             </InfoTextComp>
-            <InfoTextComp content="Localização">
-              <MapBox />
-            </InfoTextComp>
+            <InfoTextComp content="Localização"></InfoTextComp>
           </S.Content>
           <S.NavWrapper>
             <S.SideNav>

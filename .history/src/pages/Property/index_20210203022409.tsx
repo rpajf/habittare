@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
-import MapBox from '../../components/Map'
+import Input from '../../components/Input'
 import InfoTextComp from '../../components/InfoTextComp'
 import { FormHandles } from '@unform/core'
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
@@ -77,7 +77,14 @@ const Property: React.FC = () => {
               </S.InfoText>
             </InfoTextComp>
             <InfoTextComp content="Localização">
-              <MapBox />
+
+            <MapboxGl
+    {...viewport}
+    mapboxApiAccessToken="pk.eyJ1IjoicmFwaGFlbDAwMSIsImEiOiJja2tva3p5ZGwwZHo3MnBxZDFidDZxZmtoIn0.9UrwKW426t_sDOYtZQPUUQ"
+    onViewportChange={viewport => {
+      setViewport(viewport)
+    }}
+    >map here</MapboxGl>
             </InfoTextComp>
           </S.Content>
           <S.NavWrapper>

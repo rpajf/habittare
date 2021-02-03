@@ -76,9 +76,7 @@ const Property: React.FC = () => {
                 amet magna mol
               </S.InfoText>
             </InfoTextComp>
-            <InfoTextComp content="Localização">
-              <MapBox />
-            </InfoTextComp>
+            <InfoTextComp content="Localização"></InfoTextComp>
           </S.Content>
           <S.NavWrapper>
             <S.SideNav>

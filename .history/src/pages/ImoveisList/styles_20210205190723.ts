@@ -60,7 +60,7 @@ export const FilterText = styled(MenuText)`
 `
 export const InnerContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  just
 `
 export const ImgDiv = styled.div`
   height: 264px;

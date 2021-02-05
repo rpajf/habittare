@@ -18,7 +18,7 @@ const ImoveisList = () => {
 
   return (
     <S.Container>
-      <S.InnerContent>
+      <S.InnerContainer>
         <S.SideNav>
           <S.NavWrapper>
             <S.NavInfo>Localização ou código</S.NavInfo>
@@ -28,11 +28,11 @@ const ImoveisList = () => {
             <S.InnerContainer>
               <S.NavWrapper>
                 <S.NavInfo>Preço Min.</S.NavInfo>
-                <S.QuantityInput placeholder="R$" />
+                <S.NavInput placeholder="R$" />
               </S.NavWrapper>
               <S.NavWrapper>
                 <S.NavInfo>Preço Max.</S.NavInfo>
-                <S.QuantityInput placeholder="R$" />
+                <S.NavInput placeholder="R$" />
               </S.NavWrapper>
             </S.InnerContainer>
             <S.RadioContainer>
@@ -98,14 +98,15 @@ const ImoveisList = () => {
             <S.InnerContainer>
               <S.NavWrapper>
                 <S.NavInfo>Área Min (m2)</S.NavInfo>
-                <S.QuantityInput placeholder="" />
+                <S.NavInput placeholder="" />
               </S.NavWrapper>
               <S.NavWrapper>
                 <S.NavInfo>Área Max (m2)</S.NavInfo>
-                <S.QuantityInput placeholder="" />
+                <S.NavInput placeholder="" />
               </S.NavWrapper>
             </S.InnerContainer>
           </S.NavWrapper>
+          <S.InnerContent></S.InnerContent>
         </S.SideNav>
         <S.Content>
           {pid}
@@ -128,7 +129,7 @@ const ImoveisList = () => {
             <S.ImgDiv />
           </S.InnerContainer>
         </S.Content>
-      </S.InnerContent>
+      </S.In>
     </S.Container>
   )
 }

@@ -60,7 +60,6 @@ export const FilterText = styled(MenuText)`
 `
 export const InnerContainer = styled.div`
   display: flex;
-  justify-content: space-between;
 `
 export const ImgDiv = styled.div`
   height: 264px;
@@ -111,7 +110,6 @@ export const QuantityInput = styled.input`
   background: #ffffff;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  max-width: 94px;
   padding: 9px 0 6px 6px;
   border: none;
   ::placeholder {

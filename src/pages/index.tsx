@@ -1,5 +1,7 @@
-const IndexPage = () => {
-  return <h1>HABITTARE</h1>
+import ComingSoon from './comingSoon'
+
+const IndexPage: React.FC = () => {
+  return <ComingSoon />
 }
 
 export default IndexPage

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import * as S from './styles'
+import * as S from '../../styles/comingSoon/styles'
 
 const ComingSoon: React.FC = () => {
   return (

@@ -29,7 +29,9 @@ export const Line = styled.div`
   height: 2px;
   width: 7px;
   @media (max-width: 480px) {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 `
 export const HeaderMenu = styled.div`
@@ -50,6 +52,5 @@ export const MenuItem = styled.button`
   border: none;
   @media (max-width: 480px) {
     font-size: 12px;
-    margin-bottom: 8px;
   }
 `

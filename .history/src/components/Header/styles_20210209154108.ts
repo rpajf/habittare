@@ -11,8 +11,7 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   @media (max-width: 480px) {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex
   }
 `
 export const HomeTitle = styled.text`
@@ -28,9 +27,6 @@ export const Line = styled.div`
   align-self: center;
   height: 2px;
   width: 7px;
-  @media (max-width: 480px) {
-    display: none;
-  }
 `
 export const HeaderMenu = styled.div`
   display: flex;
@@ -48,8 +44,4 @@ export const MenuItem = styled.button`
   color: ${props => props.theme.colors.textPrimary};
   background: ${props => props.theme.colors.primary};
   border: none;
-  @media (max-width: 480px) {
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
 `

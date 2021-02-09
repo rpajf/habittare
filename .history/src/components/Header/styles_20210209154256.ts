@@ -50,6 +50,6 @@ export const MenuItem = styled.button`
   border: none;
   @media (max-width: 480px) {
     font-size: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 `

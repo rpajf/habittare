@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Pins from './Marker'
+
 import MapboxGl from 'react-map-gl'
 
 const Mapbox: React.FC = () => {

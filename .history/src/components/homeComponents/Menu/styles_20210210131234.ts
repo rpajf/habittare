@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 interface SwitchProps {
   isToggled: boolean
@@ -95,11 +95,10 @@ export const SearchLabel = styled.label`
 export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
   border-radius: 5px 0px 0px 5px;
   cursor: pointer;
-  ${props =>
-    props.isToggled &&
+  ${(props) =>
+    props. &&
     css`
-      background: #fff;
-      color: ${props => props.theme.colors.primary};
+      border-color: #c53030;
     `}
 `
 export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
@@ -107,12 +106,6 @@ export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
   cursor: pointer;
 
   color: ${props => props.theme.colors.primary};
-  ${props =>
-    props.isToggled &&
-    css`
-      background: ${props => props.theme.colors.primary};
-      color: #fff;
-    `}
   @media (max-width: 480px) {
     padding: 8px;
     font-size: 12px;

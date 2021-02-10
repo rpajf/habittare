@@ -98,8 +98,8 @@ export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
   ${props =>
     props.isToggled &&
     css`
-      background: #fff;
-      color: ${props => props.theme.colors.primary};
+      background: ${props => props.theme.colors.primary};
+      color: #fff;
     `}
 `
 export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`

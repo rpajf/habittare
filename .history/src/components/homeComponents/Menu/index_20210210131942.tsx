@@ -6,12 +6,10 @@ import Radio from '../../Radio'
 const Menu: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
-  // const [checked, setChecked] = useState<boolean>(false)
-
   const handleSwitch = () => {
     setToggle(!isToggled)
   }
-
+  const toggleRadio = 
   const handleClick = () => {
     setActive(!isActive)
   }

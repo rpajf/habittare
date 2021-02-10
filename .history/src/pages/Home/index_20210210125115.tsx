@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import * as S from './styles'
 
 import Menu from '../../components/homeComponents/Menu'

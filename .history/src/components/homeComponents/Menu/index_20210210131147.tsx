@@ -6,8 +6,6 @@ import Radio from '../../Radio'
 const Menu: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
-  // const [checked, setChecked] = useState<boolean>(false)
-
   const handleSwitch = () => {
     setToggle(!isToggled)
   }
@@ -19,7 +17,6 @@ const Menu: React.FC = () => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
-  // useEffect(() => {}, [])
 
   const mockedRadioValuesArray = [
     { radioValue: '1', onClick: onClick, checked: true },
@@ -34,9 +31,7 @@ const Menu: React.FC = () => {
         <S.SwitchLabel1 isToggled={isToggled} onClick={handleSwitch}>
           Comprar
         </S.SwitchLabel1>
-        <S.SwitchLabel2 isToggled={isToggled} onClick={handleSwitch}>
-          Alugar
-        </S.SwitchLabel2>
+        <S.SwitchLabel2 onClick={handleSwitch}>Alugar</S.SwitchLabel2>
         <S.SelectDiv>
           <Select />
         </S.SelectDiv>

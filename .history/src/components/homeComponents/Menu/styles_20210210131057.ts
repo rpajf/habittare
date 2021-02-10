@@ -1,7 +1,9 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 interface SwitchProps {
-  isToggled: boolean
+  isFocused: boolean;
+
+
 }
 
 export const Container = styled.div`
@@ -92,27 +94,15 @@ export const SearchLabel = styled.label`
     line-height: 16px;
   }
 `
-export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
+export const SwitchLabel1 = styled(SearchLabel)`
   border-radius: 5px 0px 0px 5px;
   cursor: pointer;
-  ${props =>
-    props.isToggled &&
-    css`
-      background: #fff;
-      color: ${props => props.theme.colors.primary};
-    `}
 `
-export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
+export const SwitchLabel2 = styled(SearchLabel)`
   background: #fff;
   cursor: pointer;
 
   color: ${props => props.theme.colors.primary};
-  ${props =>
-    props.isToggled &&
-    css`
-      background: ${props => props.theme.colors.primary};
-      color: #fff;
-    `}
   @media (max-width: 480px) {
     padding: 8px;
     font-size: 12px;

@@ -4,12 +4,10 @@ import Select from '../../Select'
 import Radio from '../../Radio'
 
 const Menu: React.FC = () => {
-  const [isToggled, setToggle] = useState<boolean>(false)
+  const [toggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
-  // const [checked, setChecked] = useState<boolean>(false)
-
-  const handleSwitch = () => {
-    setToggle(!isToggled)
+  const handleSwich = () => {
+    setToggle(!toggled)
   }
 
   const handleClick = () => {
@@ -19,7 +17,6 @@ const Menu: React.FC = () => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
-  // useEffect(() => {}, [])
 
   const mockedRadioValuesArray = [
     { radioValue: '1', onClick: onClick, checked: true },
@@ -31,12 +28,8 @@ const Menu: React.FC = () => {
   return (
     <S.Container>
       <S.SearchBar>
-        <S.SwitchLabel1 isToggled={isToggled} onClick={handleSwitch}>
-          Comprar
-        </S.SwitchLabel1>
-        <S.SwitchLabel2 isToggled={isToggled} onClick={handleSwitch}>
-          Alugar
-        </S.SwitchLabel2>
+        <S.SwitchLabel1 oncl>Comprar</S.SwitchLabel1>
+        <S.SwitchLabel2>Alugar</S.SwitchLabel2>
         <S.SelectDiv>
           <Select />
         </S.SelectDiv>

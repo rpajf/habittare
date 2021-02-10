@@ -3,16 +3,20 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: #f8f8fa;
+
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
+  margin: 15px;
+
   .hidden-menu {
     list-style: none;
     opacity: 0;
     position: absolute;
     visibility: hidden;
-    /* -webkit-transition: opacity 100ms, visibility 100ms;
-    transition: opacity 100ms, visibility 100ms; */
+
+    -webkit-transition: opacity 200ms, visibility 200ms;
+    transition: opacity 200ms, visibility 200ms;
   }
   .active {
     visibility: visible;
@@ -25,6 +29,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   padding: 5px 15px;
+
   @media (max-width: 480px) {
     flex-wrap: wrap;
     justify-content: center;
@@ -35,9 +40,12 @@ export const SearchBar = styled.div`
   background: #fff;
   display: flex;
   border-radius: 5px;
+
   border: none;
+
   @media (max-width: 480px) {
     flex-wrap: wrap;
+
     flex-direction: column;
     justify-content: center;
   }
@@ -45,6 +53,7 @@ export const SearchBar = styled.div`
 export const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `
 export const SelectDiv = styled.div`
   background: #fff;
@@ -64,8 +73,10 @@ export const SelectDiv = styled.div`
     font-size: 8px;
     line-height: 0;
     border-radius: 5px;
+
     justify-content: center;
     text-align: center;
+
     flex: 1;
     border: 1px solid #8a8a8a;
   }
@@ -84,6 +95,7 @@ export const SearchLabel = styled.label`
     font-size: 12px;
     text-align: center;
     border-radius: 5px;
+
     line-height: 16px;
   }
 `
@@ -92,6 +104,7 @@ export const SwitchLabel1 = styled(SearchLabel)`
 `
 export const SwitchLabel2 = styled(SearchLabel)`
   background: #fff;
+
   color: ${props => props.theme.colors.primary};
   @media (max-width: 480px) {
     padding: 8px;
@@ -100,6 +113,9 @@ export const SwitchLabel2 = styled(SearchLabel)`
     border-radius: 5px;
     border: 1px solid #8a8a8a;
     text-align: center;
+
+    /* border-top: 1px solid #8a8a8a;
+    border-bottom: 1px solid #8a8a8a; */
   }
 `
 
@@ -142,6 +158,7 @@ export const MenuContentText = styled.text`
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
+
   color: #8a8a8a;
 `
 export const ContentInput = styled.input`
@@ -170,6 +187,7 @@ export const QuantityInfo = styled.div`
   align-items: center;
   justify-content: center;
   color: #8a8a8a;
+
   background: #ffffff;
   border: none;
 `
@@ -185,4 +203,6 @@ export const FilterLabel = styled.label`
   margin: 0 auto 12px;
   padding: 3px 9px 2px 9px;
   align-self: center;
+  /* align-self: baseline; */
+  //
 `

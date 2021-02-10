@@ -2,25 +2,12 @@ import { useState } from 'react'
 import * as S from './styles'
 import Select from '../../Select'
 import Radio from '../../Radio'
-
 const Menu: React.FC = () => {
   const [isActive, setActive] = useState<boolean>(false)
 
   const handleClick = () => {
     setActive(!isActive)
   }
-
-  function onClick(radioValue) {
-    console.log(radioValue)
-  }
-
-  const mockedRadioValuesArray = [
-    { radioValue: '1', onClick: onClick, checked: true },
-    { radioValue: '2', onClick: onClick, checked: false },
-    { radioValue: '3', onClick: onClick, checked: false },
-    { radioValue: '4', onClick: onClick, checked: false }
-  ]
-
   return (
     <S.Container>
       <S.SearchBar>
@@ -50,32 +37,22 @@ const Menu: React.FC = () => {
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
           <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
-                />
-              )
-            })}
+            <Radio />
+            <Radio />
+
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.InnerWrapper>
             <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
             <S.QuantityWrapper>
-              {mockedRadioValuesArray.map(item => {
-                return (
-                  <Radio
-                    key={item.radioValue}
-                    radioValue={item.radioValue}
-                    onClick={item.onClick}
-                    checked={item.checked}
-                  />
-                )
-              })}
+              <Radio value="1" />
+              <Radio />
+
+              <Radio />
+              <Radio />
             </S.QuantityWrapper>
           </S.InnerWrapper>
         </S.InfoWrapper>
@@ -92,31 +69,21 @@ const Menu: React.FC = () => {
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
           <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
-                />
-              )
-            })}
+            <Radio />
+            <Radio />
+
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
           <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
-                />
-              )
-            })}
+            <Radio />
+            <Radio />
+
+            <Radio />
+            <Radio />
           </S.QuantityWrapper>
         </S.InfoWrapper>
       </S.ContentWrapper>

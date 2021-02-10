@@ -111,22 +111,17 @@ const ImoveisList = () => {
           {pid}
           {router.query.slug}
           <S.Menu>
-            <S.MenuItensWrapper>
+            <S.MenuItens>
               <S.MenuOrganizer>
                 <S.LabelOn>Comprar</S.LabelOn>
                 <S.LabelOff>Alugar</S.LabelOff>
               </S.MenuOrganizer>
               <S.MenuOrganizer>
-                <S.MenuText>Ordenar por:</S.MenuText>
+                <S.MenuText>Ordenar por</S.MenuText>
                 <S.FilterText>Relevância</S.FilterText>
                 <S.Btn>Ver no Mapa</S.Btn>
               </S.MenuOrganizer>
-            </S.MenuItensWrapper>
-            <S.MenuText>Imóveis para comprar</S.MenuText>
-            <S.MenuOrganizer>
-              <S.MenuBtn>Comprar</S.MenuBtn>
-              <S.MenuBtn>Residencial</S.MenuBtn>
-            </S.MenuOrganizer>
+            </S.MenuItens>
           </S.Menu>
         </S.Content>
       </S.InnerContent>

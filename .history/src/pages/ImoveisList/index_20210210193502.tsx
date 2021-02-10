@@ -117,16 +117,15 @@ const ImoveisList = () => {
                 <S.LabelOff>Alugar</S.LabelOff>
               </S.MenuOrganizer>
               <S.MenuOrganizer>
-                <S.MenuText>Ordenar por:</S.MenuText>
+                <S.MenuText>Ordenar por</S.MenuText>
                 <S.FilterText>Relevância</S.FilterText>
                 <S.Btn>Ver no Mapa</S.Btn>
               </S.MenuOrganizer>
-            </S.MenuItensWrapper>
-            <S.MenuText>Imóveis para comprar</S.MenuText>
-            <S.MenuOrganizer>
+              <S.MenuText>Imóveis para comprar</S.MenuText>
+
               <S.MenuBtn>Comprar</S.MenuBtn>
-              <S.MenuBtn>Residencial</S.MenuBtn>
-            </S.MenuOrganizer>
+              <S.MenuBtn>Alugar</S.MenuBtn>
+            </S.MenuItensWrapper>
           </S.Menu>
         </S.Content>
       </S.InnerContent>

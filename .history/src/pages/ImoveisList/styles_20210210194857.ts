@@ -18,18 +18,18 @@ export const Menu = styled.div`
   width: 800px;
   flex-direction: column;
   border-radius: 5px;
-  padding: 0 10px 10px 8px;
+  padding: 12px 10px 10px 8px;
 `
 export const MenuItensWrapper = styled.div`
   display: flex;
 
   justify-content: space-between;
   align-items: center;
+  margin-bottom:
 `
 export const MenuOrganizer = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 20px 0;
 `
 export const MenuBtn = styled.button`
   border: 1px solid #5743d9;

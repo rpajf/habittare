@@ -18,7 +18,7 @@ export const Menu = styled.div`
   width: 800px;
   flex-direction: column;
   border-radius: 5px;
-  padding: 0 10px 10px 8px;
+  padding: 12px 10px 10px 8px;
 `
 export const MenuItensWrapper = styled.div`
   display: flex;
@@ -28,8 +28,6 @@ export const MenuItensWrapper = styled.div`
 `
 export const MenuOrganizer = styled.div`
   display: flex;
-  align-items: center;
-  margin: 10px 0 20px 0;
 `
 export const MenuBtn = styled.button`
   border: 1px solid #5743d9;
@@ -42,7 +40,6 @@ export const MenuBtn = styled.button`
   line-height: 27px;
   color: ${props => props.theme.colors.primary};
   padding: 4px 10px 4px 10px;
-  margin-right: 15px;
 `
 export const ContentOrganizer = styled.div`
   display: flex;
@@ -74,7 +71,7 @@ export const MenuText = styled.text`
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  margin-right: 10px;
+  text-align: center;
   color: #5743d9;
 `
 export const FilterText = styled(MenuText)`

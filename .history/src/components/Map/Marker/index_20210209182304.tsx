@@ -14,8 +14,8 @@ function Pins(props) {
   return data.map((city, index) => (
     <Marker
       key={`marker-${index}`}
-      longitude={city.longitude}
-      latitude={city.latitude}
+      longitude={longitude}
+      latitude={latitude}
     >
       <svg
         height={SIZE}

@@ -9,27 +9,31 @@ const Mapbox: React.FC = () => {
     maximumAge: 0
   }
 
-  function success(pos) {
-    const crd = pos.coords
+  // function success(pos) {
+  //   const crd = pos.coords
 
-    console.log('Your current position is:')
-    console.log(`Latitude : ${crd.latitude}`)
-    console.log(`Longitude: ${crd.longitude}`)
-    console.log(`More or less ${crd.accuracy} meters.`)
+  //   console.log('Your current position is:')
+  //   const latitude = `Latitude : ${crd.latitude}`
+  //   const longitude =`Longitude: ${crd.longitude}`
+  //   console.log(`More or less ${crd.accuracy} meters.`)
+  // }
+
+  // function error(err) {
+  //   console.warn(`ERROR(${err.code}): ${err.message}`)
+  // }
+
+  // navigator.geolocation.getCurrentPosition(success, error, options)
+  const watchID = navigator.geolocation.watchPosition(function(position) {
+    return (position.coords.latitude);
   }
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`)
-  }
-
-  navigator.geolocation.getCurrentPosition(success, error, options)
+  );
   const [viewport, setViewport] = useState({
-    latitude: -2.511341,
+    latitude: ,
     longitude: -44.258348,
     width: '725px',
     height: '250px',
     border: 'none',
-    zoom: 30
+    zoom: 10
   })
   return (
     <div>
@@ -40,9 +44,7 @@ const Mapbox: React.FC = () => {
         onViewportChange={viewport => {
           setViewport(viewport)
         }}
-      >
-        <Pins />
-      </MapboxGl>
+      ></MapboxGl>
     </div>
   )
 }

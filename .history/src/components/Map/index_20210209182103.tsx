@@ -29,7 +29,7 @@ const Mapbox: React.FC = () => {
     width: '725px',
     height: '250px',
     border: 'none',
-    zoom: 30
+    zoom: 5
   })
   return (
     <div>
@@ -40,9 +40,7 @@ const Mapbox: React.FC = () => {
         onViewportChange={viewport => {
           setViewport(viewport)
         }}
-      >
-        <Pins />
-      </MapboxGl>
+      ></MapboxGl>
     </div>
   )
 }

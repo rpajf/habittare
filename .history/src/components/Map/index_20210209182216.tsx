@@ -41,7 +41,7 @@ const Mapbox: React.FC = () => {
           setViewport(viewport)
         }}
       >
-        <Pins />
+        <Pins>
       </MapboxGl>
     </div>
   )

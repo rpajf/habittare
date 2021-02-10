@@ -3,33 +3,25 @@ import Pins from './Marker'
 import MapboxGl from 'react-map-gl'
 
 const Mapbox: React.FC = () => {
-  const options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
+  function success(position) {
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude
+
+    status.textContent = ''
+    mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`
+    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`
   }
 
-  function success(pos) {
-    const crd = pos.coords
-
-    console.log('Your current position is:')
-    console.log(`Latitude : ${crd.latitude}`)
-    console.log(`Longitude: ${crd.longitude}`)
-    console.log(`More or less ${crd.accuracy} meters.`)
+  function error() {
+    status.textContent = 'Unable to retrieve your location'
   }
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`)
-  }
-
-  navigator.geolocation.getCurrentPosition(success, error, options)
   const [viewport, setViewport] = useState({
     latitude: -2.511341,
     longitude: -44.258348,
     width: '725px',
     height: '250px',
     border: 'none',
-    zoom: 30
+    zoom: 10
   })
   return (
     <div>
@@ -40,9 +32,7 @@ const Mapbox: React.FC = () => {
         onViewportChange={viewport => {
           setViewport(viewport)
         }}
-      >
-        <Pins />
-      </MapboxGl>
+      ></MapboxGl>
     </div>
   )
 }

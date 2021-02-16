@@ -43,7 +43,7 @@ const Slider: React.FC<Props> = () => {
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{ ...arrowStyles, left: 15 }}
+            style={{ ...arrowStyles }}
           ></button>
         )
       }
@@ -53,7 +53,7 @@ const Slider: React.FC<Props> = () => {
             type="button"
             onClick={onClickHandler}
             title={label}
-            style={{ transform: 'rotate(180deg)', ...arrowStyles, right: 15 }}
+            style={{ ...arrowStyles }}
           ></button>
         )
       }

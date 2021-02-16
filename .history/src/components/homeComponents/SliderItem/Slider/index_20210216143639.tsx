@@ -27,11 +27,8 @@ const arrowStyles: CSSProperties = {
   // bottom: 'auto',
   // padding: '10px',
   // zIndex: 2,
-  width: '0',
-  height: '0',
-  borderTop: '7px solid transparent',
-  borderRight: '14px solid #5743D9',
-  borderBottom: '7px solid transparent'
+  {"width":"0","height":"0","borderTop":"50px solid transparent","borderRight":"100px solid red","borderBottom":"50px solid transparent"}
+  // backgroundColor: '#5743D9'
 }
 
 const Slider: React.FC<Props> = () => {
@@ -44,17 +41,9 @@ const Slider: React.FC<Props> = () => {
             onClick={onClickHandler}
             title={label}
             style={{ ...arrowStyles, left: 15 }}
-          ></button>
-        )
-      }
-      renderArrowNext={(onClickHandler, hasNext, label) =>
-        hasNext && (
-          <button
-            type="button"
-            onClick={onClickHandler}
-            title={label}
-            style={{ transform: 'rotate(180deg)', ...arrowStyles, right: 15 }}
-          ></button>
+          >
+            -
+          </button>
         )
       }
     >

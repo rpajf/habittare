@@ -22,16 +22,11 @@ interface Props {
   }
 }
 const arrowStyles: CSSProperties = {
-  // position: 'absolute',
-  // top: '.7em',
-  // bottom: 'auto',
-  // padding: '10px',
-  // zIndex: 2,
-  width: '0',
-  height: '0',
-  borderTop: '7px solid transparent',
-  borderRight: '14px solid #5743D9',
-  borderBottom: '7px solid transparent'
+  position: 'absolute',
+  top: '.7em',
+  bottom: 'auto',
+  padding: '.4em',
+  zIndex: 2
 }
 
 const Slider: React.FC<Props> = () => {
@@ -44,17 +39,9 @@ const Slider: React.FC<Props> = () => {
             onClick={onClickHandler}
             title={label}
             style={{ ...arrowStyles, left: 15 }}
-          ></button>
-        )
-      }
-      renderArrowNext={(onClickHandler, hasNext, label) =>
-        hasNext && (
-          <button
-            type="button"
-            onClick={onClickHandler}
-            title={label}
-            style={{ transform: 'rotate(180deg)', ...arrowStyles, right: 15 }}
-          ></button>
+          >
+            -
+          </button>
         )
       }
     >

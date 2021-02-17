@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import * as S from '../../styles/Home'
+import * as S from '../../'
 
 import Menu from '../../components/homeComponents/Menu'
 import Slider from '../../components/homeComponents/SliderItem/Slider'
@@ -47,4 +47,3 @@ const Home: React.FC = () => {
 }
 
 export default Home
-export {}

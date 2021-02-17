@@ -8,18 +8,18 @@ interface Props {
   autoFocus?: boolean
   autoPlay?: boolean
   centerMode?: boolean
-  // centerSlidePercentage: number
+  centerSlidePercentage: number
   children?: React.ReactChild[]
   className?: string
   dynamicHeight?: boolean
   emulateTouch?: boolean
   infiniteLoop?: boolean
-  // interval: number
-  // labels: {
-  //   leftArrow: string
-  //   rightArrow: string
-  //   item: string
-  // }
+  interval: number
+  labels: {
+    leftArrow: string
+    rightArrow: string
+    item: string
+  }
 }
 const arrowStyles: CSSProperties = {
   // position: 'absolute',
@@ -88,4 +88,3 @@ const Slider: React.FC<Props> = ({ ...rest }) => {
 }
 
 export default Slider
-export {}

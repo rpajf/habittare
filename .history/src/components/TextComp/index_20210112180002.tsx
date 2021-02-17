@@ -12,4 +12,3 @@ const DefaultText: React.FC = () => {
   )
 }
 export default DefaultText
-export {}

@@ -7,5 +7,3 @@ const PrimaryButton: React.FC<ButtonProps> = ({ children, ...rest }) => {
   return <S.Container {...rest}>{children}</S.Container>
 }
 export default PrimaryButton
-
-export {}

@@ -8,7 +8,7 @@ import Slider from '../../components/homeComponents/SliderItem/Slider'
 import TextComp from '../../components/TextComp'
 
 import MenuCard from '../../components/homeComponents/MenuCard'
-const Home: React.FC = () => {
+const Home: React.FC = (props:) => {
   return (
     <S.Container>
       <S.CardWrapper>
@@ -47,4 +47,3 @@ const Home: React.FC = () => {
 }
 
 export default Home
-export {}

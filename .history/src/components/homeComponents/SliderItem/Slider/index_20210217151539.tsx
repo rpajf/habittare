@@ -88,4 +88,3 @@ const Slider: React.FC<Props> = ({ ...rest }) => {
 }
 
 export default Slider
-export {}

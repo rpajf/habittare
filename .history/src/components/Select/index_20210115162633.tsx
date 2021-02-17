@@ -22,4 +22,3 @@ const Select: React.FC<SelectBox> = () => {
   )
 }
 export default Select
-export {}

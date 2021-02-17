@@ -40,4 +40,3 @@ const MenuCard: React.FC = () => {
 }
 
 export default MenuCard
-export {}

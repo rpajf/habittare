@@ -39,4 +39,3 @@ const SliderText: React.FC = () => {
 }
 
 export default SliderText
-export {}

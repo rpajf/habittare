@@ -1,6 +1,8 @@
 import Property from './Property'
+
+
 const IndexPage = () => {
-  return <Property />
+  return <Home />
 }
 
 export default IndexPage

@@ -48,7 +48,7 @@ const Menu: React.FC = () => {
           <S.InnerWrapper>
             <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
             <S.QuantityWrapper>
-              <Radio />
+              <Radio value="1" />
               <Radio />
 
               <Radio />

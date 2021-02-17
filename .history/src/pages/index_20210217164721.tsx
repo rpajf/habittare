@@ -1,7 +1,7 @@
 import ImoveisList from './ImoveisList'
 
 const IndexPage = () => {
-  return <ImoveisList />
+  return <I/>
 }
 
 export default IndexPage

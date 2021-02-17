@@ -1,13 +1,16 @@
-import * as S from '../../styles/Property'
-
+import * as S from './styles'
+import { useRef } from 'react'
 import { useRouter } from 'next/router'
 import MapBox from '../../components/Map'
 import InfoTextComp from '../../components/InfoTextComp'
-
+import { FormHandles } from '@unform/core'
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
 import { Form } from '@unform/web'
 import Slider from '../../components/homeComponents/SliderItem/Slider'
+
+
 const Property: React.FC = () => {
+  const formRef = useRef<FormHandles>(null)
   const router = useRouter()
   const { pid } = router.query
 

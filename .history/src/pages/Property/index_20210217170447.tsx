@@ -1,4 +1,4 @@
-import * as S from '../../styles/Property'
+import * as S from '../../styles/'
 
 import { useRouter } from 'next/router'
 import MapBox from '../../components/Map'

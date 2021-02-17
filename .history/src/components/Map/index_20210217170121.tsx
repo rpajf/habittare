@@ -8,7 +8,7 @@ import MapboxGl, {
   FullscreenControl,
   ScaleControl,
   GeolocateControl
-} from 'react-map-gl'
+} from 'reac'
 const geolocateStyle = {
   top: 0,
   left: 0,

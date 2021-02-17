@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Pins from './Marker'
-import CITIES from './Info/cities.json'
-import CityInfo from './Info/info'
+import CITIES from './Test/cities.json'
+import CityInfo from './Test/city-info'
 import MapboxGl, {
   Popup,
   NavigationControl,

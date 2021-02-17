@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { useRouter } from 'next/router'
-const ImoveisList:React.FC = () => {
+const ImoveisList: React.FC = () => {
   const router = useRouter()
   const { pid } = router.query
 
@@ -25,7 +25,7 @@ const ImoveisList:React.FC = () => {
           </S.ContentWrapper>
         </S.Menu>
         <S.CardContainer>
-          <S.ImgDiv/>
+          <S.ImgDiv />
         </S.CardContainer>
       </S.Content>
     </S.Container>

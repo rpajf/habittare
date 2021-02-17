@@ -1,5 +1,5 @@
-import * as S from '../../styles/Property'
-
+import * as S from './styles'
+import { useRef } from 'react'
 import { useRouter } from 'next/router'
 import MapBox from '../../components/Map'
 import InfoTextComp from '../../components/InfoTextComp'

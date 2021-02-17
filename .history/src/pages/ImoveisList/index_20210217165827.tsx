@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import { useRouter } from 'next/router'
-const ImoveisList:React.FC = () => {
+const ImoveisList = () => {
   const router = useRouter()
   const { pid } = router.query
 

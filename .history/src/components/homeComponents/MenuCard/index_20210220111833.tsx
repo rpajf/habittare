@@ -1,33 +1,7 @@
 import * as S from './styles'
-import { GetStaticPaths, GetStaticProps } from 'next'
 
 type Props = {
-  [key: string]: string
-}
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      {
-        params: {
-          id: '1'
-        }
-      },
-      {
-        params: {
-          id: '2'
-        }
-      }
-    ],
-    fallback: 'blocking'
-  }
-}
-export const getStaticProps: GetStaticProps = async context => {
-  const { id } = context.params
-  return {
-    props: {
-      id: id
-    }
-  }
+  [key: string]: 
 }
 const MenuCard: React.FC = () => {
   return (

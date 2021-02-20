@@ -5,10 +5,6 @@ export const Container = styled.div`
   background: #ffffff;
   border-radius: 5px;
   margin: 15px;
-  cursor: pointer;
-  :hover {
-    border: 1px solid #5743d9;
-  }
 `
 
 export const Header = styled.div`

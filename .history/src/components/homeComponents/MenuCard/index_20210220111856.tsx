@@ -1,5 +1,4 @@
 import * as S from './styles'
-import { GetStaticPaths, GetStaticProps } from 'next'
 
 type Props = {
   [key: string]: string
@@ -19,14 +18,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     ],
     fallback: 'blocking'
-  }
-}
-export const getStaticProps: GetStaticProps = async context => {
-  const { id } = context.params
-  return {
-    props: {
-      id: id
-    }
   }
 }
 const MenuCard: React.FC = () => {

@@ -1,5 +1,4 @@
 import * as S from './styles'
-import { GetStaticPaths, GetStaticProps } from 'next'
 
 type Props = {
   [key: string]: string

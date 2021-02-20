@@ -32,6 +32,7 @@ export const getStaticProps: GetStaticProps = async context => {
 const MenuCard: React.FC = () => {
   return (
     <S.Container>
+      {props.id}
       <S.Header>
         <S.topLabel>Apartamento</S.topLabel>
         <S.BottomLabel>Venda</S.BottomLabel>

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { createHandler } from '@/middleware'
+import { createHandler } from '@/middlewares'
 import Property from '@/models/Property'
 import { fetchPropertiesFromJetmobi } from '@/services/jetmobiApi'
 

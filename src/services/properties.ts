@@ -6,13 +6,13 @@ export async function getAllProperties(): Promise<any> {
 }
 
 export async function getAllPropertiesWithFilter(
-  filter: Query<PropertyType, Document>
+  filter: Record<string, unknown>
 ): Promise<any> {
   return Property.find(filter).exec()
 }
 
 export async function getOneProperty(
-  filter: Query<PropertyType, Document>
+  filter: Record<string, unknown>
 ): Promise<any> {
   return Property.findOne(filter).exec()
 }
@@ -20,4 +20,8 @@ export async function getOneProperty(
 export async function getHomePageProperties(): Promise<any> {
   const filter = { tags: { $in: ['destaque-site'] } }
   return Property.find(filter).exec()
+}
+
+export async function createProperty(property: PropertyType): Promise<any> {
+  return Property.create(property)
 }

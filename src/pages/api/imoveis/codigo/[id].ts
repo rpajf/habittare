@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { createHandler } from '@/middleware'
+import { createHandler } from '@/middlewares'
 import Property from '@/models/Property'
 
 async function _getHandler(req: NextApiRequest, res: NextApiResponse) {

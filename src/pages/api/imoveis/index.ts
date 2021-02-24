@@ -1,9 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { createHandler } from '@/middleware'
-import { getAllProperties } from '@/services/properties'
+import { createHandler } from '@/middlewares'
+import { getAllPropertiesWithFilter } from '@/services/properties'
+
+import { _mountFilters } from '@/utils/api/helpers'
 
 async function _getHandler(req: NextApiRequest, res: NextApiResponse) {
-  const properties = await getAllProperties()
+  const filter = _mountFilters(req.query) as Record<string, unknown>
+
+  const properties = await getAllPropertiesWithFilter(filter)
   res.status(200).send(properties)
 }
 

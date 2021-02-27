@@ -10,7 +10,6 @@ export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
-  /* margin: 0 30px 0 180px; */
 `
 export const Menu = styled.div`
   background: #fff;
@@ -39,10 +38,15 @@ export const MenuBtn = styled.button`
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
+  opacity: 0.8;
   line-height: 27px;
   color: ${props => props.theme.colors.primary};
   padding: 4px 10px 4px 10px;
   margin-right: 15px;
+  :hover {
+    opacity: 1;
+    transition: 0.2s;
+  }
 `
 export const ContentOrganizer = styled.div`
   display: flex;
@@ -64,10 +68,12 @@ export const LabelOn = styled.label`
   font-weight: 500;
   font-size: 16px;
   color: ${props => props.theme.colors.textPrimary};
+  cursor: pointer;
 `
 export const LabelOff = styled(LabelOn)`
   background: #fff;
   color: ${props => props.theme.colors.primary};
+  cursor: pointer;
 `
 export const MenuText = styled.text`
   font-style: normal;
@@ -115,10 +121,16 @@ export const SideNav = styled.div`
 `
 export const NavInfo = styled.text`
   font-style: normal;
+  margin: 5px 0 5px 0;
   font-weight: 300;
   font-size: 14px;
   line-height: 21px;
   color: #8a8a8a;
+`
+export const InnerNavWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0 5px 0;
 `
 export const NavInput = styled.input`
   background: #ffffff;

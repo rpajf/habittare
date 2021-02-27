@@ -26,14 +26,14 @@ const ImoveisList: React.FC = () => {
             <S.NavInfo>Tipo de Imóvel</S.NavInfo>
             <S.NavInput placeholder="Selecione um tipo de imovel" />
             <S.InnerContainer>
-              <S.NavWrapper>
+              <S.InnerNavWrapper>
                 <S.NavInfo>Preço Min.</S.NavInfo>
                 <S.QuantityInput placeholder="R$" />
-              </S.NavWrapper>
-              <S.NavWrapper>
+              </S.InnerNavWrapper>
+              <S.InnerNavWrapper>
                 <S.NavInfo>Preço Max.</S.NavInfo>
                 <S.QuantityInput placeholder="R$" />
-              </S.NavWrapper>
+              </S.InnerNavWrapper>
             </S.InnerContainer>
             <S.RadioContainer>
               <S.NavInfo>Quartos</S.NavInfo>
@@ -96,14 +96,14 @@ const ImoveisList: React.FC = () => {
               </S.InnerContainer>
             </S.RadioContainer>
             <S.InnerContainer>
-              <S.NavWrapper>
+              <S.InnerNavWrapper>
                 <S.NavInfo>Área Min (m2)</S.NavInfo>
                 <S.QuantityInput placeholder="" />
-              </S.NavWrapper>
-              <S.NavWrapper>
+              </S.InnerNavWrapper>
+              <S.InnerNavWrapper>
                 <S.NavInfo>Área Max (m2)</S.NavInfo>
                 <S.QuantityInput placeholder="" />
-              </S.NavWrapper>
+              </S.InnerNavWrapper>
             </S.InnerContainer>
           </S.NavWrapper>
         </S.SideNav>

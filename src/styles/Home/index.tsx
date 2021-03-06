@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
 `
 
+export const SliderContainer = styled.div`
+  width: 100%;
+`
+
 export const InnerDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,12 +23,18 @@ export const InnerDiv = styled.div`
 export const ImgBackground = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1400px;
+  width: 100%;
   height: 440px;
   align-items: center;
   justify-content: center;
 
-  background: url('/imgs/imovel.svg') no-repeat;
+  background: rgba(87, 67, 167, 0.5) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  @media (min-width: 310px) and (max-width: 480px) {
+    display: none;
+  }
 `
 export const MenuWrapper = styled.div`
   display: flex;

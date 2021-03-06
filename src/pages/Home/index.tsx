@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
+
+import { Carousel } from 'react-responsive-carousel'
+
 import * as S from '../../styles/Home'
 
 import Menu from '../../components/homeComponents/Menu'
@@ -10,13 +14,53 @@ import TextComp from '../../components/TextComp'
 
 import MenuCard from '../../components/homeComponents/MenuCard'
 const Home: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const next = () => {
+    if (currentSlide === 1) return setCurrentSlide(0)
+    return setCurrentSlide(currentSlide + 1)
+  }
+
+  const prev = () => {
+    return setCurrentSlide(currentSlide - 1)
+  }
   return (
     <S.Container>
-      <S.ImgBackground>
+      {/* <S.ImgBackground>
         <S.InnerDiv>
           <SliderText />
         </S.InnerDiv>
-      </S.ImgBackground>
+      </S.ImgBackground> */}
+      <S.SliderContainer>
+        <Carousel
+          autoPlay={true}
+          selectedItem={currentSlide}
+          swipeable={true}
+          emulateTouch={true}
+          stopOnHover={true}
+        >
+          <S.ImgBackground
+            style={{
+              backgroundImage:
+                'url("https://s01.jetimgs.com/trvAWQHuYcArjvEQrn0RZKS2Bhe0O8DO2AIZ-bQ3I8l5e-YQhf6FMkRTlRsXZu26thc1hC3G3A/1.jpg")'
+            }}
+          >
+            <S.InnerDiv>
+              <SliderText next={next} prev={prev} />
+            </S.InnerDiv>
+          </S.ImgBackground>
+          <S.ImgBackground
+            style={{
+              backgroundImage:
+                'url("https://s01.jetimgs.com/trvAWQHuYcArjvEQrn0RZKS2Bhe0O8DO2AIZ-bQ3I8l5e-YQhf6FMkRTlRsXZu26thc1hC3G3A/1.jpg")'
+            }}
+          >
+            <S.InnerDiv>
+              <SliderText next={next} prev={prev} />
+            </S.InnerDiv>
+          </S.ImgBackground>
+        </Carousel>
+      </S.SliderContainer>
       <S.Content>
         <S.MenuWrapper>
           <Menu />
@@ -52,4 +96,3 @@ const Home: React.FC = () => {
 }
 
 export default Home
-export {}

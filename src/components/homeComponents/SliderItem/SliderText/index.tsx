@@ -10,9 +10,19 @@ import {
 } from './styles'
 import Image from 'next/image'
 
-const SliderText: React.FC = () => {
+interface Props {
+  next: () => void
+  prev: () => void
+  children?: React.ReactChild[]
+}
+
+const SliderText: React.FC<Props> = ({ next, prev }) => {
   return (
     <TextDiv>
+      <div>
+        <button onClick={prev}>-</button>
+        <button onClick={next}>+</button>
+      </div>
       <Title>Rua São João</Title>
       <SubtitleWrapper>
         <Image src="/menu/pin.svg" height={20} width={20} />

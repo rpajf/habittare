@@ -10,18 +10,22 @@ export const HeaderContent = styled.div`
   padding: 25px 0px;
   align-items: center;
   justify-content: space-between;
-  @media (min-width: 310px) and (max-width: 480px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  @media (min-width: 320px) and (max-width: 578px) {
+    justify-content: center;
+    margin: 0 30px 0 30px;
+  }
+  @media (max-width: 320px) {
   }
 `
 export const HomeTitle = styled.text`
   font-size: 36px;
   font-weight: 400;
   color: ${props => props.theme.colors.textPrimary};
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 578px) {
     font-size: 22px;
+  }
+  @media (max-width: 320px) {
+    font-size: 16px;
   }
 `
 export const TitleWrapper = styled.div`
@@ -34,25 +38,20 @@ export const SubTitle = styled.text`
   letter-spacing: 10px;
   color: ${props => props.theme.colors.textPrimary};
 `
-// export const Line = styled.div`
-//   background-color: ${props => props.theme.colors.textPrimary};
-//   align-self: center;
-//   height: 2px;
-//   width: 7px;
-//   @media (max-width: 480px) {
-//     display: none;
-//   }
-// `
+
 export const HeaderMenu = styled.div`
   display: flex;
   max-width: 500px;
   width: 100%;
   justify-content: space-between;
 
-  @media (min-width: 310px) and (max-width: 480px) {
+  /* @media (min-width: 310px) and (max-width: 480px) {
     display: flex;
     flex-direction: column;
     align-items: center;
+  } */
+  @media (min-width: 310px) and (max-width: 760px) {
+    display: none;
   }
 `
 export const ItemWrapper = styled.div`

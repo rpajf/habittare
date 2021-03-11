@@ -1,11 +1,15 @@
+import React, { useRef, useState } from 'react'
 import * as S from './styles'
+import Burguer from '../BurguerMenu/Burger'
+
+import { useOnClickOutside } from '../../hooks/clickOutside'
+import Menu from '../BurguerMenu/Menu'
 import Link from 'next/link'
-
-interface HeaderProps {
-  props?: HTMLElement
-}
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
+  const node = useRef()
+  const [isOpen, setOpen] = useState(false)
+  useOnClickOutside(node, () => setOpen(false))
+  // const onClick = () => setOpen(!isOpen)
   return (
     <S.Container>
       <S.HeaderContent>
@@ -30,6 +34,8 @@ const Header: React.FC<HeaderProps> = () => {
           </Link>
         </S.HeaderMenu>
       </S.HeaderContent>
+      <Burguer isOpen={isOpen} setOpen={setOpen} />
+      <Menu isOpen={isOpen} setOpen={setOpen} />
     </S.Container>
   )
 }

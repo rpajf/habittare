@@ -6,12 +6,13 @@ import { Carousel } from 'react-responsive-carousel'
 
 import * as S from '../../styles/Home'
 
-import Menu from '../../components/homeComponents/Menu'
-
 import SliderText from '../../components/homeComponents/SliderItem/SliderText'
 import TextComp from '../../components/TextComp'
 
 import MenuCard from '../../components/homeComponents/MenuCard'
+
+import FindPropertyWithFilter from '@/components/homeComponents/FindPropertyWithFilter'
+
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -62,7 +63,7 @@ const Home: React.FC = () => {
       </S.SliderContainer>
       <S.Content>
         <S.MenuWrapper>
-          <Menu />
+          <FindPropertyWithFilter />
         </S.MenuWrapper>
 
         <S.TitleDiv>

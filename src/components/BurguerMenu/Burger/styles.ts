@@ -11,8 +11,8 @@ export const Container = styled.div<BurguerProps>`
     display: none;
   }
   position: absolute;
-  top: 5%;
-  left: 2rem;
+  top: 2%;
+  left: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -26,11 +26,11 @@ export const Container = styled.div<BurguerProps>`
   span {
     width: 2rem;
     height: 0.25rem;
-    /* background: ${({ isOpen }) => (isOpen ? '#0D0C1D' : '#EFFFFA')}; */
+
     border-radius: 10px;
-    transition: all 0.5s linear;
+    /* transition: all 0.5s linear; */
     /* position: relative; */
-    transform-origin: 1px;
+    /* transform-origin: 1px; */
     /* :first-child {
       transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
       display: ${({ isOpen }) => (isOpen ? 'none' : 'flex')};

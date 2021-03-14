@@ -1,21 +1,33 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 interface MenuProps {
   isOpen: boolean
 }
+const appearFromLeft = keyframes`
+from {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+`
 export const Container = styled.div<MenuProps>`
-  display: flex;
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 
   flex-direction: column;
+  padding: 5px;
   align-items: center;
   justify-content: center;
-  transform: ${({ isOpen }) =>
-    isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-  /* background: #e9eeef; */
-  background: ${props => props.theme.colors.primary};
+  background-color: #e9eeef;
+  /* background-color: #5743d9;
+  opacity: 0.6; */
 
-  height: 60vh;
-  @media (min-width: 568px) {
+  -webkit-transition: bottom 1s ease-in-out, background-color 1s ease-out 1s;
+  transition: bottom 1s ease-in-out, background-color 1s ease-out 1s;
+  animation: ${appearFromLeft} 1.5s;
+  @media (min-width: 628px) {
     display: none;
   }
 `
@@ -23,7 +35,8 @@ export const ShownMenuItens = styled.label`
   font-size: 14px;
   font-weight: 400;
   /* color: #020202; */
-  color: #fff;
+
+  color: #5743d9;
   cursor: pointer;
   :hover {
     opacity: 0.6;

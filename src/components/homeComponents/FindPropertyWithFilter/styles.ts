@@ -105,7 +105,6 @@ export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
 export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
   background: #fff;
   cursor: pointer;
-
   color: ${props => props.theme.colors.primary};
   ${props =>
     props.isToggled &&

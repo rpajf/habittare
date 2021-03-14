@@ -3,10 +3,13 @@ import * as S from './styles'
 import Select from '../../Select'
 import Radio from '../../Radio'
 
-const Menu: React.FC = () => {
+const FindPropertyWithFilter: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
   const [checked, setChecked] = useState<boolean>(false)
+
+  const [rooms, setRooms] = useState<number>(0)
+  const [baths, setBaths] = useState<number>(0)
 
   const handleSwitch = () => {
     setToggle(!isToggled)
@@ -25,6 +28,14 @@ const Menu: React.FC = () => {
   ]
   function onClick(radioValue) {
     console.log(radioValue)
+  }
+
+  function onRoomClick(value: string) {
+    setRooms(Number(value))
+  }
+
+  function onBathClick(value: string) {
+    setBaths(Number(value))
   }
 
   return (
@@ -65,8 +76,8 @@ const Menu: React.FC = () => {
                 <Radio
                   key={item.radioValue}
                   radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
+                  onClick={onRoomClick}
+                  checked={rooms.toString() === item.radioValue}
                 />
               )
             })}
@@ -81,8 +92,8 @@ const Menu: React.FC = () => {
                   <Radio
                     key={item.radioValue}
                     radioValue={item.radioValue}
-                    onClick={item.onClick}
-                    checked={item.checked}
+                    onClick={onBathClick}
+                    checked={baths.toString() === item.radioValue}
                   />
                 )
               })}
@@ -135,5 +146,4 @@ const Menu: React.FC = () => {
   )
 }
 
-export default Menu
-export {}
+export default FindPropertyWithFilter

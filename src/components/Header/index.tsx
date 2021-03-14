@@ -5,15 +5,18 @@ import Burguer from '../BurguerMenu/Burger'
 import { useOnClickOutside } from '../../hooks/clickOutside'
 import Menu from '../BurguerMenu/Menu'
 import Link from 'next/link'
+interface HeaderProps {
+  isOpen: boolean
+}
 const Header: React.FC = () => {
   const node = useRef()
   const [isOpen, setOpen] = useState(false)
   useOnClickOutside(node, () => setOpen(false))
   // const onClick = () => setOpen(!isOpen)
   return (
-    <S.Container>
+    <S.Container isOpen={isOpen}>
       <S.HeaderContent>
-        <S.TitleWrapper>
+        <S.TitleWrapper isOpen={isOpen}>
           <S.HomeTitle>HABITTARE</S.HomeTitle>
           <S.SubTitle>IMOBILIARIA</S.SubTitle>
         </S.TitleWrapper>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
 import * as S from './styles'
 
 export type RadioProps = {
@@ -7,22 +7,18 @@ export type RadioProps = {
   checked: boolean
 }
 
-const Radio: React.FC<RadioProps> = ({
-  onClick,
-  radioValue,
-  checked,
-  ...rest
-}) => {
+const Radio: React.FC<RadioProps> = ({ onClick, radioValue, checked }) => {
   return (
-    <S.Container
-      onClick={() => {
-        onClick(radioValue)
-      }}
-      {...rest}
-    >
+    <S.Container>
       <S.QuantityInfo id="quantityRadio" type="radio" />
 
-      <S.RadioLabel checked={checked} htmlFor="quantityRadio">
+      <S.RadioLabel
+        checked={checked}
+        htmlFor="quantityRadio"
+        onClick={() => {
+          onClick(radioValue)
+        }}
+      >
         {radioValue}
       </S.RadioLabel>
     </S.Container>

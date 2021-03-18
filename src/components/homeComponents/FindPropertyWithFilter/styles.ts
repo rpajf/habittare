@@ -126,6 +126,7 @@ export const MainInput = styled.input`
   padding: 12px 0 12px 5px;
   flex: 1 1 250px;
   border: none;
+  outline: none;
   ::placeholder {
     color: #8a8a8a;
     font-weight: 300;
@@ -167,6 +168,7 @@ export const ContentInput = styled.input`
   background: #ffffff;
   border-radius: 5px;
   border: none;
+  outline: none;
   padding: 15px 0 15px 5px;
   @media (max-width: 480px) {
     flex: 1 1 50px;

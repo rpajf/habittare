@@ -3,6 +3,7 @@ import * as S from '../../styles/Property'
 import { useRouter } from 'next/router'
 import MapBox from '../../components/Map'
 import InfoTextComp from '../../components/InfoTextComp'
+import Input from '../../components/Input/'
 
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
 import { Form } from '@unform/web'
@@ -80,10 +81,13 @@ const Property: React.FC = () => {
               {/* <Form ref={formRef}>
                 <Input name="name" placeholder="Nome"></Input>
               </Form> */}
-              <S.InputArea placeholder="Nome"></S.InputArea>
-              <S.InputArea placeholder="E-mail"></S.InputArea>
-              <S.InputArea placeholder="Telefone"></S.InputArea>
-              <S.InputArea placeholder="Olá, Estou interessado no imóvel consectetur adipiscing elit"></S.InputArea>
+              <S.InputArea name="nome" placeholder="Nome"></S.InputArea>
+              <S.InputArea name="name" placeholder="E-mail"></S.InputArea>
+              <S.InputArea name="name" placeholder="Telefone"></S.InputArea>
+              <S.InputArea
+                name="name"
+                placeholder="Olá, Estou interessado no imóvel consectetur adipiscing elit"
+              ></S.InputArea>
               <PrimaryButton>Agendar Visita</PrimaryButton>
             </S.SideNav>
             <S.SideNav>

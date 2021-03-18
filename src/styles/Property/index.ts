@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
+import Input from '../../components/Input/'
 import SecondaryButton from '../../components/Buttons/SecondaryBtn'
+
 export const Container = styled.div`
   background: #f3f4f7;
 `
@@ -122,7 +124,7 @@ export const InputArea = styled.input`
   flex: 1;
   padding: 10px 0px 10px 13px;
   margin: 5px 0 5px 0;
-
+  outline: none;
   border-radius: 5px;
   color: #484848;
   ::placeholder {

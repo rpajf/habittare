@@ -32,8 +32,10 @@ export const Container = styled.div<MenuProps>`
   }
 `
 export const ShownMenuItens = styled.label`
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 2;
+  padding-bottom: 10px;
+  font-weight: 500;
   /* color: #020202; */
 
   color: #5743d9;

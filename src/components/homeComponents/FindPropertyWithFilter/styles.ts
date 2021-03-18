@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-
+import PrimaryBtn from '../../PrimaryBtn'
 interface SwitchProps {
   isToggled: boolean
 }
@@ -14,7 +14,7 @@ export const Container = styled.div`
   .hidden-menu {
     list-style: none;
     opacity: 0;
-    position: absolute;
+
     visibility: hidden;
     /* -webkit-transition: opacity 100ms, visibility 100ms;
     transition: opacity 100ms, visibility 100ms; */
@@ -73,6 +73,23 @@ export const SelectDiv = styled.div`
     text-align: center;
     flex: 1;
     border: 1px solid #8a8a8a;
+  }
+`
+export const SearchButton = styled(PrimaryBtn)`
+  background: #5743d9;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px 20px 10px 20px;
+  flex-wrap: wrap;
+  line-height: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  color: ${props => props.theme.colors.textPrimary};
+  @media (max-width: 480px) {
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 16px;
   }
 `
 export const SearchLabel = styled.label`

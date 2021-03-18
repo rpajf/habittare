@@ -21,6 +21,8 @@ export const SelectContainer = styled.div`
     option {
       position: absolute;
       transition: ease-in 1100ms;
+      width: 100%;
+      max-width: 400px;
     }
   }
   span {

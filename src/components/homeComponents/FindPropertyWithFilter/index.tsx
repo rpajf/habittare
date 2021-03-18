@@ -2,6 +2,7 @@ import { useState } from 'react'
 import * as S from './styles'
 import Select from '../../Select'
 import Radio from '../../Radio'
+import CurrencyInput from '../../Input/index'
 
 const FindPropertyWithFilter: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)
@@ -37,6 +38,9 @@ const FindPropertyWithFilter: React.FC = () => {
   function onBathClick(value: string) {
     setBaths(Number(value))
   }
+  function onSubmit() {
+    console.log(mockedRadioValuesArray.filter(obj => obj.radioValue))
+  }
 
   return (
     <S.Container>
@@ -53,7 +57,9 @@ const FindPropertyWithFilter: React.FC = () => {
 
         {/* </S.SwitchDiv> */}
         <S.MainInput placeholder="Onde você quer morar(bairro, endereço ou codigo)?" />
-        <S.SearchLabel>Buscar</S.SearchLabel>
+        <S.SearchButton type="submit" onClick={onSubmit}>
+          Buscar
+        </S.SearchButton>
       </S.SearchBar>
       <S.FilterLabel className="show-menu" onClick={handleClick}>
         ExibirFiltros
@@ -62,11 +68,11 @@ const FindPropertyWithFilter: React.FC = () => {
       <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
-          <S.ContentInput placeholder="R$" />
+          <CurrencyInput mask="currency" placeholder="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Preço max</S.MenuContentText>
-          <S.ContentInput placeholder="R$" />
+          <CurrencyInput mask="currency" placeholder="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
@@ -104,11 +110,11 @@ const FindPropertyWithFilter: React.FC = () => {
       <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
-          <S.ContentInput placeholder="R$" />
+          <CurrencyInput mask="currency" placeholder="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Preço max</S.MenuContentText>
-          <S.ContentInput placeholder="R$" />
+          <CurrencyInput mask="currency" placeholder="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>

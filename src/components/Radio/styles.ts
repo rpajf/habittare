@@ -6,7 +6,6 @@ interface RadioProps {
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-right: 10px;
 `
 export const RadioLabel = styled.label<RadioProps>`
@@ -20,6 +19,8 @@ export const RadioLabel = styled.label<RadioProps>`
   width: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
   height: 40px;
   padding: 21px;
   cursor: pointer;

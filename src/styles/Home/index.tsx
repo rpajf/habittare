@@ -21,13 +21,13 @@ export const InnerDiv = styled.div`
   width: 920px;
 `
 export const ImgBackground = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   width: 100%;
   height: 440px;
   align-items: center;
   justify-content: center;
-
+  cursor: pointer;
   background: rgba(87, 67, 167, 0.5) no-repeat;
   background-size: cover;
   background-position: center;

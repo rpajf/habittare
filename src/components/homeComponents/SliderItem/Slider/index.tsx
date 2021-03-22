@@ -4,7 +4,6 @@ import { Carousel } from 'react-responsive-carousel'
 import Image from 'next/image'
 import { CSSProperties } from 'styled-components'
 interface Props {
-  // axis: 'horizontal' | 'vertical'
   autoFocus?: boolean
   autoPlay?: boolean
   centerMode?: boolean

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useState } from 'react'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
@@ -11,9 +12,24 @@ import TextComp from '../../components/TextComp'
 
 import MenuCard from '../../components/homeComponents/MenuCard'
 
-import FindPropertyWithFilter from '@/components/homeComponents/FindPropertyWithFilter'
+import FindPropertyWithFilter from '../../components/homeComponents/FindPropertyWithFilter'
 
 const Home: React.FC = () => {
+  const links = [
+    {
+      name: 'imovel1',
+      id: 1
+    },
+    {
+      name: 'imovel2',
+
+      id: 2
+    },
+    {
+      name: 'imovel3',
+      id: 3
+    }
+  ]
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const next = () => {
@@ -55,6 +71,10 @@ const Home: React.FC = () => {
                 'url("https://s01.jetimgs.com/trvAWQHuYcArjvEQrn0RZKS2Bhe0O8DO2AIZ-bQ3I8l5e-YQhf6FMkRTlRsXZu26thc1hC3G3A/1.jpg")'
             }}
           >
+            {links.forEach(link => (
+              <Link href={`imoveis/${link.name}`} />
+            ))}
+
             <S.InnerDiv>
               <SliderText next={next} prev={prev} />
             </S.InnerDiv>

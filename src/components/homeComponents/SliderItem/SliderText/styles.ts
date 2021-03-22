@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 export const TextDiv = styled.div`
   display: flex;
-
+  cursor: default;
   max-height: 210px;
   height: 100%;
   align-self: flex-start;

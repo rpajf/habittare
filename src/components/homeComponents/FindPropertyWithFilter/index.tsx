@@ -1,8 +1,10 @@
 import { useState } from 'react'
+
 import * as S from './styles'
-import Select from '../../Select'
-import Radio from '../../Radio'
-import CurrencyInput from '../../Input/index'
+
+import Select from '@/components/Select'
+import Radio from '@/components/Radio'
+import CurrencyInput from '@/components/Input/index'
 
 const FindPropertyWithFilter: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)

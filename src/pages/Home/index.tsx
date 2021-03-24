@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import TextComp from '../../components/TextComp'
+import TextComp from '@/components/TextComp'
 
-import MenuCard from '../../components/homeComponents/MenuCard'
+import MenuCard from '@/components/homeComponents/MenuCard'
 
-import FindPropertyWithFilter from '../../components/homeComponents/FindPropertyWithFilter'
+import FindPropertyWithFilter from '@/components/homeComponents/FindPropertyWithFilter'
 
-import * as S from '../../styles/Home'
+import * as S from '@/styles/Home'
 
 import HomeCarousel from '@/components/HomeCarousel'
 

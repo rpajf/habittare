@@ -1,6 +1,5 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -8,7 +7,7 @@ import { Carousel } from 'react-responsive-carousel'
 
 import * as S from './styles'
 
-import SliderText from '../../components/homeComponents/SliderItem/SliderText'
+import SliderText from '@/components/homeComponents/SliderItem/SliderText'
 
 const HomeCarousel: React.FC = () => {
   const router = useRouter()

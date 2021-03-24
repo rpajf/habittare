@@ -68,11 +68,11 @@ const FindPropertyWithFilter: React.FC = () => {
       <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
-          <CurrencyInput mask="currency" placeholder="R$" />
+          <CurrencyInput mask="currency" prefix="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Preço max</S.MenuContentText>
-          <CurrencyInput mask="currency" placeholder="R$" />
+          <CurrencyInput mask="currency" prefix="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
@@ -110,11 +110,11 @@ const FindPropertyWithFilter: React.FC = () => {
       <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
-          <CurrencyInput mask="currency" placeholder="R$" />
+          <CurrencyInput mask="currency" prefix="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Preço max</S.MenuContentText>
-          <CurrencyInput mask="currency" placeholder="R$" />
+          <CurrencyInput mask="currency" prefix="R$" />
         </S.InfoWrapper>
         <S.InfoWrapper>
           <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>

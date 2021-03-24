@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({ mask, prefix, ...props }) => {
 
   return (
     <S.Container>
-      {prefix && <span className="prefix-span">{prefix}</span>}
+      {prefix && <S.InnerSpan>{prefix}</S.InnerSpan>}
       <input {...props} onKeyUp={handleKeyUp} />
     </S.Container>
   )

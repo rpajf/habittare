@@ -97,7 +97,8 @@ export const SearchLabel = styled.label`
   border-radius: 0px 5px 5px 0px;
   padding: 10px 20px 10px 20px;
   flex-wrap: wrap;
-  line-height: 24px;
+  text-align: center;
+  line-height: 35px;
   font-weight: 500;
   font-size: 16px;
   color: ${props => props.theme.colors.textPrimary};
@@ -111,6 +112,7 @@ export const SearchLabel = styled.label`
 `
 export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
   border-radius: 5px 0px 0px 5px;
+  text-align: center;
   cursor: pointer;
   ${props =>
     props.isToggled &&
@@ -120,6 +122,9 @@ export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
     `}
 `
 export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
+  border-radius: 0px;
+  text-align: center;
+
   background: #fff;
   cursor: pointer;
   color: ${props => props.theme.colors.primary};
@@ -133,8 +138,7 @@ export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
     padding: 8px;
     font-size: 12px;
     line-height: 16px;
-    border-radius: 5px;
-    border: 1px solid #8a8a8a;
+
     text-align: center;
   }
 `

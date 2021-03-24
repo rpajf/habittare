@@ -13,11 +13,11 @@ const BurguerMenu: React.FC<BurguerProps> = ({ isOpen, setOpen, ...props }) => {
   return (
     <S.Container isOpen={isOpen} onClick={() => setOpen(!isOpen)} {...props}>
       {isOpen ? (
-        <S.NavIcon>
+        <S.NavIcon isOpen={isOpen}>
           <FontAwesomeIcon icon={faTimes} />
         </S.NavIcon>
       ) : (
-        <S.NavIcon>
+        <S.NavIcon isOpen={isOpen}>
           <FontAwesomeIcon icon={faBars} />
         </S.NavIcon>
       )}

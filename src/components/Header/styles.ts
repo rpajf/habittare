@@ -7,18 +7,10 @@ export const Container = styled.header<HeaderProps>`
   background: ${({ isOpen }) => (!isOpen ? '#5743D9' : 'none')};
 `
 export const HeaderContent = styled.div`
-  max-width: 1440px;
-
   display: flex;
   padding: 25px 0px;
   flex: 1;
   align-items: center;
-  justify-content: space-around;
-  @media (min-width: 320px) and (max-width: 578px) {
-  }
-  @media (max-width: 320px) {
-    display: flex;
-  }
 `
 export const HomeTitle = styled.text`
   font-size: 36px;

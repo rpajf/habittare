@@ -36,13 +36,11 @@ export const InfoWrapper = styled.div`
   align-items: center;
 `
 
-export const SellButton = styled.button`
+export const SellButton = styled.div`
   margin-left: 10px;
-  max-width: 68px;
-  height: 23px;
   align-self: center;
   color: #fff;
-  padding: 6px 10px 6px 10px;
+  padding: 2px 10px;
   background: #5743d9;
   text-align: center;
 

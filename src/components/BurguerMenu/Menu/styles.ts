@@ -3,9 +3,7 @@ import styled, { keyframes } from 'styled-components'
 interface MenuProps {
   isOpen: boolean
 }
-interface ItemProps {
-  checked: boolean
-}
+
 const appearFromLeft = keyframes`
 from {
   opacity: 0;
@@ -32,13 +30,13 @@ export const Container = styled.div<MenuProps>`
     display: none;
   }
 `
-export const ShownMenuItens = styled.label<ItemProps>`
+export const ShownMenuItens = styled.label`
   font-size: 16px;
   line-height: 2;
   padding-bottom: 10px;
   font-weight: 500;
   /* color: #020202; */
-  opacity: ${({ checked }) => (checked ? 1 : 0.5)};
+
   color: #5743d9;
   cursor: pointer;
   :hover {

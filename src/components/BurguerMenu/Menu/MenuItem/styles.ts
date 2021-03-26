@@ -1,18 +1,15 @@
 import styled from 'styled-components'
-interface ItemProps {
-  checked: boolean
-}
-
-export const Container = styled.label<ItemProps>`
+export const Container = styled.li`
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
   line-height: 2;
   padding-bottom: 10px;
   font-weight: 500;
-
-  opacity: ${({ checked }) => (checked ? 1 : 0.5)};
   color: #5743d9;
   cursor: pointer;
-  :hover {
-    opacity: 0.6;
+
+  a {
+    text-decoration: none;
   }
 `

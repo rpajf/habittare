@@ -1,16 +1,10 @@
-import React, { ReactNode, useState } from 'react'
+import React from 'react'
 import * as S from './styles'
-interface ItemProps {
-  setChecked: (newValue: boolean) => void
-
-  checked: boolean
-  children: string
-}
-
-const MenuItem: React.FC<ItemProps> = ({ checked, setChecked, children }) => {
+import Link from 'next/link'
+const MenuItem: React.FC = () => {
   return (
-    <S.Container checked={checked} onClick={() => setChecked(!checked)}>
-      {children}
+    <S.Container>
+      <Link href="12313">Inicio</Link>
     </S.Container>
   )
 }

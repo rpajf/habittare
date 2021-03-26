@@ -28,6 +28,7 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "react/display-name": "off",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",

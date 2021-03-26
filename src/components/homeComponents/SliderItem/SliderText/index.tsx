@@ -1,14 +1,6 @@
-import {
-  TextDiv,
-  Title,
-  SubTitle,
-  InfoWrapper,
-  SellButton,
-  SubtitleWrapper,
-  Line,
-  InfoText
-} from './styles'
 import Image from 'next/image'
+
+import * as S from './styles'
 
 interface Props {
   next: () => void
@@ -18,41 +10,41 @@ interface Props {
 
 const SliderText: React.FC<Props> = ({ next, prev }) => {
   return (
-    <TextDiv>
+    <S.TextDiv>
       <div>
         <button onClick={prev}>-</button>
         <button onClick={next}>+</button>
       </div>
-      <Title>Rua São João</Title>
-      <SubtitleWrapper>
+      <S.Title>Rua São João</S.Title>
+      <S.SubtitleWrapper>
         <Image src="/menu/pin.svg" height={20} width={20} />
 
-        <SubTitle>Angelim - São Luis</SubTitle>
-        <SellButton>Venda</SellButton>
-      </SubtitleWrapper>
-      <InfoWrapper>
+        <S.SubTitle>Angelim - São Luis</S.SubTitle>
+        <S.SellButton>Venda</S.SellButton>
+      </S.SubtitleWrapper>
+      <S.InfoWrapper>
         <Image src="/menu/icon2.svg" height={20} width={20} />
-        <InfoText>
+        <S.InfoText>
           52
           <br />
           m2
-        </InfoText>
+        </S.InfoText>
         <Image src="/menu/icon1.svg" height={20} width={20} />
 
-        <InfoText>
+        <S.InfoText>
           2
           <br />
           quartos
-        </InfoText>
+        </S.InfoText>
         <Image src="/menu/icon3.svg" height={20} width={20} />
 
-        <InfoText>
+        <S.InfoText>
           2
           <br />
           banheiros
-        </InfoText>
-      </InfoWrapper>
-    </TextDiv>
+        </S.InfoText>
+      </S.InfoWrapper>
+    </S.TextDiv>
   )
 }
 

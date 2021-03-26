@@ -1,8 +1,10 @@
 import { useState } from 'react'
+
 import * as S from './styles'
-import Select from '../../Select'
-import Radio from '../../Radio'
-import CurrencyInput from '../../Input/index'
+
+import Select from '@/components/Select'
+import Radio from '@/components/Radio'
+import CurrencyInput from '@/components/Input/index'
 
 const FindPropertyWithFilter: React.FC = () => {
   const [isToggled, setToggle] = useState<boolean>(false)
@@ -61,11 +63,16 @@ const FindPropertyWithFilter: React.FC = () => {
           Buscar
         </S.SearchButton>
       </S.SearchBar>
+
       <S.FilterLabel className="show-menu" onClick={handleClick}>
-        ExibirFiltros
+        Mais filtros
       </S.FilterLabel>
 
-      <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
+      <S.ContentWrapper
+        className={`${
+          isActive ? 'hidden-menu' : 'active'
+        } flex-col md:flex-row`}
+      >
         <S.InfoWrapper>
           <S.MenuContentText>Preço min</S.MenuContentText>
           <CurrencyInput mask="currency" prefix="R$" />
@@ -105,46 +112,6 @@ const FindPropertyWithFilter: React.FC = () => {
               })}
             </S.QuantityWrapper>
           </S.InnerWrapper>
-        </S.InfoWrapper>
-      </S.ContentWrapper>
-      <S.ContentWrapper className={isActive ? 'hidden-menu' : 'active'}>
-        <S.InfoWrapper>
-          <S.MenuContentText>Preço min</S.MenuContentText>
-          <CurrencyInput mask="currency" prefix="R$" />
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.MenuContentText>Preço max</S.MenuContentText>
-          <CurrencyInput mask="currency" prefix="R$" />
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
-          <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
-                />
-              )
-            })}
-          </S.QuantityWrapper>
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
-          <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={item.onClick}
-                  checked={item.checked}
-                />
-              )
-            })}
-          </S.QuantityWrapper>
         </S.InfoWrapper>
       </S.ContentWrapper>
       <S.FilterLabel className="hidden-menu">Limpar Filtros</S.FilterLabel>

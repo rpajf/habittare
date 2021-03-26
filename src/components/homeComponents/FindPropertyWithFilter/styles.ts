@@ -15,12 +15,11 @@ export const Container = styled.div`
     list-style: none;
     opacity: 0;
 
-    visibility: hidden;
+    display: none;
     /* -webkit-transition: opacity 100ms, visibility 100ms;
     transition: opacity 100ms, visibility 100ms; */
   }
   .active {
-    visibility: visible;
     opacity: 1;
     -webkit-transition: opacity 700ms, visibility 700ms;
     transition: opacity 700ms, visibility 700ms;
@@ -215,7 +214,7 @@ export const QuantityInfo = styled.div`
   background: #ffffff;
   border: none;
 `
-export const FilterLabel = styled.label`
+export const FilterLabel = styled.button`
   background: #f8f8fa;
   color: #8a8a8a;
   border: 1px solid #5743d9;
@@ -224,7 +223,10 @@ export const FilterLabel = styled.label`
   border-radius: 5px;
   font-size: 16px;
   line-height: 24px;
-  margin: 0 auto 12px;
-  padding: 3px 9px 2px 9px;
+  margin: 10px auto;
+  padding: 5px 10px;
   align-self: center;
+  :focus {
+    outline: none;
+  }
 `

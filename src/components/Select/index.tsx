@@ -8,14 +8,14 @@ interface SelectBox {
 
 const Select: React.FC<SelectBox> = () => {
   return (
-    <S.SelectContainer>
-      <select>
-        <option selected disabled>
+    <S.SelectContainer className="w-full">
+      <select defaultValue="" className="w-full">
+        <option disabled value="">
           Tipo de imovel
         </option>
 
-        <option>Apartamento</option>
-        <option>Casa</option>
+        <option value="apt">Apartamento</option>
+        <option value="house">Casa</option>
       </select>
       <span />
     </S.SelectContainer>

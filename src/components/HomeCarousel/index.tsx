@@ -24,7 +24,7 @@ const HomeCarousel: React.FC = () => {
 
   const mockedImoveis = [
     {
-      id: 1,
+      id: 112312,
       name: 'imovel1',
       street: 'Rua Sao Joao',
       localization: 'Angelim - São Luis',
@@ -33,7 +33,7 @@ const HomeCarousel: React.FC = () => {
       baths: 2
     },
     {
-      id: 2,
+      id: 21231231,
       name: 'imovel2',
       street: 'Rua Silva Costa',
       localization: 'Bequimao - São Luis',
@@ -44,7 +44,7 @@ const HomeCarousel: React.FC = () => {
   ]
 
   return (
-    <div className="w-full hidden md:block">
+    <div className="w-full">
       <Carousel
         autoPlay={true}
         selectedItem={currentSlide}
@@ -52,6 +52,10 @@ const HomeCarousel: React.FC = () => {
         emulateTouch={true}
         stopOnHover={true}
         statusFormatter={(current, total) => ''}
+        onClickItem={e => {
+          router.push(`/imoveis/${mockedImoveis[e].id}`)
+        }}
+        showThumbs={false}
       >
         {mockedImoveis.map(element => (
           <S.ImgBackground
@@ -60,9 +64,9 @@ const HomeCarousel: React.FC = () => {
               backgroundImage:
                 'url("https://s01.jetimgs.com/trvAWQHuYcArjvEQrn0RZKS2Bhe0O8DO2AIZ-bQ3I8l5e-YQhf6FMkRTlRsXZu26thc1hC3G3A/1.jpg")'
             }}
-            onClick={() => {
-              router.push('/imoveis/1')
-            }}
+            // onClick={() => {
+            //   router.push('/imoveis/1')
+            // }}
           >
             <S.InnerDiv className="container mx-auto">
               <SliderText next={next} prev={prev} />

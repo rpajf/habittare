@@ -32,8 +32,6 @@ export const InfoWrapper = styled.div`
   display: flex;
   max-width: 380px;
   justify-content: space-between;
-
-  align-items: center;
 `
 
 export const SellButton = styled.div`

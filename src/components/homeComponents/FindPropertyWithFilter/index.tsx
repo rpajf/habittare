@@ -53,7 +53,7 @@ const FindPropertyWithFilter: React.FC = () => {
         <S.SwitchLabel2 isToggled={isToggled} onClick={handleSwitch}>
           Alugar
         </S.SwitchLabel2>
-        <S.SelectDiv>
+        <S.SelectDiv className="w-full">
           <Select />
         </S.SelectDiv>
 
@@ -65,56 +65,59 @@ const FindPropertyWithFilter: React.FC = () => {
       </S.SearchBar>
 
       <S.FilterLabel className="show-menu" onClick={handleClick}>
-        Mais filtros
+        {isActive ? 'Fechar filtros' : 'Mais Filtros'}
       </S.FilterLabel>
-
-      <S.ContentWrapper
+      <S.FilterWrapper
         className={`${
-          isActive ? 'hidden-menu' : 'active'
-        } flex-col md:flex-row`}
+          isActive ? 'active' : 'hidden-menu'
+        } flex-col justify-center`}
       >
-        <S.InfoWrapper>
-          <S.MenuContentText>Preço min</S.MenuContentText>
-          <CurrencyInput mask="currency" prefix="R$" />
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.MenuContentText>Preço max</S.MenuContentText>
-          <CurrencyInput mask="currency" prefix="R$" />
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
-          <S.QuantityWrapper>
-            {mockedRadioValuesArray.map(item => {
-              return (
-                <Radio
-                  key={item.radioValue}
-                  radioValue={item.radioValue}
-                  onClick={onRoomClick}
-                  checked={rooms.toString() === item.radioValue}
-                />
-              )
-            })}
-          </S.QuantityWrapper>
-        </S.InfoWrapper>
-        <S.InfoWrapper>
-          <S.InnerWrapper>
-            <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
+        <S.ContentWrapper className="flex-col md:flex-row">
+          <S.InfoWrapper>
+            <S.MenuContentText>Preço min</S.MenuContentText>
+            <CurrencyInput mask="currency" prefix="R$" />
+          </S.InfoWrapper>
+          <S.InfoWrapper>
+            <S.MenuContentText>Preço max</S.MenuContentText>
+            <CurrencyInput mask="currency" prefix="R$" />
+          </S.InfoWrapper>
+          <S.InfoWrapper>
+            <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>
             <S.QuantityWrapper>
               {mockedRadioValuesArray.map(item => {
                 return (
                   <Radio
                     key={item.radioValue}
                     radioValue={item.radioValue}
-                    onClick={onBathClick}
-                    checked={baths.toString() === item.radioValue}
+                    onClick={onRoomClick}
+                    checked={rooms.toString() === item.radioValue}
                   />
                 )
               })}
             </S.QuantityWrapper>
-          </S.InnerWrapper>
-        </S.InfoWrapper>
-      </S.ContentWrapper>
-      <S.FilterLabel className="hidden-menu">Limpar Filtros</S.FilterLabel>
+          </S.InfoWrapper>
+          <S.InfoWrapper>
+            <S.InnerWrapper>
+              <S.MenuContentText>Qtd de banheiros</S.MenuContentText>
+              <S.QuantityWrapper>
+                {mockedRadioValuesArray.map(item => {
+                  return (
+                    <Radio
+                      key={item.radioValue}
+                      radioValue={item.radioValue}
+                      onClick={onBathClick}
+                      checked={baths.toString() === item.radioValue}
+                    />
+                  )
+                })}
+              </S.QuantityWrapper>
+            </S.InnerWrapper>
+          </S.InfoWrapper>
+        </S.ContentWrapper>
+        <div className="flex w-full mx-auto">
+          <S.FilterLabel className="hidden-menu">Limpar Filtros</S.FilterLabel>
+        </div>
+      </S.FilterWrapper>
     </S.Container>
   )
 }

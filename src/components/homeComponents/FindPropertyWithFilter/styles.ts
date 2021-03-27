@@ -11,29 +11,27 @@ export const Container = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 10px;
-  .hidden-menu {
-    list-style: none;
-    opacity: 0;
-
-    display: none;
-    /* -webkit-transition: opacity 100ms, visibility 100ms;
-    transition: opacity 100ms, visibility 100ms; */
+`
+export const FilterWrapper = styled.div`
+  transition: all 0.3s ease-in-out;
+  transform-origin: top;
+  height: 100%;
+  &.hidden-menu {
+    height: 0;
+    transform: scaleY(0);
   }
-  .active {
-    opacity: 1;
-    -webkit-transition: opacity 700ms, visibility 700ms;
-    transition: opacity 700ms, visibility 700ms;
+  &.active {
+    transform: scaleY(1);
   }
 `
+
 export const ContentWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   padding: 5px 15px;
-  @media (max-width: 480px) {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `
 export const SearchBar = styled.div`
   background: #fff;
@@ -175,7 +173,7 @@ export const ModalTag = styled(SearchLabel)`
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 30px;
+  margin: 10px 30px;
 `
 export const MenuContentText = styled.text`
   font-style: normal;

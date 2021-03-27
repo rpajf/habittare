@@ -22,27 +22,33 @@ const SliderText: React.FC<Props> = ({ next, prev }) => {
         <S.SubTitle>Angelim - São Luis</S.SubTitle>
         <S.SellButton>Venda</S.SellButton>
       </S.SubtitleWrapper>
-      <S.InfoWrapper>
-        <Image src="/menu/icon2.svg" height={20} width={20} />
-        <S.InfoText>
-          52
-          <br />
-          m2
-        </S.InfoText>
-        <Image src="/menu/icon1.svg" height={20} width={20} />
+      <S.InfoWrapper className="flex-col items-start md:flex-row md:items-center">
+        <div className="flex flex-row">
+          <Image src="/menu/icon2.svg" height={20} width={20} />
+          <S.InfoText>
+            52
+            <br />
+            m2
+          </S.InfoText>
+        </div>
+        <div className="flex flex-row">
+          <Image src="/menu/icon1.svg" height={20} width={20} />
 
-        <S.InfoText>
-          2
-          <br />
-          quartos
-        </S.InfoText>
-        <Image src="/menu/icon3.svg" height={20} width={20} />
+          <S.InfoText>
+            2
+            <br />
+            quartos
+          </S.InfoText>
+        </div>
+        <div className="flex flex-row">
+          <Image src="/menu/icon3.svg" height={20} width={20} />
 
-        <S.InfoText>
-          2
-          <br />
-          banheiros
-        </S.InfoText>
+          <S.InfoText>
+            2
+            <br />
+            banheiros
+          </S.InfoText>
+        </div>
       </S.InfoWrapper>
     </S.TextDiv>
   )

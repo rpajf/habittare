@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
+import Link from 'next/link'
+
 import * as S from './styles'
 import Burguer from '@/components/BurguerMenu/Burger'
 
 import { useOnClickOutside } from '@/hooks/clickOutside'
 import Menu from '@/components/BurguerMenu/Menu'
-
 const Header: React.FC = () => {
   const [checked, setActive] = useState<boolean>(false)
 
@@ -21,15 +22,19 @@ const Header: React.FC = () => {
           <S.SubTitle>IMOBILIARIA</S.SubTitle>
         </S.TitleWrapper>
         <S.HeaderMenu>
-          <S.ItemWrapper>
-            <S.MenuItem>Home</S.MenuItem>
-          </S.ItemWrapper>
+          <S.MenuItem>
+            <Link href="/">Home</Link>
+          </S.MenuItem>
 
-          <S.MenuItem>Sobre Nós </S.MenuItem>
+          <S.MenuItem>
+            <Link href="/sobre-nos">Sobre Nós</Link>
+          </S.MenuItem>
 
-          <S.MenuItem>Corretores </S.MenuItem>
           <S.MenuItem>Anuncie seu imovel </S.MenuItem>
-          <S.MenuItem>Contato</S.MenuItem>
+
+          <S.MenuItem>
+            <Link href="contato">Contato</Link>
+          </S.MenuItem>
         </S.HeaderMenu>
       </S.HeaderContent>
       <Burguer isOpen={isOpen} setOpen={setOpen} />

@@ -1,4 +1,4 @@
-import * as S from '../../styles/Contato'
+import * as S from '@/styles/contato'
 import ContactForm from './Form'
 import { useRouter } from 'next/router'
 

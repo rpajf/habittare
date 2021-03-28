@@ -1,5 +1,6 @@
-import * as S from '../../styles/Sobre'
 import { useRouter } from 'next/router'
+
+import * as S from '@/styles/sobre'
 
 const AboutUs: React.FC = () => {
   const router = useRouter()

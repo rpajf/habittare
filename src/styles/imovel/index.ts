@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import PrimaryButton from '../../components/Buttons/PrimaryBtn'
-import Input from '../../components/Input/'
+import Input from '../../components/Input'
 import SecondaryButton from '../../components/Buttons/SecondaryBtn'
 
 export const Container = styled.div`

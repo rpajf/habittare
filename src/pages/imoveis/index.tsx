@@ -1,4 +1,4 @@
-import * as S from '../../styles/ImoveisList'
+import * as S from '@/styles/imoveis'
 
 import { useRouter } from 'next/router'
 const ImoveisList: React.FC = () => {

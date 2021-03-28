@@ -1,13 +1,13 @@
-import * as S from '../../styles/Property'
+import * as S from '@/styles/imovel'
 
 import { useRouter } from 'next/router'
-import MapBox from '../../components/Map'
-import InfoTextComp from '../../components/InfoTextComp'
-import Input from '../../components/Input/'
+import MapBox from '@/components/Map'
+import InfoTextComp from '@/components/InfoTextComp'
+import Input from '@/components/Input/'
 
-import PrimaryButton from '../../components/Buttons/PrimaryBtn'
+import PrimaryButton from '@/components/Buttons/PrimaryBtn'
 import { Form } from '@unform/web'
-import Slider from '../../components/homeComponents/SliderItem/Slider'
+import Slider from '@/components/homeComponents/SliderItem/Slider'
 const Property: React.FC = () => {
   const router = useRouter()
   const { pid } = router.query

@@ -135,7 +135,6 @@ export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
     padding: 8px;
     font-size: 12px;
     line-height: 16px;
-
     text-align: center;
   }
 `

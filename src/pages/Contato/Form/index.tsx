@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-import * as S from '../../../styles/Contato/Form'
+import * as S from '@/styles/Contato/Form'
 
 import { FormHandles } from '@unform/core'
 import { Form } from '@unform/web'

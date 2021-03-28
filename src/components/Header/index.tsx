@@ -3,7 +3,7 @@ import * as S from './styles'
 import Burguer from '@/components/BurguerMenu/Burger'
 
 import { useOnClickOutside } from '@/hooks/clickOutside'
-import Menu from '@/components//BurguerMenu/Menu'
+import Menu from '@/components/BurguerMenu/Menu'
 
 const Header: React.FC = () => {
   const [checked, setActive] = useState<boolean>(false)

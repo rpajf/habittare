@@ -5,7 +5,7 @@ import { currency } from './masks'
 import * as S from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  mask: 'currency'
+  mask?: 'currency'
   prefix?: string
 }
 

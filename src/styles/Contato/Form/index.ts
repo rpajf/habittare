@@ -29,10 +29,8 @@ export const FieldWrapper = styled.div`
 export const InputField = styled(Input)`
   background: #ffffff;
   border: 1px solid #c4c4c4;
-
   border-radius: 5px;
   max-width: 300px;
-
   input {
   }
 `
@@ -44,13 +42,11 @@ export const FormText = styled.text`
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-
   color: #001;
 `
 export const CheckBoxWrapper = styled.div`
   display: flex;
   /* justify-content: space-between; */
-
   @media (min-width: 310px) and (max-width: 480px) {
     flex-direction: column;
     align-items: center;
@@ -75,7 +71,6 @@ export const CheckBox = styled.input`
 export const FormOrganizer = styled.div`
   display: flex;
   flex-direction: column;
-
   @media (min-width: 310px) and (max-width: 480px) {
     margin-left: 0;
   }

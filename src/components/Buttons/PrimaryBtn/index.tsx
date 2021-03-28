@@ -1,12 +1,9 @@
-import { ReactNode } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import * as S from './styles'
 
-interface ButtonProps {
-  children: ReactNode
-}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-const PrimaryButton: React.FC<ButtonProps> = props => {
-  const { children } = props
-  return <S.Container>{children}</S.Container>
+const PrimaryButton: React.FC<ButtonProps> = ({ children, ...rest }) => {
+  return <S.Container {...rest}>{children}</S.Container>
 }
 export default PrimaryButton

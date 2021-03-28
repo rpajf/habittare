@@ -9,7 +9,12 @@ export type RadioProps = {
 
 const Radio: React.FC<RadioProps> = ({ onClick, radioValue, checked }) => {
   return (
-    <S.Container>
+    <S.Container
+      onClick={() => {
+        onClick(radioValue)
+      }}
+      {...rest}
+    >
       <S.QuantityInfo id="quantityRadio" type="radio" />
 
       <S.RadioLabel

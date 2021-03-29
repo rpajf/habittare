@@ -10,12 +10,11 @@ export const Container = styled.div`
   flex: 1;
   max-width: 700px;
   border-radius: 5px;
-  padding: 20px 25px 30px 25px;
+  padding: 10px;
   @media (min-width: 310px) and (max-width: 480px) {
     flex: auto;
     padding: 10px;
     align-items: center;
-    background: #e9eeef;
   }
 `
 export const FieldWrapper = styled.div`

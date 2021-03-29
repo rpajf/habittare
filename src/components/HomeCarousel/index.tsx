@@ -8,8 +8,13 @@ import { Carousel } from 'react-responsive-carousel'
 import * as S from './styles'
 
 import SliderText from '@/components/homeComponents/SliderItem/SliderText'
+import { PropertyType } from '@/models/Property'
 
-const HomeCarousel: React.FC = () => {
+interface HomeCarouselProps {
+  properties: Array<PropertyType>
+}
+
+const HomeCarousel: React.FC<HomeCarouselProps> = ({ properties }) => {
   const router = useRouter()
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -22,27 +27,6 @@ const HomeCarousel: React.FC = () => {
     return setCurrentSlide(currentSlide - 1)
   }
 
-  const mockedImoveis = [
-    {
-      id: 112312,
-      name: 'imovel1',
-      street: 'Rua Sao Joao',
-      localization: 'Angelim - São Luis',
-      size: 52,
-      rooms: 2,
-      baths: 2
-    },
-    {
-      id: 21231231,
-      name: 'imovel2',
-      street: 'Rua Silva Costa',
-      localization: 'Bequimao - São Luis',
-      size: 10,
-      rooms: 3,
-      baths: 1
-    }
-  ]
-
   return (
     <div className="w-full">
       <Carousel
@@ -53,23 +37,19 @@ const HomeCarousel: React.FC = () => {
         stopOnHover={true}
         statusFormatter={(current, total) => ''}
         onClickItem={e => {
-          router.push(`/imoveis/${mockedImoveis[e].id}`)
+          router.push(`/imoveis/${properties[e].codigo}`)
         }}
         showThumbs={false}
       >
-        {mockedImoveis.map(element => (
+        {properties.map(property => (
           <S.ImgBackground
-            key={element.id}
+            key={property.codigo}
             style={{
-              backgroundImage:
-                'url("https://s01.jetimgs.com/trvAWQHuYcArjvEQrn0RZKS2Bhe0O8DO2AIZ-bQ3I8l5e-YQhf6FMkRTlRsXZu26thc1hC3G3A/1.jpg")'
+              backgroundImage: `url("${property.imagens[0].link}")`
             }}
-            // onClick={() => {
-            //   router.push('/imoveis/1')
-            // }}
           >
             <S.InnerDiv className="container mx-auto">
-              <SliderText next={next} prev={prev} />
+              <SliderText property={property} next={next} prev={prev} />
             </S.InnerDiv>
           </S.ImgBackground>
         ))}

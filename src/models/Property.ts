@@ -15,7 +15,7 @@ export interface PropertyType {
   tipo?: ObjectId | Record<string, unknown>
   subtipo?: ObjectId | Record<string, unknown>
   observacoes?: string
-  mobiliado?: boolean
+  mobiliado?: string
   dormitorios?: number
   suites?: number
   banheiros?: number
@@ -37,7 +37,7 @@ export interface PropertyType {
   valorCondominio?: number
   lat?: number
   log?: number
-  geoVisivel?: boolean
+  geoVisivel?: string
   metaDescription?: string
   condominioNome?: string
   condominioFechado?: boolean
@@ -60,6 +60,8 @@ export interface PropertyType {
   descricaoAnuncio?: string
   tags?: Array<string>
   imagens?: Array<PropertyImageType>
+  dataCadastro?: Date
+  dataUpdate?: Date
 }
 
 export interface jetmobiApiImageType {
@@ -77,7 +79,7 @@ export interface jetmobiPropertyType {
   tipo_construcao: string
   entrega_ano: string
   entrega_mes: string
-  mobiliado: boolean
+  mobiliado: string
   dormitorios: number
   suites: number
   banheiros: number
@@ -142,7 +144,7 @@ export interface jetmobiPropertyType {
   id_estado: number
   id_cidade: number
   id_bairro: number
-  geoposicionamento_visivel: boolean
+  geoposicionamento_visivel: string
   titulo_anuncio: string
   descricao_anuncio: string
   tags: string
@@ -150,6 +152,8 @@ export interface jetmobiPropertyType {
   imovel_comodidades: string
   videos: Array<string>
   imagens: Array<jetmobiApiImageType>
+  data_cadastro: Date
+  data_update: Date
 }
 
 const PropertySchema = new Schema({
@@ -159,7 +163,7 @@ const PropertySchema = new Schema({
   tipo: String,
   subtipo: String,
   observacoes: String,
-  mobiliado: Boolean,
+  mobiliado: String,
   dormitorios: Number,
   suites: Number,
   banheiros: Number,
@@ -181,7 +185,7 @@ const PropertySchema = new Schema({
   valorCondominio: Number,
   lat: Number,
   log: Number,
-  geoVisivel: Boolean,
+  geoVisivel: Number,
   metaDescription: String,
   condominioNome: String,
   condominioFechado: Boolean,
@@ -203,7 +207,9 @@ const PropertySchema = new Schema({
   tituloAnuncio: String,
   descricaoAnuncio: String,
   tags: Array,
-  imagens: Array
+  imagens: Array,
+  dataCadastro: Date,
+  dataUpdate: Date
 })
 
 const Property =

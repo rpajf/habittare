@@ -23,9 +23,11 @@ export const ImgDiv = styled.div`
   height: 500px;
   /* position: relative; */
 `
-export const MenuCardWrapper = styled.div`
+export const PropertyCardWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: center;
+
   @media (max-width: 480px) {
     flex-wrap: wrap;
     align-items: center;
@@ -78,7 +80,8 @@ export const SubTitle = styled.text`
     font-size: 14px;
   }
 `
-export const Button = styled.button`
+export const Button = styled.div`
+  cursor: pointer;
   align-self: center;
   max-width: 115px;
   margin: 25px 0 25px 0;

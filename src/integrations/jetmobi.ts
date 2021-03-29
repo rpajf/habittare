@@ -1,4 +1,4 @@
-import {
+import Property, {
   jetmobiApiImageType,
   jetmobiPropertyType,
   PropertyImageType,
@@ -6,7 +6,8 @@ import {
 } from '../models/Property'
 
 const comodidadesHandler = (value: string): Array<string> => {
-  return value.split(',')
+  if (typeof value === 'string') return value.split(',')
+  return value
 }
 
 const imageHandler = (
@@ -17,9 +18,13 @@ const imageHandler = (
   })
 }
 
+const dateHandler = (value: string): Date => {
+  return new Date(value)
+}
+
 const _values = [
   { external: 'codigo', internal: 'codigo' },
-  { external: 'contrato', internal: 'tipoContato' },
+  { external: 'contrato', internal: 'tipoContrato' },
   { external: 'tipo', internal: 'tipo' },
   { external: 'subtipo', internal: 'subtipo' },
   { external: 'observacoes', internal: 'observacoes' },
@@ -83,26 +88,37 @@ const _values = [
     internal: 'imovelComodidades',
     customHandler: comodidadesHandler
   },
-  { external: 'imagens', internal: 'imagens', customHandler: imageHandler }
+  { external: 'imagens', internal: 'imagens', customHandler: imageHandler },
+  {
+    external: 'data_cadastro',
+    internal: 'dataCadastro',
+    customHander: dateHandler
+  },
+  { external: 'data_update', internal: 'dataUpdate', customHander: dateHandler }
 ]
 
 export const mapImoveisJetimobAPIToMongo = (
   jetimobResponse: Array<jetmobiPropertyType>
 ): Array<PropertyType> => {
-  const mapped = jetimobResponse.map(jetimobProperty => {
-    const _property: PropertyType = { codigo: '' }
+  try {
+    const mapped = jetimobResponse.map(jetimobProperty => {
+      const _property: PropertyType = { codigo: '' }
 
-    _values.forEach(i => {
-      if (jetimobProperty[i.external]) {
-        const value = jetimobProperty[i.external]
-        if (i.customHandler) {
-          _property[i.internal] = i.customHandler(value)
-        } else _property[i.internal] = value
-      }
+      _values.forEach(i => {
+        if (jetimobProperty[i.external]) {
+          const value = jetimobProperty[i.external]
+          if (i.customHandler) {
+            _property[i.internal] = i.customHandler(value)
+          } else _property[i.internal] = value
+        }
+      })
+      console.log(_property.dataCadastro)
+      return _property
     })
-    console.log(_property.enderecoEstado)
-    return _property
-  })
 
-  return mapped
+    return mapped
+  } catch (error) {
+    console.log(error)
+    return []
+  }
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Button from '../../../components/Buttons/PrimaryBtn'
+import Button from '@/components/Buttons/PrimaryBtn'
 
-import Input from '../../../components/Input'
+import Input from '@/components/Input'
 
 export const Container = styled.div`
   background: #fff;

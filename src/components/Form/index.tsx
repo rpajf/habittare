@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-import * as S from '@/styles/contato/Form'
+import * as S from './styles'
 
 import { FormHandles } from '@unform/core'
 import { Form } from '@unform/web'
@@ -15,7 +15,7 @@ const ContactForm: React.FC = () => {
     console.log(data)
   }
   return (
-    <S.Container>
+    <S.Container className="mx-auto">
       <Form ref={formRef} onSubmit={handleSubmit}>
         <S.FieldWrapper>
           <S.InputField name="nome" placeholder="Nome" />
@@ -32,11 +32,11 @@ const ContactForm: React.FC = () => {
               <S.FormText>Desejo receber contato por:</S.FormText>
               <S.LabelWrapper>
                 <label>
-                  <S.CheckBox type="checkBox" value="whatsup" />
-                  whatsup
+                  <S.CheckBox type="checkBox" value="whatsapp" />
+                  WhatsApp
                 </label>
                 <label>
-                  <S.CheckBox type="checkBox" value="whatsup" />
+                  <S.CheckBox type="checkBox" value="ligacao" />
                   Telefone
                 </label>
               </S.LabelWrapper>

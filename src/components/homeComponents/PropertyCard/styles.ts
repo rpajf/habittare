@@ -4,7 +4,7 @@ export const Container = styled.div`
   flex-direction: column;
   background: #ffffff;
   border-radius: 5px;
-  margin: 15px 0 15px 0;
+  margin: 15px 15px;
 
   border: 1px solid transparent;
   cursor: pointer;
@@ -16,7 +16,8 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   height: 160px;
-  background: #cacaca;
+  background-size: cover;
+  background-position: center;
   border-radius: 5px 5px 0px 80px;
   position: relative;
 `
@@ -53,6 +54,7 @@ export const Title = styled.h4`
   color: #5743d9;
   border-bottom: 1px solid rgba(138, 138, 138, 0.5);
   margin-bottom: 14px;
+  text-transform: capitalize;
 `
 export const Deion = styled.div`
   display: flex;

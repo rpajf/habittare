@@ -22,6 +22,10 @@ export async function getHomePageProperties(): Promise<any> {
   return Property.find(filter).exec()
 }
 
+export async function getLatestProperties(): Promise<any> {
+  return Property.find().sort({ dataCadastro: -1 }).limit(5).exec()
+}
+
 export async function createProperty(property: PropertyType): Promise<any> {
   return Property.create(property)
 }

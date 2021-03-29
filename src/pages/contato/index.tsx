@@ -1,15 +1,10 @@
 import * as S from '@/styles/contato'
-import ContactForm from './Form'
-import { useRouter } from 'next/router'
+import ContactForm from '../../components/Form'
 
 const Contato: React.FC = () => {
-  const router = useRouter()
-  const { pid } = router.query
   return (
     <S.Container>
       <S.TextWrapper>
-        {pid}
-        {router.query.slug}
         <S.Title>O que podemos fazer por você?</S.Title>
         <S.SubTitle>Estamos aqui para melhorar sua vida</S.SubTitle>
       </S.TextWrapper>

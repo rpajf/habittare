@@ -15,8 +15,10 @@ async function _mapNewProperties(properties) {
     const property = properties[i]
     const doc = await Property.findOne({ codigo: property.codigo }).exec()
 
-    if (doc) _updateExistentProperty(doc)
-    else newProperties.push(property)
+    if (doc) {
+      await Property.findByIdAndUpdate(doc._id, property).exec()
+      console.log('atualizou', property.dataCadastro)
+    } else newProperties.push(property)
   }
 
   return newProperties

@@ -11,6 +11,7 @@ export const Title = styled.text`
   font-weight: 600;
   font-size: 48px;
   color: #fff;
+  text-transform: capitalize;
 `
 export const SubTitle = styled.text`
   font-weight: 300;

@@ -20,7 +20,7 @@ export const renderTipoContrato = (value): string => {
   }
 }
 
-export const renderArea = (property: PropertyType): number => {
+export const renderArea = (property: PropertyType): number | string => {
   return property.areaTotal
     ? property.areaTotal
     : property.areaPrivativa

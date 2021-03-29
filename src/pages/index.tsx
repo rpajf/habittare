@@ -27,21 +27,21 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      sliderProperties: JSON.stringify(sliderProperties),
-      latestProperties: JSON.stringify(latestProperties)
+      sliderProperties: JSON.parse(JSON.stringify(sliderProperties)),
+      latestProperties: JSON.parse(JSON.stringify(latestProperties))
     }
   }
 }
 
 interface HomeProps {
-  sliderProperties: string
-  latestProperties: string
+  sliderProperties: Array<PropertyType>
+  latestProperties: Array<PropertyType>
 }
 
 const Home: React.FC<HomeProps> = ({ sliderProperties, latestProperties }) => {
   return (
     <S.Container>
-      <HomeCarousel properties={JSON.parse(sliderProperties)} />
+      <HomeCarousel properties={sliderProperties} />
       <div className="container">
         <FindPropertyWithFilter />
         <S.TitleDiv>
@@ -52,7 +52,7 @@ const Home: React.FC<HomeProps> = ({ sliderProperties, latestProperties }) => {
           </S.SubTitle>
 
           <S.PropertyCardWrapper className="flex-col md:flex-row">
-            {JSON.parse(latestProperties).map((property: PropertyType) => (
+            {latestProperties.map((property: PropertyType) => (
               <PropertyCard key={property.codigo} property={property} />
             ))}
           </S.PropertyCardWrapper>

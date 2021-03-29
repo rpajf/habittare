@@ -7,11 +7,9 @@ export const Container = styled.div`
   background: #f3f4f7;
 `
 export const Content = styled.div`
-  max-width: 789px;
-  margin: 0 30px 0 180px;
+  margin: 10px 15px 10px 0;
 `
 export const MainInfoWrapper = styled.div`
-  max-width: 789px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -33,15 +31,17 @@ export const MainInfo = styled.div`
     flex-direction: column;
   }
 `
-export const Title = styled.text`
+export const Title = styled.h1`
   color: ${props => props.theme.colors.primary};
   font-weight: 600;
 
   font-style: normal;
   font-size: 26px;
   line-height: 39px;
+
+  text-transform: capitalize;
 `
-export const SubTitle = styled.text`
+export const SubTitle = styled.h2`
   color: ${props => props.theme.colors.primary};
   font-weight: 300;
 
@@ -52,10 +52,10 @@ export const SubTitle = styled.text`
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 15px 20px 15px 30px;
 `
 export const ButtonsWrapper = styled.div`
   display: flex;
+  align-items: center;
 `
 export const InfoText = styled.text`
   font-family: Poppins;
@@ -70,9 +70,11 @@ export const PrimaryBtn = styled(PrimaryButton)``
 export const SecondaryBtn = styled(SecondaryButton)``
 export const PropertyInfoWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
   @media (min-width: 310px) and (max-width: 480px) {
-    flex-direction: column;
   }
 `
 export const InfoData = styled.text`

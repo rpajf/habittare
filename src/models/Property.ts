@@ -37,7 +37,7 @@ export interface PropertyType {
   valorCondominio?: number
   lat?: number
   log?: number
-  geoVisivel?: string
+  geoVisivel?: number
   metaDescription?: string
   condominioNome?: string
   condominioFechado?: boolean

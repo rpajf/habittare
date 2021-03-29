@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           <S.MenuItem>Anuncie seu imovel </S.MenuItem>
 
           <S.MenuItem>
-            <Link href="contato">Contato</Link>
+            <Link href="/contato">Contato</Link>
           </S.MenuItem>
         </S.HeaderMenu>
       </S.HeaderContent>

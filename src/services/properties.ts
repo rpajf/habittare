@@ -17,6 +17,12 @@ export async function getOneProperty(
   return Property.findOne(filter).exec()
 }
 
+export async function geyOnePropertyByCodeOrId(id: string): Promise<any> {
+  return Property.findOne()
+    .or([{ codigo: id }])
+    .exec()
+}
+
 export async function getHomePageProperties(): Promise<any> {
   const filter = { tags: { $in: ['destaque-site'] } }
   return Property.find(filter).exec()

@@ -1,11 +1,7 @@
 import { ReactNode } from 'react'
 import * as S from './styles'
-interface ButtonProps {
-  children: ReactNode
-}
 
-const SecondaryButton: React.FC<ButtonProps> = props => {
-  const { children } = props
+const SecondaryButton: React.FC = ({ children }) => {
   return <S.Container>{children}</S.Container>
 }
 export default SecondaryButton

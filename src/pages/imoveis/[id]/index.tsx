@@ -6,7 +6,7 @@ import InfoTextComp from '@/components/InfoTextComp'
 
 import PrimaryButton from '@/components/Buttons/PrimaryBtn'
 
-import Slider from '@/components/homeComponents/SliderItem/Slider'
+import ImobCarousel from '@/components/ImobCarousel'
 
 import { geyOnePropertyByCodeOrId } from '@/services/properties'
 import { PropertyType } from '@/models/Property'
@@ -33,7 +33,7 @@ interface PropertyProps {
 const Property: React.FC<PropertyProps> = ({ property }) => {
   return (
     <>
-      <Slider />
+      <ImobCarousel imagens={property.imagens} />
       <S.Container>
         <S.MainInfo>
           <div className="container mx-auto">

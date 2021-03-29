@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 
 import * as S from './styles'
@@ -6,13 +6,28 @@ import Burguer from '@/components/BurguerMenu/Burger'
 
 import { useOnClickOutside } from '@/hooks/clickOutside'
 import Menu from '@/components/BurguerMenu/Menu'
+import { useRouter } from 'next/router'
 const Header: React.FC = () => {
   const [checked, setActive] = useState<boolean>(false)
 
   const node = useRef()
   const [isOpen, setOpen] = useState<boolean>(false)
+
   useOnClickOutside(node, () => setOpen(false))
   // const onClick = () => setOpen(!isOpen)
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url, { shallow }) => {
+      setOpen(false)
+    }
+
+    router.events.on('routeChangeStart', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [])
 
   return (
     <S.Container isOpen={isOpen}>

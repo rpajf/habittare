@@ -14,7 +14,7 @@ import { PropertyType } from '@/models/Property'
 import * as S from '@/styles/Home'
 
 import HomeCarousel from '@/components/HomeCarousel'
-import ContactForm from '@/components/Form'
+import ContactForm from '@/components/ContactForm'
 
 import {
   getHomePageProperties,

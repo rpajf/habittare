@@ -125,7 +125,7 @@ const Property: React.FC<PropertyProps> = ({ property }) => {
                 <PrimaryButton>Agendar Visita</PrimaryButton>
               </S.SideNav>
               <S.SideNav>
-                <S.InfoText>Propriedades em destaque</S.InfoText>
+                <S.InfoText>Propriedades relacionadas</S.InfoText>
               </S.SideNav>
               <S.SideNav>
                 <S.InfoText>Propriedades em destaque</S.InfoText>

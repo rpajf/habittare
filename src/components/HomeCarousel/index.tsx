@@ -48,7 +48,7 @@ const HomeCarousel: React.FC<HomeCarouselProps> = ({ properties }) => {
               backgroundImage: `url("${property.imagens[0].link}")`
             }}
           >
-            <S.InnerDiv className="container mx-auto">
+            <S.InnerDiv className="container mx-auto px-5">
               <SliderText property={property} next={next} prev={prev} />
             </S.InnerDiv>
           </S.ImgBackground>

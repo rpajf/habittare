@@ -10,7 +10,7 @@ export const ImgBackground = styled.div`
   display: inline-flex;
   flex-direction: column;
   width: 100%;
-  height: 440px;
+  height: 650px;
   align-items: center;
   justify-content: center;
   cursor: pointer;

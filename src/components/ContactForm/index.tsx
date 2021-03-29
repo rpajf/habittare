@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-
+import UnformInput from '@/components/UnformInput'
 import * as S from './styles'
 
 import { FormHandles } from '@unform/core'
@@ -21,14 +21,16 @@ const ContactForm: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <label className="block w-full md:w-1/2 my-2 md:mx-2">
             <span className="text-gray-700">Nome</span>
-            <input
+            <UnformInput
+              name="name"
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block w-full md:w-1/2 my-2 md:mx-2">
             <span className="text-gray-700">Sobrenome</span>
-            <input
+            <UnformInput
+              name="lastName"
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
@@ -37,14 +39,16 @@ const ContactForm: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <label className="block w-full md:w-1/2 my-2 md:mx-2">
             <span className="text-gray-700">Email</span>
-            <input
+            <UnformInput
+              name="email"
               type="email"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
           </label>
           <label className="block w-full md:w-1/2 my-2 md:mx-2">
             <span className="text-gray-700">Telefone</span>
-            <input
+            <UnformInput
+              name="phone"
               type="tel"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
@@ -59,10 +63,12 @@ const ContactForm: React.FC = () => {
             ></textarea>
           </label>
         </div>
+        <div className="w-full my-2 md:mx-2">
+          <S.SubmitButton type="submit" className="w-full">
+            Enviar
+          </S.SubmitButton>
+        </div>
       </Form>
-      <div className="w-full my-2 md:mx-2">
-        <S.SubmitButton className="w-full">Enviar</S.SubmitButton>
-      </div>
     </S.Container>
   )
 }

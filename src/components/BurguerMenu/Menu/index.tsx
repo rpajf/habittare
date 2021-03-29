@@ -17,9 +17,10 @@ const BurguerMenu: React.FC<MenuProps> = ({ isOpen }) => {
   return (
     <S.Container isOpen={isOpen}>
       <ul>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
+        <MenuItem link="/" label="Home" />
+        <MenuItem link="/sobre-nos" label="Sobre Nós" />
+        <MenuItem link="/" label="Anuncie seu imóvel" />
+        <MenuItem link="/contato" label="Contato" />
       </ul>
     </S.Container>
   )

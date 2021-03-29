@@ -1,5 +1,5 @@
 import * as S from '@/styles/contato'
-import ContactForm from '../../components/Form'
+import ContactForm from '../../components/ContactForm'
 
 const Contato: React.FC = () => {
   return (

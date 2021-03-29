@@ -13,16 +13,28 @@ import { PropertyType } from '@/models/Property'
 import { renderTitle, renderTipoContrato } from '@/utils/property'
 import PropertyMap from '@/components/PropertyMap'
 
-export const getServerSideProps: GetServerSideProps = async context => {
-  const id =
-    typeof context.params.id === 'string'
-      ? context.params.id
-      : context.params.id[0]
-  const property = await geyOnePropertyByCodeOrId(id)
-  return {
-    props: {
-      property: JSON.parse(JSON.stringify(property))
+import nextConnect from 'next-connect'
+import databaseMiddleware from '@/middlewares/db'
+
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  res,
+  params
+}) => {
+  const handler = nextConnect().use(databaseMiddleware)
+  try {
+    await handler.run(req, res)
+
+    const id = typeof params.id === 'string' ? params.id : params.id[0]
+    const property = await geyOnePropertyByCodeOrId(id)
+    return {
+      props: {
+        property: JSON.parse(JSON.stringify(property))
+      }
     }
+  } catch (error) {
+    console.log(error)
+    return { props: {} }
   }
 }
 

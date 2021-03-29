@@ -14,21 +14,32 @@ import { PropertyType } from '@/models/Property'
 import * as S from '@/styles/Home'
 
 import HomeCarousel from '@/components/HomeCarousel'
-import ContactForm from '@/components/Form'
+import ContactForm from '@/components/ContactForm'
 
 import {
   getHomePageProperties,
   getLatestProperties
 } from '@/services/properties'
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const sliderProperties = await getHomePageProperties()
-  const latestProperties = await getLatestProperties()
+import nextConnect from 'next-connect'
+import databaseMiddleware from '@/middlewares/db'
 
-  return {
-    props: {
-      sliderProperties: JSON.parse(JSON.stringify(sliderProperties)),
-      latestProperties: JSON.parse(JSON.stringify(latestProperties))
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const handler = nextConnect().use(databaseMiddleware)
+  try {
+    await handler.run(req, res)
+    const sliderProperties = await getHomePageProperties()
+    const latestProperties = await getLatestProperties()
+    return {
+      props: {
+        sliderProperties: JSON.parse(JSON.stringify(sliderProperties)),
+        latestProperties: JSON.parse(JSON.stringify(latestProperties))
+      }
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      props: { sliderProperties: [], latestProperties: [] }
     }
   }
 }

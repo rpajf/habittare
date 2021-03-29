@@ -1,10 +1,16 @@
 import React from 'react'
 import * as S from './styles'
 import Link from 'next/link'
-const MenuItem: React.FC = () => {
+
+interface MenuItemProps {
+  link: string
+  label: string
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ link, label }) => {
   return (
     <S.Container>
-      <Link href="12313">Inicio</Link>
+      <Link href={link}>{label}</Link>
     </S.Container>
   )
 }

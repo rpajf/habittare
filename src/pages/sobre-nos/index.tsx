@@ -6,8 +6,8 @@ const AboutUs: React.FC = () => {
   const router = useRouter()
   const { pid } = router.query
   return (
-    <S.Container>
-      <S.Content>
+    <S.Container className="container">
+      <S.Content className="flex-col md:flex-row px-5">
         <S.SideContent>
           <S.IconWrapper>
             <S.IconBorder />

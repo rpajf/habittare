@@ -27,6 +27,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 
     const id = typeof params.id === 'string' ? params.id : params.id[0]
     const property = await geyOnePropertyByCodeOrId(id)
+
+    if (!property) return { notFound: true }
+
     return {
       props: {
         property: JSON.parse(JSON.stringify(property))
@@ -34,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     }
   } catch (error) {
     console.log(error)
-    return { props: {} }
+    return { notFound: true }
   }
 }
 

@@ -7,17 +7,22 @@ export default async function dbMiddleware(req, res, next) {
 
   try {
     if (!globalAny.mongoose) {
-      globalAny.mongoose = await mongoose.connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false
-      })
+      await connectDb()
     }
   } catch (ex) {
     console.error(ex)
   }
 
   return next()
+}
+
+export async function connectDb() {
+  const globalAny: any = global
+  globalAny.mongoose = await mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  })
 }
 
 export function jsonify(obj) {

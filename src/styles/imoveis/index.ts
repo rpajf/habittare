@@ -10,6 +10,7 @@ export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
 `
 export const Menu = styled.div`
   background: #fff;

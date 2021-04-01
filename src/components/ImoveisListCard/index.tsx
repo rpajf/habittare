@@ -20,10 +20,11 @@ const ImoveisListCard: React.FC<PropertyCardProps> = () => {
         </S.StatusLabel>
       </S.ImgArea>
       <S.ContentInfo>
-        <S.ImovelName>Condominio Barramar</S.ImovelName>
-        <S.TextFoot />
         <S.HeaderWrapper>
-          <Image src="/menu/pin.svg" height={20} width={20} />
+          <S.ImovelName>Condominio Barramar</S.ImovelName>
+          <S.TextFoot />
+
+          {/* <Image src="/menu/pin.svg" height={20} width={20} /> */}
 
           <S.ImovelLocation>R.Projetada Calhau, n.10</S.ImovelLocation>
           <S.ImovelDescription>
@@ -32,13 +33,13 @@ const ImoveisListCard: React.FC<PropertyCardProps> = () => {
         </S.HeaderWrapper>
         <S.ContentWrapper>
           <S.ImovelInfoWrapper>
-            <Image src="/menu/pin.svg" height={20} width={20} />
+            {/* <Image src="/menu/pin.svg" height={20} width={20} /> */}
 
             <S.ImovelData>Banheiros</S.ImovelData>
             <S.ImovelInfo>4</S.ImovelInfo>
           </S.ImovelInfoWrapper>
-          <S.ImovelInfoWrapper>
-            <Image src="/menu/pin.svg" height={20} width={20} />
+          <S.ImovelInfoWrapper className="last">
+            {/* <Image src="/menu/pin.svg" height={20} width={20} /> */}
 
             <S.ImovelData>Quartos</S.ImovelData>
             <S.ImovelInfo>3</S.ImovelInfo>
@@ -46,13 +47,13 @@ const ImoveisListCard: React.FC<PropertyCardProps> = () => {
         </S.ContentWrapper>
         <S.ContentWrapper>
           <S.ImovelInfoWrapper>
-            <Image src="/menu/pin.svg" height={20} width={20} />
+            {/* <Image src="/menu/pin.svg" height={20} width={20} /> */}
 
             <S.ImovelData>Banheiros</S.ImovelData>
             <S.ImovelInfo>4</S.ImovelInfo>
           </S.ImovelInfoWrapper>
-          <S.ImovelInfoWrapper>
-            <Image src="/menu/pin.svg" height={20} width={20} />
+          <S.ImovelInfoWrapper className="last">
+            {/* <Image src="/menu/pin.svg" height={20} width={20} /> */}
 
             <S.ImovelData>Quartos</S.ImovelData>
             <S.ImovelInfo>3</S.ImovelInfo>

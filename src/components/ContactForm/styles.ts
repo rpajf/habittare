@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import Button from '@/components/PrimaryBtn'
 
-import Input from '@/components/Input'
-
 export const Container = styled.div`
   background: #fff;
   display: flex;
@@ -25,18 +23,7 @@ export const FieldWrapper = styled.div`
     align-items: center;
   }
 `
-export const InputField = styled(Input)`
-  background: #ffffff;
-  border: 1px solid #c4c4c4;
-  border-radius: 5px;
-  max-width: 300px;
-  input {
-  }
-`
-export const InputArea = styled(Input)`
-  height: 150px;
-  text-align: start;
-`
+
 export const FormText = styled.text`
   font-weight: 400;
   font-size: 16px;

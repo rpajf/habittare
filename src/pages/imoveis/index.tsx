@@ -1,10 +1,35 @@
-import * as S from '@/styles/imoveis'
-import ImoveisListCard from '@/components/ImoveisListCard'
-import { useRouter } from 'next/router'
-const ImoveisList: React.FC = () => {
-  const router = useRouter()
-  const { pid } = router.query
+import { GetServerSideProps } from 'next'
+import nextConnect from 'next-connect'
 
+import databaseMiddleware from '@/middlewares/db'
+
+import ImoveisListCard from '@/components/ImoveisListCard'
+import * as S from '@/styles/imoveis'
+import { getAllProperties } from '@/services/properties'
+import { PropertyType } from '@/models/Property'
+
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  const handler = nextConnect().use(databaseMiddleware)
+  try {
+    await handler.run(req, res)
+    const properties = await getAllProperties()
+
+    return {
+      props: {
+        properties: JSON.parse(JSON.stringify(properties))
+      }
+    }
+  } catch (error) {
+    console.log(error)
+    return { notFound: true }
+  }
+}
+
+interface ImoveisListProps {
+  properties: [PropertyType]
+}
+
+const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
@@ -108,8 +133,6 @@ const ImoveisList: React.FC = () => {
           </S.NavWrapper>
         </S.SideNav>
         <S.Content>
-          {pid}
-          {router.query.slug}
           <S.Menu>
             <S.MenuItensWrapper>
               <S.MenuOrganizer>
@@ -128,7 +151,9 @@ const ImoveisList: React.FC = () => {
               <S.MenuBtn>Residencial</S.MenuBtn>
             </S.MenuOrganizer>
           </S.Menu>
-          <ImoveisListCard />
+          {properties.map(property => (
+            <ImoveisListCard key={property.codigo} property={property} />
+          ))}
         </S.Content>
       </S.InnerContent>
     </S.Container>

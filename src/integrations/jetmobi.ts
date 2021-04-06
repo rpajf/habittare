@@ -42,7 +42,7 @@ const _values = [
   { external: 'valor_venda_visivel', internal: 'valorVendaVisivel' },
   { external: 'valor_venda', internal: 'valorVenda' },
   { external: 'valor_locacao_visivel', internal: 'valorLocacaoVisivel' },
-  { external: 'valor_locacao', internal: 'valorLocacao:' },
+  { external: 'valor_locacao', internal: 'valorLocacao' },
   { external: 'valor_temporada_visivel', internal: 'valorTemporadaVisivel' },
   { external: 'valor_temporada', internal: 'valorTemporada' },
   { external: 'valor_condominio_visivel', internal: 'valorCondominioVisivel' },
@@ -107,6 +107,9 @@ export const mapImoveisJetimobAPIToMongo = (
       _values.forEach(i => {
         if (jetimobProperty[i.external]) {
           const value = jetimobProperty[i.external]
+          if (i.external === 'valor_locacao') {
+            console.log(value)
+          }
           if (i.customHandler) {
             _property[i.internal] = i.customHandler(value)
           } else _property[i.internal] = value

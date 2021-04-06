@@ -11,7 +11,7 @@ import ImobCarousel from '@/components/ImobCarousel'
 
 import { geyOnePropertyByCodeOrId } from '@/services/properties'
 import { PropertyType } from '@/models/Property'
-import { renderTitle, renderTipoContrato } from '@/utils/property'
+import { renderTitle, renderTipoContrato, renderValor } from '@/utils/property'
 import PropertyMap from '@/components/PropertyMap'
 
 import nextConnect from 'next-connect'
@@ -80,7 +80,7 @@ const Property: React.FC<PropertyProps> = ({ property }) => {
                     <Icon name={IconNames.Money} size={20} color="#8A8A8A" />
                     <S.InfoData className="ml-2">Preço</S.InfoData>
                   </div>
-                  <S.InfoQuantity>R$ {property.valorVenda}</S.InfoQuantity>
+                  <S.InfoQuantity>R$ {renderValor(property)}</S.InfoQuantity>
                 </S.DataWrapper>
                 <S.DataWrapper>
                   <div className="flex flex-row my-2">

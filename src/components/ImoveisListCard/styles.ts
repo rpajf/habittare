@@ -4,7 +4,6 @@ import PrimaryButton from '@/components/PrimaryBtn'
 
 export const Container = styled.div`
   width: 100%;
-  height: 260px;
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
@@ -12,7 +11,7 @@ export const Container = styled.div`
   border: 1px solid transparent;
   cursor: pointer;
   /* :hover {
-    border: 1px solid #6b2ec1;
+    border: 1px solid ${props => props.theme.colors.primary};
     transition: 0.3s;
   } */
   @media (max-width: 680px) {
@@ -25,7 +24,8 @@ export const HeaderWrapper = styled.div`
   flex-wrap: wrap;
 `
 export const ImgArea = styled.div`
-  background: #6666;
+  background-size: cover;
+  background-position: center;
   max-width: 400px;
   width: 100%;
   height: 100%;
@@ -65,7 +65,7 @@ export const PriceLabel = styled.div`
   left: 0;
   bottom: 0;
   border-radius: 0px 5px 0 5px;
-  background-color: #6b2ec1;
+  background-color: ${props => props.theme.colors.primary};
 
   font-weight: 200;
 `
@@ -82,7 +82,7 @@ export const StatusLabel = styled.div`
   right: 0;
   font-weight: 200;
   border-radius: 5px 0 0px 0px;
-  background-color: #6b2ec1;
+  background-color: ${props => props.theme.colors.primary};
   padding: 6px;
 `
 
@@ -91,7 +91,8 @@ export const ImovelName = styled.text`
   text-align: start;
   font-weight: 500;
   line-height: 24px;
-  color: #6b2ec1;
+  color: ${props => props.theme.colors.primary};
+  text-transform: capitalize;
 `
 export const ImovelLocation = styled.text`
   font-size: 16px;
@@ -110,7 +111,7 @@ export const ImovelDescription = styled.text`
 export const ImovelInfo = styled.text`
   font-size: 18px;
   font-weight: 450;
-  color: #6b2ec1;
+  color: ${props => props.theme.colors.primary};
   margin: 0 10px 0 15px;
 `
 export const TextFoot = styled.div`
@@ -124,19 +125,20 @@ export const ImovelData = styled.text`
   color: #67706a;
   font-weight: 500;
 
-  font-size: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
 `
 export const ButtonsWrapper = styled.div`
   display: flex;
 `
 export const Button = styled(PrimaryButton)`
-  background: #6b2ec1;
+  background: ${props => props.theme.colors.primary};
   padding: 6px 8px 6px 8px;
   font-weight: 200;
   font-size: 14px;
   margin: 20px 20px 0 0;
 
   &:hover {
-    background: ${shade(0.2, '#6b2ec1')};
+    background: ${props => shade(0.2, props.theme.colors.primary)};
   }
 `

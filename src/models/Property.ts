@@ -11,7 +11,7 @@ export interface PropertyImageType {
 export interface PropertyType {
   jetimobImovelId?: number
   codigo: string
-  tipoContrato?: ObjectId | Record<string, unknown>
+  tipoContrato?: string
   tipo?: ObjectId | Record<string, unknown>
   subtipo?: ObjectId | Record<string, unknown>
   observacoes?: string

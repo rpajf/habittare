@@ -1,5 +1,10 @@
 module.exports = {
-  env: {
-    REACT_APP_MAPBOX_TOKEN: process.env.REACT_APP_MAPBOX_TOKEN
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack']
+    })
+
+    return config
   }
 }

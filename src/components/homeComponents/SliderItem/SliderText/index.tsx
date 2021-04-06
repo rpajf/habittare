@@ -1,3 +1,4 @@
+import Icon, { IconNames } from '@/components/Icon'
 import { PropertyType } from '@/models/Property'
 import { renderArea, renderTipoContrato, renderTitle } from '@/utils/property'
 import Image from 'next/image'
@@ -18,8 +19,8 @@ const SliderText: React.FC<Props> = ({ property, next, prev }) => {
         <button onClick={next}>+</button>
       </div>
       <S.Title>{renderTitle(property)}</S.Title>
-      <S.SubtitleWrapper>
-        <Image src="/menu/pin.svg" height={20} width={20} />
+      <S.SubtitleWrapper className="items-center">
+        <Icon name={IconNames.Pin} size={20} color="white" />
 
         <S.SubTitle>
           {property.enderecoBairro} - {property.enderecoCidade}
@@ -27,16 +28,16 @@ const SliderText: React.FC<Props> = ({ property, next, prev }) => {
         <S.SellButton>{renderTipoContrato(property.tipoContrato)}</S.SellButton>
       </S.SubtitleWrapper>
       <S.InfoWrapper className="flex-col items-start md:flex-row md:items-center">
-        <div className="flex flex-row">
-          <Image src="/menu/icon2.svg" height={20} width={20} />
+        <div className="flex flex-row items-center">
+          <Icon name={IconNames.Measure} size={20} color="white" />
           <S.InfoText>
             {renderArea(property)}
             <br />
             {property.medida}
           </S.InfoText>
         </div>
-        <div className="flex flex-row">
-          <Image src="/menu/icon1.svg" height={20} width={20} />
+        <div className="flex flex-row items-center">
+          <Icon name={IconNames.Bed} size={20} color="white" />
 
           <S.InfoText>
             {property.dormitorios}
@@ -44,8 +45,8 @@ const SliderText: React.FC<Props> = ({ property, next, prev }) => {
             quartos
           </S.InfoText>
         </div>
-        <div className="flex flex-row">
-          <Image src="/menu/icon3.svg" height={20} width={20} />
+        <div className="flex flex-row items-center">
+          <Icon name={IconNames.Baths} size={20} color="white" />
 
           <S.InfoText>
             {property.banheiros}

@@ -15,6 +15,7 @@ import PropertyMap from '@/components/PropertyMap'
 
 import nextConnect from 'next-connect'
 import databaseMiddleware from '@/middlewares/db'
+import Icon, { IconNames } from '@/components/Icon'
 
 export const getServerSideProps: GetServerSideProps = async ({
   req,
@@ -74,24 +75,39 @@ const Property: React.FC<PropertyProps> = ({ property }) => {
             <InfoTextComp content="Visão geral do imovel">
               <S.PropertyInfoWrapper>
                 <S.DataWrapper>
-                  <S.InfoData>Preço</S.InfoData>
+                  <div className="flex flex-row my-2">
+                    <Icon name={IconNames.Money} size={20} color="#8A8A8A" />
+                    <S.InfoData className="ml-2">Preço</S.InfoData>
+                  </div>
                   <S.InfoQuantity>R$ {property.valorVenda}</S.InfoQuantity>
                 </S.DataWrapper>
                 <S.DataWrapper>
-                  <S.InfoData>Banheiros</S.InfoData>
+                  <div className="flex flex-row my-2">
+                    <Icon name={IconNames.Baths} size={20} color="#8A8A8A" />
+                    <S.InfoData className="ml-2">Banheiros</S.InfoData>
+                  </div>
                   <S.InfoQuantity>{property.banheiros}</S.InfoQuantity>
                 </S.DataWrapper>
                 <S.DataWrapper>
-                  <S.InfoData>Quartos</S.InfoData>
+                  <div className="flex flex-row my-2">
+                    <Icon name={IconNames.Bed} size={20} color="#8A8A8A" />
+                    <S.InfoData className="ml-2">Quartos</S.InfoData>
+                  </div>
                   <S.InfoQuantity>{property.dormitorios}</S.InfoQuantity>
                 </S.DataWrapper>
                 <S.DataWrapper>
-                  <S.InfoData>Garagens</S.InfoData>
+                  <div className="flex flex-row my-2">
+                    <Icon name={IconNames.Garage} size={20} color="#8A8A8A" />
+                    <S.InfoData className="ml-2">Garagens</S.InfoData>
+                  </div>
 
                   <S.InfoQuantity>{property.garagens}</S.InfoQuantity>
                 </S.DataWrapper>
                 <S.DataWrapper>
-                  <S.InfoData>Localização</S.InfoData>
+                  <div className="flex flex-row my-2">
+                    <Icon name={IconNames.Pin} size={20} color="#8A8A8A" />{' '}
+                    <S.InfoData className="ml-2">Localização</S.InfoData>
+                  </div>
 
                   <S.InfoQuantity>
                     {property.enderecoLogradouro}, {property.enderecoBairro} -{' '}

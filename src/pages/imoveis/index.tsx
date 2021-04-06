@@ -1,5 +1,5 @@
 import * as S from '@/styles/imoveis'
-
+import ImoveisListCard from '@/components/ImoveisListCard'
 import { useRouter } from 'next/router'
 const ImoveisList: React.FC = () => {
   const router = useRouter()
@@ -128,6 +128,7 @@ const ImoveisList: React.FC = () => {
               <S.MenuBtn>Residencial</S.MenuBtn>
             </S.MenuOrganizer>
           </S.Menu>
+          <ImoveisListCard />
         </S.Content>
       </S.InnerContent>
     </S.Container>

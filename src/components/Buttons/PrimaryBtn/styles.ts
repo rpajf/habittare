@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { shade } from 'polished'
-export const Container = styled.div`
+export const Container = styled.button`
   background: ${props => props.theme.colors.primary};
   border-radius: 5px;
   color: #fff;

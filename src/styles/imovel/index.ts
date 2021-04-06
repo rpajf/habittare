@@ -57,7 +57,7 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
 `
-export const InfoText = styled.text`
+export const InfoText = styled.p`
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
@@ -77,7 +77,7 @@ export const PropertyInfoWrapper = styled.div`
   @media (min-width: 310px) and (max-width: 480px) {
   }
 `
-export const InfoData = styled.text`
+export const InfoData = styled.p`
   font-style: normal;
 
   font-weight: normal;
@@ -95,7 +95,7 @@ export const DataWrapper = styled.div`
     justify-content: space-between;
   }
 `
-export const InfoQuantity = styled.text`
+export const InfoQuantity = styled.p`
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -111,7 +111,7 @@ export const ContentOrganizer = styled.div`
 `
 export const SideNav = styled.div`
   background: #fff;
-  margin-top: 40px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   padding: 20px 16px 20px 16px;
@@ -138,7 +138,7 @@ export const InputArea = styled.input`
     color: #c4c4c4;
   }
 `
-export const NavMainText = styled.text`
+export const NavMainText = styled.p`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

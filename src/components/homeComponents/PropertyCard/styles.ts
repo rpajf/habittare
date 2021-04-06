@@ -68,17 +68,13 @@ export const DeionItem = styled.div`
   align-items: center;
 `
 
-export const DeionItemIcon = styled.div`
-  width: 11px;
-  height: 12px;
-  background: rgba(138, 138, 138, 0.5);
-`
-
 export const DeionItemText = styled.div``
 
-export const DeionItemMainText = styled.text`
+export const DeionItemMainText = styled.p`
+  margin-left: 20px;
   font-weight: 300;
   font-size: 12px;
+  text-align: left;
   line-height: 18px;
   color: ${props => props.theme.colors.primary};
 `

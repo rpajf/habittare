@@ -1,6 +1,9 @@
+import Link from 'next/link'
+
 import { PropertyType } from '@/models/Property'
 import { renderArea, renderTipoContrato, renderTitle } from '@/utils/property'
-import Link from 'next/link'
+import Icon, { IconNames } from '@/components/Icon'
+
 import * as S from './styles'
 
 interface PropertyCardProps {
@@ -25,24 +28,24 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           <S.Title>{renderTitle(property)}</S.Title>
           <S.Deion>
             <S.DeionItem>
-              <S.DeionItemIcon></S.DeionItemIcon>
+              <Icon name={IconNames.Pin} size={12} color="#8A8A8A" />
               <S.DeionItemMainText>
                 {property.enderecoLogradouro}
               </S.DeionItemMainText>
             </S.DeionItem>
             <S.DeionItem>
-              <S.DeionItemIcon></S.DeionItemIcon>
+              <Icon name={IconNames.Measure} size={12} color="#8A8A8A" />
 
               <S.DeionItemText>{property.medida}</S.DeionItemText>
               <S.DeionItemMainText>{renderArea(property)}</S.DeionItemMainText>
             </S.DeionItem>
             <S.DeionItem>
-              <S.DeionItemIcon></S.DeionItemIcon>
+              <Icon name={IconNames.Measure} size={12} color="#8A8A8A" />
               <S.DeionItemText>banheiros</S.DeionItemText>
               <S.DeionItemMainText>{property.banheiros}</S.DeionItemMainText>
             </S.DeionItem>
             <S.DeionItem>
-              <S.DeionItemIcon></S.DeionItemIcon>
+              <Icon name={IconNames.Bed} size={12} color="#8A8A8A" />
 
               <S.DeionItemText>quartos</S.DeionItemText>
               <S.DeionItemMainText>{property.dormitorios}</S.DeionItemMainText>

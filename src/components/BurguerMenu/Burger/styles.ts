@@ -6,10 +6,6 @@ interface BurguerProps {
 
 export const Container = styled.div<BurguerProps>`
   background: #6a6a6a;
-
-  position: absolute;
-  top: 3.5%;
-  left: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +31,7 @@ export const Container = styled.div<BurguerProps>`
     :nth-child(3) {
       transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg)' : 'rotate(0)')};
     }
-    @media (min-width: 568px) {
+    @media (min-width: 720px) {
       display: none;
     }
   }

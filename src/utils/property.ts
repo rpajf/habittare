@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { PropertyType } from '@/models/Property'
 
 export const renderTitle = (property: PropertyType): string => {
@@ -28,4 +29,23 @@ export const renderArea = (property: PropertyType): number | string => {
     : property.areaUtil
     ? property.areaUtil
     : ''
+}
+
+export const renderValor = (property: PropertyType): number | string => {
+  switch (property.tipoContrato) {
+    case 'Compra':
+      return property.valorVendaVisivel
+        ? property.valorVenda.toLocaleString('pt-br', {
+            minimumFractionDigits: 2
+          })
+        : ''
+    case 'Locação':
+      return property.valorLocacaoVisivel
+        ? property.valorLocacao.toLocaleString('pt-br', {
+            minimumFractionDigits: 2
+          })
+        : ''
+    default:
+      return ''
+  }
 }

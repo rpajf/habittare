@@ -111,7 +111,7 @@ export const ContentOrganizer = styled.div`
 `
 export const SideNav = styled.div`
   background: #fff;
-  margin-top: 40px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   padding: 20px 16px 20px 16px;

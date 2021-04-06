@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
 `
 export const Content = styled.div`
-  max-width: 800px;
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
@@ -15,7 +14,6 @@ export const Content = styled.div`
 export const Menu = styled.div`
   background: #fff;
   display: flex;
-  width: 800px;
   flex-direction: column;
   border-radius: 5px;
   padding: 0 10px 10px 8px;

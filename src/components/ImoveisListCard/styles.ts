@@ -14,10 +14,6 @@ export const Container = styled.div`
     border: 1px solid ${props => props.theme.colors.primary};
     transition: 0.3s;
   } */
-  @media (max-width: 680px) {
-    width: 80%;
-    display: block;
-  }
 `
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -26,18 +22,20 @@ export const HeaderWrapper = styled.div`
 export const ImgArea = styled.div`
   background-size: cover;
   background-position: center;
-  max-width: 400px;
+  min-height: 200px;
   width: 100%;
   height: 100%;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 5px 0 0;
   position: relative;
+  @media (min-width: 768px) {
+    border-radius: 5px 0 0 5px;
+  }
 `
 export const ContentInfo = styled.div`
   display: flex;
   flex-direction: column;
   background: #fff;
   border-radius: 0 5px 5px 0;
-  max-width: 400px;
   height: 100%;
   padding: 10px 0 20px 10px;
 

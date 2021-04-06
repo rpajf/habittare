@@ -16,7 +16,7 @@ interface PropertyCardProps {
 const ImoveisListCard: React.FC<PropertyCardProps> = ({ property }) => {
   return (
     <Link href={`/imoveis/${property.codigo}`}>
-      <S.Container>
+      <S.Container className="flex flex-col md:flex-row">
         <S.ImgArea
           style={{
             backgroundImage: `url("${property.imagens[0].link}")`
@@ -33,7 +33,7 @@ const ImoveisListCard: React.FC<PropertyCardProps> = ({ property }) => {
           </S.StatusLabel>
         </S.ImgArea>
         <S.ContentInfo>
-          <S.HeaderWrapper>
+          <S.HeaderWrapper className="flex flex-col">
             <S.ImovelName>{renderTitle(property)}</S.ImovelName>
             <S.TextFoot />
 

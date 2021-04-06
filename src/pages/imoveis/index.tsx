@@ -43,8 +43,8 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
 
   return (
     <S.Container>
-      <S.InnerContent>
-        <S.SideNav>
+      <S.InnerContent className="container mx-auto flex flex-col md:flex-row justify-between">
+        <S.SideNav className="w-full md:w-2/6">
           <S.NavWrapper>
             <S.NavInfo>Localização ou código</S.NavInfo>
             <S.NavInput placeholder="Bairro, endereço ou código" />
@@ -132,8 +132,8 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
             </S.InnerContainer>
           </S.NavWrapper>
         </S.SideNav>
-        <S.Content>
-          <S.Menu>
+        <S.Content className="w-full md:w-4/6">
+          <S.Menu className="w-full">
             <S.MenuItensWrapper>
               <S.MenuOrganizer>
                 <S.LabelOn>Comprar</S.LabelOn>

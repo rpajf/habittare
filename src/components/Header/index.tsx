@@ -30,7 +30,10 @@ const Header: React.FC = () => {
   }, [])
 
   return (
-    <S.Container isOpen={isOpen}>
+    <S.Container
+      isOpen={isOpen}
+      className="flex flex-row justify-center items-center"
+    >
       <S.HeaderContent className="container mx-auto justify-around md:justify-between">
         <S.TitleWrapper isOpen={isOpen}>
           <S.HomeTitle>HABITTARE</S.HomeTitle>

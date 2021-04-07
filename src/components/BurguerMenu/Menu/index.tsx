@@ -9,11 +9,6 @@ interface MenuProps {
   setOpen: (newValue: boolean) => void
 }
 const BurguerMenu: React.FC<MenuProps> = ({ isOpen }) => {
-  const [checked, setActive] = useState<boolean>(false)
-  const handleClick = () => {
-    setActive(!checked)
-  }
-
   return (
     <S.Container isOpen={isOpen}>
       <ul>

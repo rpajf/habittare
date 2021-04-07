@@ -14,8 +14,6 @@ const Header: React.FC = () => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
   useOnClickOutside(node, () => setOpen(false))
-  // const onClick = () => setOpen(!isOpen)
-
   const router = useRouter()
 
   useEffect(() => {

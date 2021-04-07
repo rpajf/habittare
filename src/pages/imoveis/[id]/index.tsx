@@ -1,11 +1,8 @@
 import * as S from '@/styles/imovel'
 import { GetServerSideProps } from 'next'
-
-import MapBox from '@/components/Map'
 import InfoTextComp from '@/components/InfoTextComp'
 
 import MyForm from '@/components/Form'
-import PrimaryButton from '@/components/Buttons/PrimaryBtn'
 
 import ImobCarousel from '@/components/ImobCarousel'
 

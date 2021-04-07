@@ -82,7 +82,7 @@ const ImoveisListCard: React.FC<PropertyCardProps> = ({ property }) => {
             </S.ImovelInfoWrapper>
           </S.ContentWrapper>
           <S.ButtonsWrapper>
-            <S.Button>Main detalhes</S.Button>
+            <S.Button>Mais detalhes</S.Button>
           </S.ButtonsWrapper>
         </S.ContentInfo>
       </S.Container>

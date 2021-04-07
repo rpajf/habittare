@@ -1,10 +1,13 @@
+import { useState } from 'react'
+import * as S from '@/styles/imoveis'
 import { GetServerSideProps } from 'next'
 import nextConnect from 'next-connect'
 
 import databaseMiddleware from '@/middlewares/db'
 
 import ImoveisListCard from '@/components/ImoveisListCard'
-import * as S from '@/styles/imoveis'
+import SideNav from '@/components/CollapseSideBar/SideNav'
+import ShowSideNav from '@/components/CollapseSideBar'
 import { getAllProperties } from '@/services/properties'
 import { PropertyType } from '@/models/Property'
 
@@ -30,6 +33,9 @@ interface ImoveisListProps {
 }
 
 const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
+  const [isOpen, setOpen] = useState<boolean>(false)
+  const showSidebar = () => setOpen(!isOpen)
+
   function onClick(radioValue) {
     console.log(radioValue)
   }
@@ -44,7 +50,9 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
   return (
     <S.Container>
       <S.InnerContent className="container mx-auto flex flex-col md:flex-row justify-between">
-        <S.SideNav className="w-full md:w-2/6">
+        <ShowSideNav isOpen={isOpen} setOpen={setOpen} />
+        <SideNav isOpen={isOpen} setOpen={setOpen} />
+        {/* <S.SideNav className="w-full md:w-2/6">
           <S.NavWrapper>
             <S.NavInfo>Localização ou código</S.NavInfo>
             <S.NavInput placeholder="Bairro, endereço ou código" />
@@ -131,7 +139,7 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
               </S.InnerNavWrapper>
             </S.InnerContainer>
           </S.NavWrapper>
-        </S.SideNav>
+        </S.SideNav> */}
         <S.Content className="w-full md:w-4/6">
           <S.Menu className="w-full">
             <S.MenuItensWrapper>

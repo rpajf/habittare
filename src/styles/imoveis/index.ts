@@ -1,15 +1,21 @@
 import styled from 'styled-components'
 import Button from '../../components/Buttons/PrimaryBtn'
 import Radio from '../../components/Radio'
+interface DisplayProps {
+  isDisplayed: boolean
+}
 
 export const Container = styled.div`
   display: flex;
 `
-export const Content = styled.div`
+export const Content = styled.div<DisplayProps>`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  @media (max-width: 678px) {
+    display: ${({ isDisplayed }) => (isDisplayed ? 'flex' : 'none')};
+  }
 `
 export const Menu = styled.div`
   background: #fff;

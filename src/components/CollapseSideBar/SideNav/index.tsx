@@ -3,6 +3,7 @@ import * as S from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { set } from 'mongoose'
 interface SideNavProps {
   isOpen: boolean
   setOpen: (newValue: boolean) => void
@@ -11,6 +12,8 @@ const SideBar: React.FC<SideNavProps> = ({ isOpen, setOpen }) => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
+  const showSidebar = () => setOpen(!isOpen)
+
   const mockedRadioValuesArray = [
     { radioValue: '1', onClick: onClick, checked: true },
     { radioValue: '2', onClick: onClick, checked: false },
@@ -19,7 +22,7 @@ const SideBar: React.FC<SideNavProps> = ({ isOpen, setOpen }) => {
   ]
   return (
     <>
-      <S.NavIcon isOpen={isOpen} onClick={() => setOpen(!isOpen)}>
+      <S.NavIcon isOpen={isOpen} onClick={showSidebar}>
         <FontAwesomeIcon icon={faTimes} />
       </S.NavIcon>
       <S.SideNav isOpen={isOpen} className="w-full md:w-2/6">

@@ -3,7 +3,10 @@ interface SideNavProps {
   isOpen: boolean
 }
 export const Container = styled.div<SideNavProps>`
-  display: ${({ isOpen }) => (isOpen ? 'none' : 'flex')};
+  display: none;
+  @media (max-width: 678px) {
+    display: ${({ isOpen }) => (isOpen ? 'none' : 'flex')};
+  }
 `
 export const Filter = styled.div`
   background: #fff;

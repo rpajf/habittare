@@ -30,10 +30,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
 interface ImoveisListProps {
   properties: [PropertyType]
+  isDisplayed: boolean
 }
 
-const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
+const ImoveisList: React.FC<ImoveisListProps> = ({
+  properties,
+  isDisplayed
+}) => {
   const [isOpen, setOpen] = useState<boolean>(false)
+
   const showSidebar = () => setOpen(!isOpen)
 
   function onClick(radioValue) {
@@ -140,7 +145,7 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
             </S.InnerContainer>
           </S.NavWrapper>
         </S.SideNav> */}
-        <S.Content className="w-full md:w-4/6">
+        <S.Content isDisplayed={!isOpen} className="w-full md:w-4/6">
           <S.Menu className="w-full">
             <S.MenuItensWrapper>
               <S.MenuOrganizer>

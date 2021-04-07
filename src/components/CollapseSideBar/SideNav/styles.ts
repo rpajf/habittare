@@ -1,23 +1,59 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import Radio from '@/components/Radio'
+import { opacify } from 'polished'
 interface SideNavProps {
   isOpen: boolean
   setOpen: (newValue: boolean) => void
 }
 
+const appearFromLeft = keyframes`
+from {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+`
+const disapear = keyframes`
+  from{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+
+  }
+`
+// const openAnimation = css`
+//   animation: 1s linear ${appearFromLeft} left;
+// `
+const closeAnimation = css`
+  animation: 1s linear ${disapear} right;
+`
+export const Container = styled.div`
+  display: flex;
+`
 export const SideNav = styled.div<SideNavProps>`
   background: #fff;
   margin-right: 20px;
-
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  display: flex;
   flex-direction: column;
-  max-height: 900px;
-  /* left: ${({ isOpen }) => (isOpen ? '0' : '-100')}; */
-  /* position: fixed; */
-  transition: 350ms;
+  max-height: 760px;
   height: 100%;
+  /* flex: 1; */
   border-radius: 5px;
   padding: 20px 16px 20px 10px;
+  @media (max-width: 678px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    transition: ${({ isOpen }) =>
+      isOpen ? 'left 0.5s linear' : 'right 0.5s linear'};
+    margin: 0;
+    animation: ${appearFromLeft} 1s;
+  }
 `
 
 export const InnerContainer = styled.div`
@@ -83,6 +119,9 @@ export const ImoveisRadio = styled(Radio)`
     :first-of-type {
       border-radius: 5px;
     }
+    /* @media (max-width: 678px) {
+      padding: 3px;
+    } */
   }
 `
 export const RadioContainer = styled.div`
@@ -92,7 +131,19 @@ export const RadioContainer = styled.div`
   margin: 15px 0 15px 0;
 `
 export const NavIcon = styled.span<SideNavProps>`
-  cursor: pointer;
-  color: ${({ isOpen }) => (isOpen ? '#000' : '#fff')};
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+  display: none;
+  @media (max-width: 678px) {
+    transition: 0.4s;
+    cursor: pointer;
+    color: #000;
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+
+    transition: left 0.5s linear;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    animation: ${appearFromLeft} 1s;
+
+    width: 30px;
+    height: 30px;
+  }
 `

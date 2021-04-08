@@ -44,7 +44,7 @@ export const SideNav = styled.div<SideNavProps>`
   max-height: 760px;
   height: 100%;
   /* flex: 1; */
-  border-radius: 5px;
+  border-radius: 0 5px 5px 5px;
   padding: 20px 16px 20px 10px;
   @media (max-width: 678px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -137,12 +137,13 @@ export const NavIcon = styled.span<SideNavProps>`
     cursor: pointer;
     color: #000;
     display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-
+    align-items: center;
+    justify-content: center;
     transition: left 0.5s linear;
     background: #fff;
     border-radius: 5px 5px 0 0;
     animation: ${appearFromLeft} 1s;
-
+    padding: 5px 10px 15px 10px;
     width: 30px;
     height: 30px;
   }

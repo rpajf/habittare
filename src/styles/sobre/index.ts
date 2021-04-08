@@ -84,3 +84,13 @@ export const IconBorder = styled.div`
 export const FooterContent = styled.div`
   display: flex;
 `
+export const HeadText = styled.h1`
+  font-weight: 500;
+  line-height: 32px;
+  color: ${props => props.theme.colors.primary};
+`
+export const FooterText = styled.h3`
+  line-height: 28px;
+  font-weight: 300px;
+  color: ${props => props.theme.colors.primary};
+`

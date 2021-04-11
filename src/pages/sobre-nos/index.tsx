@@ -1,8 +1,13 @@
 import { useRouter } from 'next/router'
+import PropertyMap from '@/components/PropertyMap'
+import { PropertyType } from '@/models/Property'
+import AboutUsMap from '@/components/AboutUsMap'
 
 import * as S from '@/styles/sobre'
-
-const AboutUs: React.FC = () => {
+interface PropertyProps {
+  property: PropertyType
+}
+const AboutUs: React.FC<PropertyProps> = ({ property }) => {
   const router = useRouter()
   const { pid } = router.query
   return (
@@ -50,7 +55,9 @@ const AboutUs: React.FC = () => {
             <S.IconBorder />
           </S.IconWrapper>
         </div>
-        <S.MapDiv />
+        <S.MapDiv>
+          <AboutUsMap lat={-2.518017} long={-44.242063} />
+        </S.MapDiv>
       </S.SideContent>
     </S.Container>
   )

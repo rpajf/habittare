@@ -128,9 +128,8 @@ export const FooterText = styled.p`
 `
 
 export const MapDiv = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
   height: 320px;
   width: 320px;
   border-radius: 50%;
-  background: #666;
 `

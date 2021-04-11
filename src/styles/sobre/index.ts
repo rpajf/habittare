@@ -1,21 +1,31 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
-export const Content = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+export const Container = styled.div`
+  /* display: flex;
 
-  margin: 50px auto;
+  max-width: 1100px;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 50px;
+  align-items: center;
+  flex-direction: column; */
+  display: flex;
+  padding: 50px;
 `
-export const TextWrapper = styled.div`
+export const Content = styled.div`
+  max-width: 650px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-  background: #e9eeef;
+  margin: 50px auto;
+`
+export const HeadTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 `
 
-export const Title = styled.text`
+export const Title = styled.h1`
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -27,6 +37,7 @@ export const Title = styled.text`
 export const ContentText = styled.text`
   font-style: normal;
   font-weight: normal;
+
   font-size: 18px;
   line-height: 27px;
 
@@ -36,6 +47,7 @@ export const SubTitle = styled.text`
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
+
   line-height: 30px;
   text-align: center;
   color: ${props => props.theme.colors.primary};
@@ -65,7 +77,9 @@ export const FormContent = styled.div`
 
 export const SideContent = styled.div`
   display: flex;
+  padding-top: 75px;
   flex-direction: column;
+  justify-content: space-around;
 `
 export const IconWrapper = styled.div`
   display: flex;
@@ -83,14 +97,40 @@ export const IconBorder = styled.div`
 `
 export const FooterContent = styled.div`
   display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  flex: 1;
+
+  margin-top: 40px;
 `
 export const HeadText = styled.h1`
+  font-size: 36px;
   font-weight: 500;
-  line-height: 32px;
+  margin: 20px 0 25px 0;
+  line-height: 38px;
   color: ${props => props.theme.colors.primary};
 `
-export const FooterText = styled.h3`
-  line-height: 28px;
-  font-weight: 300px;
+export const FooterSubtitle = styled.h3`
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 300;
+  /* margin: 20px 0 25px 0; */
   color: ${props => props.theme.colors.primary};
+  :first-child {
+    margin-top: 10px;
+  }
+`
+export const FooterText = styled.p`
+  font-size: 18px;
+  line-height: 20px;
+  color: ${props => props.theme.colors.primary};
+`
+
+export const MapDiv = styled.div`
+  margin-top: 20px;
+  height: 320px;
+  width: 320px;
+  border-radius: 50%;
+  background: #666;
 `

@@ -131,16 +131,6 @@ const Property: React.FC<PropertyProps> = ({ property }) => {
             <S.NavWrapper>
               <S.SideNav>
                 <MyForm />
-                {/* <S.NavMainText>Contato</S.NavMainText>
-                <S.InputArea name="nome" placeholder="Nome"></S.InputArea>
-                <S.InputArea name="name" placeholder="E-mail"></S.InputArea>
-                <S.InputArea name="name" placeholder="Telefone"></S.InputArea>
-                <S.InputArea
-                  name="name"
-                  className="comment"
-                  placeholder="Olá, Estou interessado no imóvel consectetur adipiscing elit"
-                ></S.InputArea>
-                <PrimaryButton>Agendar Visita</PrimaryButton> */}
               </S.SideNav>
               <S.SideNav>
                 <S.InfoText>Propriedades relacionadas</S.InfoText>

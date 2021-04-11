@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
-  /* padding: 10px; */
+
   border: 1px solid transparent;
   cursor: pointer;
   /* :hover {

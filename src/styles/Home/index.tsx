@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const MenuWrapper = styled.div`
   display: flex;
 
-  /* margin: 0 auto; */
   @media (max-width: 480px) {
     flex-wrap: wrap;
     align-items: center;

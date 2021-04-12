@@ -1,14 +1,24 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  padding: 50px 0 60px 50px;
+  padding: 50px 50px 60px 50px;
   margin: 0 auto;
   max-width: 1250px;
   width: 100%;
+  @media (min-width: 310px) and (max-width: 480px) {
+    padding: 15px;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `
 export const InnerContainer = styled.div`
   display: flex;
@@ -16,6 +26,9 @@ export const InnerContainer = styled.div`
 
   /* align-items: center;
   justify-content: space-around; */
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 export const HeadTextWrapper = styled.div`
   display: flex;
@@ -39,8 +52,13 @@ export const ContentText = styled.text`
   max-width: 650px;
   height: 400px;
   font-size: 18px;
-  line-height: 27px;
+  line-height: 28px;
   color: #000000;
+  @media (min-width: 310px) and (max-width: 480px) {
+    width: 90vw;
+
+    line-height: 22px;
+  }
 `
 export const SubTitle = styled.text`
   font-style: normal;
@@ -64,21 +82,24 @@ export const ContactTitle = styled.text`
   line-height: 36px;
   color: ${props => props.theme.colors.primary};
 `
-
-export const FormContent = styled.div`
-  display: flex;
-`
-
 export const SideContent = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 500px;
   width: 100%;
-  /* margin: 0 auto; */
   align-items: center;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-direction: row;
+    justify-content: center;
+    height: 45vh;
+    flex-wrap: wrap;
+  }
 `
 export const IconWrapper = styled.div`
   display: flex;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 `
 export const IconBorder = styled.div`
   height: 108px;
@@ -90,6 +111,9 @@ export const IconBorder = styled.div`
   border-color: #eddbfb;
   border-width: 16px;
   border-style: solid;
+  @media (min-width: 310px) and (max-width: 480px) {
+    margin: 0 10px 0 10px;
+  }
 `
 export const FooterContent = styled.div`
   display: flex;
@@ -97,6 +121,11 @@ export const FooterContent = styled.div`
   margin-top: -40px;
   max-width: 600px;
   width: 100%;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-wrap: wrap;
+    /* padding: 20px 0 20px 0; */
+    margin: 0;
+  }
 `
 export const FooterWrapper = styled.div`
   display: flex;
@@ -104,13 +133,24 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   max-width: 1050px;
   width: 100%;
+  @media (min-width: 310px) and (max-width: 480px) {
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 567px;
+    justify-content: center;
+  }
 `
 export const HeadText = styled.h1`
   font-size: 36px;
   font-weight: 500;
+  /* text-align: center; */
   margin: 20px 0 25px 0;
   line-height: 38px;
   color: ${props => props.theme.colors.primary};
+  @media (min-width: 310px) and (max-width: 480px) {
+    font-size: 30px;
+    margin: 0;
+  }
 `
 export const FooterSubtitle = styled.h3`
   font-size: 32px;
@@ -120,12 +160,20 @@ export const FooterSubtitle = styled.h3`
   :first-child {
     margin-top: 10px;
   }
+  @media (min-width: 310px) and (max-width: 480px) {
+    font-size: 26px;
+    margin: 0;
+  }
 `
 export const FooterText = styled.p`
   font-size: 18px;
   margin-top: 15px;
   line-height: 22px;
   color: ${props => props.theme.colors.primary};
+  @media (min-width: 310px) and (max-width: 480px) {
+    line-height: 18px;
+    font-size: 16px;
+  }
 `
 
 export const MapDiv = styled.div`
@@ -134,4 +182,9 @@ export const MapDiv = styled.div`
   height: 300px;
   width: 300px;
   border-radius: 50%;
+  @media (min-width: 310px) and (max-width: 480px) {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+  }
 `

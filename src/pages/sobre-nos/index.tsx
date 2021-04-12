@@ -32,9 +32,7 @@ const AboutUs: React.FC<PropertyProps> = ({ property }) => {
             elementum congue. Vivamus quis mollis lorem. Proin quis lorem
             consectetur sem rutrum ornare at in turpis. Nam vitae ex elit.
             Suspendisse aliquet libero a libero congue, tempor tempus lectus
-            accumsan. Mauris mattis tellus in venenatis pretium. Fusce lorem
-            nulla, ullamcorpxer a lorem ut, facilisis suscipit massa. Maecenas
-            feugiat vehicula ultricies. Aenean luctus non magna ac dignissim.
+            accumsan. Mauris mattis tellus in venenatis pretium.
           </S.ContentText>
           <S.SideContent>
             <S.IconWrapper>
@@ -49,6 +47,7 @@ const AboutUs: React.FC<PropertyProps> = ({ property }) => {
           <S.FooterWrapper>
             <S.FooterContent>
               <S.HeadText>Nossa localização</S.HeadText>
+
               <S.FooterSubtitle>São Luís,</S.FooterSubtitle>
               <S.FooterSubtitle> Rua xxxx- cohama</S.FooterSubtitle>
               <S.FooterText>

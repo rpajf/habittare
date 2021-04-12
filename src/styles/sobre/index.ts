@@ -1,28 +1,27 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  /* display: flex;
-
-  max-width: 1100px;
+  padding: 50px 0 60px 50px;
+  margin: 0 auto;
+  max-width: 1250px;
   width: 100%;
-  justify-content: space-around;
-  margin-top: 50px;
-  align-items: center;
-  flex-direction: column; */
-  display: flex;
-  padding: 50px;
 `
 export const Content = styled.div`
-  max-width: 650px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 50px auto;
+`
+export const InnerContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  /* align-items: center;
+  justify-content: space-around; */
 `
 export const HeadTextWrapper = styled.div`
   display: flex;
+
+  margin: 10px 0 30px;
   flex-direction: column;
-  margin-bottom: 30px;
 `
 
 export const Title = styled.h1`
@@ -37,10 +36,10 @@ export const Title = styled.h1`
 export const ContentText = styled.text`
   font-style: normal;
   font-weight: normal;
-
+  max-width: 650px;
+  height: 400px;
   font-size: 18px;
   line-height: 27px;
-
   color: #000000;
 `
 export const SubTitle = styled.text`
@@ -65,21 +64,18 @@ export const ContactTitle = styled.text`
   line-height: 36px;
   color: ${props => props.theme.colors.primary};
 `
-export const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 5px;
-`
+
 export const FormContent = styled.div`
   display: flex;
 `
 
 export const SideContent = styled.div`
   display: flex;
-  padding-top: 75px;
   flex-direction: column;
-  justify-content: space-around;
+  max-width: 500px;
+  width: 100%;
+  /* margin: 0 auto; */
+  align-items: center;
 `
 export const IconWrapper = styled.div`
   display: flex;
@@ -98,11 +94,16 @@ export const IconBorder = styled.div`
 export const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: -40px;
   max-width: 600px;
   width: 100%;
-  flex: 1;
-
-  margin-top: 40px;
+`
+export const FooterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1050px;
+  width: 100%;
 `
 export const HeadText = styled.h1`
   font-size: 36px;
@@ -113,9 +114,8 @@ export const HeadText = styled.h1`
 `
 export const FooterSubtitle = styled.h3`
   font-size: 32px;
-  line-height: 36px;
+  line-height: 28px;
   font-weight: 300;
-  /* margin: 20px 0 25px 0; */
   color: ${props => props.theme.colors.primary};
   :first-child {
     margin-top: 10px;
@@ -123,13 +123,15 @@ export const FooterSubtitle = styled.h3`
 `
 export const FooterText = styled.p`
   font-size: 18px;
-  line-height: 20px;
+  margin-top: 15px;
+  line-height: 22px;
   color: ${props => props.theme.colors.primary};
 `
 
 export const MapDiv = styled.div`
-  margin-top: 40px;
-  height: 320px;
-  width: 320px;
+  background: #cacaca;
+
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
 `

@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   padding: 35px;
 `
 export const MainText = styled.text`
@@ -19,6 +19,10 @@ export const MainText = styled.text`
 export const TextFoot = styled.div`
   height: 1px;
   max-width: 720px;
-  background: linear-gradient(to right, #5743d9 20%, #c4c4c4 0%);
+  background: linear-gradient(
+    to right,
+    ${props => props.theme.colors.primary}20%,
+    #c4c4c4 0%
+  );
   margin-bottom: 15px;
 `

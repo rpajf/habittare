@@ -9,7 +9,7 @@ export const Container = styled.div<SideNavProps>`
   }
 `
 export const Filter = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 5px;
   display: flex;
   align-items: center;

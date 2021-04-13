@@ -3,7 +3,7 @@ import { shade } from 'polished'
 export const Container = styled.button`
   background: ${props => props.theme.colors.primary};
   border-radius: 5px;
-  color: #fff;
+  color: ${props => props.theme.colors.textPrimary};
   border: none;
   text-align: center;
   padding: 10px 8px 10px 8px;

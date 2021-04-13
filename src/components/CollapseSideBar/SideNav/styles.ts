@@ -37,7 +37,7 @@ export const Container = styled.div`
   display: flex;
 `
 export const SideNav = styled.div<SideNavProps>`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   margin-right: 20px;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ export const InnerNavWrapper = styled.div`
   margin: 5px 0 5px 0;
 `
 export const NavInput = styled.input`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   padding: 9px 0 6px 6px;
@@ -84,7 +84,7 @@ export const NavInput = styled.input`
   }
 `
 export const QuantityInput = styled.input`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   max-width: 94px;
@@ -105,7 +105,7 @@ export const ImoveisRadio = styled(Radio)`
   margin: 0;
 
   label {
-    background: #ffffff;
+    background: ${props => props.theme.colors.textPrimary};
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
     border-radius: 0;
     font-style: normal;
@@ -140,7 +140,7 @@ export const NavIcon = styled.span<SideNavProps>`
     align-items: center;
     justify-content: center;
     transition: left 0.5s linear;
-    background: #fff;
+    background: ${props => props.theme.colors.textPrimary};
     border-radius: 5px 5px 0 0;
     animation: ${appearFromLeft} 1s;
     padding: 5px 10px 15px 10px;

@@ -18,7 +18,7 @@ export const Content = styled.div<DisplayProps>`
   }
 `
 export const Menu = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -39,7 +39,7 @@ export const MenuBtn = styled.button`
   border: 1px solid #5743d9;
 
   border-radius: 5px;
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -58,14 +58,14 @@ export const ContentOrganizer = styled.div`
   align-items: center;
 `
 export const ImoveisCard = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
 `
 export const Btn = styled(Button)`
   /* padding: 10px 20px 10px 20px; */
 `
 
 export const LabelOn = styled.label`
-  background: #5743d9;
+  background: ${props => props.theme.colors.primary};
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
 
@@ -76,7 +76,7 @@ export const LabelOn = styled.label`
   cursor: pointer;
 `
 export const LabelOff = styled(LabelOn)`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   color: ${props => props.theme.colors.primary};
   cursor: pointer;
 `
@@ -86,7 +86,7 @@ export const MenuText = styled.text`
   font-size: 18px;
   line-height: 27px;
   margin-right: 10px;
-  color: #5743d9;
+  color: ${props => props.theme.colors.primary};
 `
 export const FilterText = styled(MenuText)`
   color: #000;
@@ -115,7 +115,7 @@ export const CardFooter = styled.div`
   margin-bottom: 15px;
 `
 export const SideNav = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   margin-right: 20px;
 
   display: flex;
@@ -138,7 +138,7 @@ export const InnerNavWrapper = styled.div`
   margin: 5px 0 5px 0;
 `
 export const NavInput = styled.input`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   padding: 9px 0 6px 6px;
@@ -148,7 +148,7 @@ export const NavInput = styled.input`
   }
 `
 export const QuantityInput = styled.input`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   max-width: 94px;
@@ -169,7 +169,7 @@ export const ImoveisRadio = styled(Radio)`
   margin: 0;
 
   label {
-    background: #ffffff;
+    background: ${props => props.theme.colors.textPrimary};
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
     border-radius: 0;
     font-style: normal;

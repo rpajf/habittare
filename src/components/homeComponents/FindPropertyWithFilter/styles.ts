@@ -34,7 +34,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
 `
 export const SearchBar = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   display: flex;
   border-radius: 5px;
   border: none;
@@ -49,7 +49,7 @@ export const InnerWrapper = styled.div`
   flex-direction: column;
 `
 export const SelectDiv = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 0px;
   padding: 0 10px 0 10px;
   border-right: 1px solid rgba(138, 138, 138, 0.5);
@@ -114,7 +114,7 @@ export const SwitchLabel1 = styled(SearchLabel)<SwitchProps>`
   ${props =>
     props.isToggled &&
     css`
-      background: #fff;
+      background: ${props => props.theme.colors.textPrimary};
       color: ${props => props.theme.colors.primary};
     `}
 `
@@ -122,14 +122,14 @@ export const SwitchLabel2 = styled(SearchLabel)<SwitchProps>`
   border-radius: 0px;
   text-align: center;
 
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   cursor: pointer;
   color: ${props => props.theme.colors.primary};
   ${props =>
     props.isToggled &&
     css`
       background: ${props => props.theme.colors.primary};
-      color: #fff;
+      color: ${props => props.theme.colors.textPrimary};
     `}
   @media (max-width: 480px) {
     padding: 8px;
@@ -167,7 +167,7 @@ export const CustomArrow = styled.div`
   border-top: 5px solid #000;
 `
 export const ModalTag = styled(SearchLabel)`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
 `
 export const InfoWrapper = styled.div`
   display: flex;
@@ -182,7 +182,7 @@ export const MenuContentText = styled.text`
   color: #8a8a8a;
 `
 export const ContentInput = styled.input`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 5px;
   border: none;
   outline: none;
@@ -208,13 +208,13 @@ export const QuantityInfo = styled.div`
   align-items: center;
   justify-content: center;
   color: #8a8a8a;
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   border: none;
 `
 export const FilterLabel = styled.button`
   background: #f8f8fa;
   color: #8a8a8a;
-  border: 1px solid #5743d9;
+  border: 1px solid ${props => props.theme.colors.primary};
   font-style: normal;
   font-weight: 300;
   border-radius: 5px;

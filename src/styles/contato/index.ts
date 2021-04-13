@@ -76,7 +76,7 @@ export const SideTittle = styled.text`
 export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 5px;
 `
 export const FormContent = styled.div`

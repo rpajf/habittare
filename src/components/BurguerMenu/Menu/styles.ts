@@ -21,7 +21,7 @@ export const Container = styled.div<MenuProps>`
   padding: 5px;
   align-items: center;
   justify-content: center;
-  background-color: #e9eeef;
+  background-color: ${props => props.theme.colors.background};
 
   -webkit-transition: bottom 1s ease-in-out, background-color 1s ease-out 1s;
   transition: bottom 1s ease-in-out, background-color 1s ease-out 1s;

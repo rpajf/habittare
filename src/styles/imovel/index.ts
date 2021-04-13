@@ -21,12 +21,12 @@ export const MainInfoWrapper = styled.div`
 export const SliderArea = styled.div``
 
 export const MainInfo = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   display: flex;
   padding: 20px;
   align-items: center;
   @media (min-width: 310px) and (max-width: 480px) {
-    background: #fff;
+    background: ${props => props.theme.colors.textPrimary};
     display: flex;
     flex-direction: column;
   }
@@ -110,7 +110,7 @@ export const ContentOrganizer = styled.div`
   flex-wrap: wrap;
 `
 export const SideNav = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   margin-top: 50px;
   display: flex;
   flex-direction: column;

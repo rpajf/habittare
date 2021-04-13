@@ -58,6 +58,7 @@ export const ContentText = styled.text`
     width: 90vw;
 
     line-height: 22px;
+    margin-bottom: 15px;
   }
 `
 export const SubTitle = styled.text`
@@ -89,16 +90,19 @@ export const SideContent = styled.div`
   width: 100%;
   align-items: center;
   @media (min-width: 310px) and (max-width: 480px) {
-    flex-direction: row;
+    margin-top: 40px;
     justify-content: center;
-    height: 45vh;
-    flex-wrap: wrap;
+    align-items: center;
+    height: 100vh;
   }
 `
 export const IconWrapper = styled.div`
   display: flex;
   @media (min-width: 310px) and (max-width: 480px) {
-    flex-wrap: wrap;
+    flex-direction: column;
+    :first-child {
+      margin-top: 50px;
+    }
   }
 `
 export const IconBorder = styled.div`
@@ -112,7 +116,12 @@ export const IconBorder = styled.div`
   border-width: 16px;
   border-style: solid;
   @media (min-width: 310px) and (max-width: 480px) {
-    margin: 0 10px 0 10px;
+    display: block;
+    height: 99px;
+    border-width: 14px;
+
+    width: 99px;
+    margin: 10px 10px 0 0;
   }
 `
 export const FooterContent = styled.div`
@@ -123,7 +132,7 @@ export const FooterContent = styled.div`
   width: 100%;
   @media (min-width: 310px) and (max-width: 480px) {
     flex-wrap: wrap;
-    /* padding: 20px 0 20px 0; */
+
     margin: 0;
   }
 `
@@ -183,7 +192,7 @@ export const MapDiv = styled.div`
   width: 300px;
   border-radius: 50%;
   @media (min-width: 310px) and (max-width: 480px) {
-    margin: 0 auto;
+    margin: 35px auto;
     height: 200px;
     width: 200px;
   }

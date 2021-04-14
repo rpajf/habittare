@@ -5,6 +5,7 @@ import { useField, SubmitHandler, FormHandles } from '@unform/core'
 interface Props {
   name: string
   label?: string
+  rows: number
 }
 
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & Props

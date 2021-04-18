@@ -37,7 +37,7 @@ const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
-  const findOnPriceRange = (e: React.ChangeEvent) => {}
+  // const findOnPriceRange = (e: React.ChangeEvent) => {}
 
   function onRoomClick(value: string) {
     setRooms(Number(value))

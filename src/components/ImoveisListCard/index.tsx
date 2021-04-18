@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import * as S from './styles'
 import { PropertyType } from '@/models/Property'
 
@@ -14,6 +15,8 @@ interface PropertyCardProps {
 }
 
 const ImoveisListCard: React.FC<PropertyCardProps> = ({ property }) => {
+  const [isToggled, setToggle] = useState<boolean>(false)
+
   return (
     <Link href={`/imoveis/${property.codigo}`}>
       <S.Container className="flex flex-col md:flex-row">

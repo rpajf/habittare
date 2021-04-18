@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Button from '@/components/PrimaryBtn'
 
 export const Container = styled.div`
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   display: flex;
   flex-direction: column;
 

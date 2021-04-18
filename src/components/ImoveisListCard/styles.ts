@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-top: 20px;
   border-radius: 5px;
   display: flex;
-  /* padding: 10px; */
+
   border: 1px solid transparent;
   cursor: pointer;
   /* :hover {
@@ -34,7 +34,7 @@ export const ImgArea = styled.div`
 export const ContentInfo = styled.div`
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 0 5px 5px 0;
   height: 100%;
   padding: 10px 0 20px 10px;
@@ -68,7 +68,7 @@ export const PriceLabel = styled.div`
   font-weight: 200;
 `
 export const SmallText = styled.text`
-  color: #fff;
+  color: ${props => props.theme.colors.textPrimary};
   font-size: 14px;
 `
 export const StatusLabel = styled.div`

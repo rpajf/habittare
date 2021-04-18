@@ -1,30 +1,26 @@
 import { useRouter } from 'next/router'
+import PropertyMap from '@/components/PropertyMap'
+import { PropertyType } from '@/models/Property'
+import AboutUsMap from '@/components/AboutUsMap'
 
 import * as S from '@/styles/sobre'
-
-const AboutUs: React.FC = () => {
+interface PropertyProps {
+  property: PropertyType
+}
+const AboutUs: React.FC<PropertyProps> = ({ property }) => {
   const router = useRouter()
   const { pid } = router.query
   return (
     <S.Container className="container">
-      <S.Content className="flex-col md:flex-row px-5">
-        <S.SideContent>
-          <S.IconWrapper>
-            <S.IconBorder />
-            <S.IconBorder />
-          </S.IconWrapper>
-          <S.IconWrapper>
-            <S.IconBorder />
-
-            <S.IconBorder />
-          </S.IconWrapper>
-        </S.SideContent>
-        <S.TextWrapper>
+      {/* <S.Content className="flex-col md:flex-row px-5"> */}
+      <S.Content>
+        <S.HeadTextWrapper>
           <S.ItalicText>Um pouco sobre nós </S.ItalicText>
           <S.Title>Habitarre Imobilaria </S.Title>
-          {pid}
-          {router.query.slug}
-
+        </S.HeadTextWrapper>
+        {pid}
+        {router.query.slug}
+        <S.InnerContainer>
           <S.ContentText>
             consectetur adipiscing elit. Etiam scelerisque mi quam, eu vehicula
             ligula condimentum in. Phasellus nec ligula vel orci elementum
@@ -36,11 +32,33 @@ const AboutUs: React.FC = () => {
             elementum congue. Vivamus quis mollis lorem. Proin quis lorem
             consectetur sem rutrum ornare at in turpis. Nam vitae ex elit.
             Suspendisse aliquet libero a libero congue, tempor tempus lectus
-            accumsan. Mauris mattis tellus in venenatis pretium. Fusce lorem
-            nulla, ullamcorper a lorem ut, facilisis suscipit massa. Maecenas
-            feugiat vehicula ultricies. Aenean luctus non magna ac dignissim.
+            accumsan. Mauris mattis tellus in venenatis pretium.
           </S.ContentText>
-        </S.TextWrapper>
+          <S.SideContent>
+            <S.IconWrapper>
+              <S.IconBorder />
+              <S.IconBorder />
+            </S.IconWrapper>
+            <S.IconWrapper>
+              <S.IconBorder />
+              <S.IconBorder />
+            </S.IconWrapper>
+          </S.SideContent>
+          <S.FooterWrapper>
+            <S.FooterContent>
+              <S.HeadText>Nossa localização</S.HeadText>
+
+              <S.FooterSubtitle>São Luís,</S.FooterSubtitle>
+              <S.FooterSubtitle> Rua xxxx- cohama</S.FooterSubtitle>
+              <S.FooterText>
+                consectetur adipiscing elit. Etiam scelerisque mi quam, eu
+                vehicula ligula condimentum in. Phasellus nec ligula vel orci
+                elementum
+              </S.FooterText>
+            </S.FooterContent>
+            <S.MapDiv />
+          </S.FooterWrapper>
+        </S.InnerContainer>
       </S.Content>
     </S.Container>
   )

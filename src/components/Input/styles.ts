@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 export const Container = styled.div`
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 5px;
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.2);

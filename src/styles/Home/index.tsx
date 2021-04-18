@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const MenuWrapper = styled.div`
   display: flex;
 
-  /* margin: 0 auto; */
   @media (max-width: 480px) {
     flex-wrap: wrap;
     align-items: center;
@@ -90,7 +89,7 @@ export const Button = styled.div`
   border-radius: 5px;
   padding: 10px 12px 10px 12px;
   font-weight: 400;
-  color: #fff;
+  color: ${props => props.theme.colors.textPrimary};
   font-size: 18px;
 `
 export {}

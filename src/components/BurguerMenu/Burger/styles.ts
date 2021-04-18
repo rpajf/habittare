@@ -9,7 +9,6 @@ export const Container = styled.div<BurguerProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   width: 3rem;
   height: 3rem;
   background: transparent;

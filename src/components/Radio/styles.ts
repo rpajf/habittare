@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const RadioLabel = styled.label<RadioProps>`
   color: ${props => (props.checked ? props.theme.colors.primary : '#8a8a8a')};
   text-align: center;
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 50%;
   border: 1px solid;
   border-color: ${props =>

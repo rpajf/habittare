@@ -5,7 +5,7 @@ export const SelectContainer = styled.div`
   padding: 10px 15px 10px 10px;
 
   select {
-    background: #fff;
+    background: ${props => props.theme.colors.textPrimary};
     position: relative;
     font-weight: 300;
     font-size: 16px;

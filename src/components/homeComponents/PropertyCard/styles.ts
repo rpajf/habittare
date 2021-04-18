@@ -2,14 +2,14 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: ${props => props.theme.colors.textPrimary};
   border-radius: 5px;
   margin: 15px 15px;
 
   border: 1px solid transparent;
   cursor: pointer;
   :hover {
-    border: 1px solid #5743d9;
+    border: 1px solid ${props => props.theme.colors.primary};
     transition: 0.3s;
   }
 `
@@ -27,7 +27,7 @@ export const topLabel = styled.div`
   right: 0;
   top: 0;
   border-radius: 0 5px 0 5px;
-  background-color: #5743d9;
+  background-color: ${props => props.theme.colors.primary};
   color: white;
   padding: 5px;
 `

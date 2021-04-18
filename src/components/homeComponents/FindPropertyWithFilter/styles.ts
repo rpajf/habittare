@@ -73,7 +73,7 @@ export const SelectDiv = styled.div`
   }
 `
 export const SearchButton = styled(PrimaryBtn)`
-  background: #5743d9;
+  background: ${props => props.theme.colors.primary};
   border-radius: 0px 5px 5px 0px;
   padding: 10px 20px 10px 20px;
   flex-wrap: wrap;
@@ -90,7 +90,7 @@ export const SearchButton = styled(PrimaryBtn)`
   }
 `
 export const SearchLabel = styled.label`
-  background: #5743d9;
+  background: ${props => props.theme.colors.primary};
   border-radius: 0px 5px 5px 0px;
   padding: 10px 20px 10px 20px;
   flex-wrap: wrap;

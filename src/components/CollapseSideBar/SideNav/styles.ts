@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components'
 import Radio from '@/components/Radio'
-import { opacify } from 'polished'
+
 interface SideNavProps {
   isOpen: boolean
   setOpen: (newValue: boolean) => void
@@ -47,10 +47,12 @@ export const SideNav = styled.div<SideNavProps>`
   border-radius: 0 5px 5px 5px;
   padding: 20px 16px 20px 10px;
   @media (max-width: 678px) {
-    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    display: flex;
+    position: absolute;
+    z-index: 5;
+    top: 140px;
     left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
-    transition: ${({ isOpen }) =>
-      isOpen ? 'left 0.5s linear' : 'right 0.5s linear'};
+    transition: all 0.3s ease-in-out;
     margin: 0;
     animation: ${appearFromLeft} 1s;
   }
@@ -77,6 +79,7 @@ export const NavInput = styled.input`
   background: ${props => props.theme.colors.textPrimary};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+  outline: none;
   padding: 9px 0 6px 6px;
   border: none;
   ::placeholder {
@@ -89,6 +92,7 @@ export const QuantityInput = styled.input`
   border-radius: 5px;
   max-width: 94px;
   padding: 9px 0 6px 6px;
+  outline: none;
   border: none;
   ::placeholder {
     color: #c9c9c9;
@@ -146,5 +150,29 @@ export const NavIcon = styled.span<SideNavProps>`
     padding: 5px 10px 15px 10px;
     width: 30px;
     height: 30px;
+  }
+`
+export const SelectDiv = styled.div`
+  background: ${props => props.theme.colors.textPrimary};
+  border-radius: 5px;
+  margin: 5px 0 5px 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  color: #8a8a8a;
+  @media (max-width: 480px) {
+    font-size: 8px;
+    line-height: 0;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    border: 1px solid #8a8a8a;
+  }
+  select {
+    padding: 0;
   }
 `

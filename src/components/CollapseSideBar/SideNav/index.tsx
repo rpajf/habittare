@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import * as S from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Select from '@/components/Select'
+import CurrencyInput from '@/components/Input/index'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { set } from 'mongoose'
 interface SideNavProps {
@@ -24,6 +25,8 @@ const SideBar: React.FC<SideNavProps> = ({
   subtipo,
   setSubtipo
 }) => {
+  const [newPrice, setNewPrice] = useState<string>('')
+
   function onClick(radioValue) {
     console.log(radioValue)
   }
@@ -48,16 +51,27 @@ const SideBar: React.FC<SideNavProps> = ({
             value={location}
             onChange={e => setLocation(e.target.value)}
           />
-          <S.NavInfo>Tipo de Imóvel</S.NavInfo>
-          <S.NavInput placeholder="Selecione um tipo de imovel" />
+          {/* <S.NavInfo>Tipo de Imóvel</S.NavInfo> */}
+          {/* <S.NavInput placeholder="Selecione um tipo de imovel" /> */}
+          <S.SelectDiv className="w-full">
+            <Select />
+          </S.SelectDiv>
           <S.InnerContainer>
             <S.InnerNavWrapper>
               <S.NavInfo>Preço Min.</S.NavInfo>
-              <S.QuantityInput placeholder="R$" />
+              <CurrencyInput
+                mask="currency"
+                prefix="R$"
+                onChange={e => setNewPrice(e.target.value)}
+              />
             </S.InnerNavWrapper>
             <S.InnerNavWrapper>
               <S.NavInfo>Preço Max.</S.NavInfo>
-              <S.QuantityInput placeholder="R$" />
+              <CurrencyInput
+                mask="currency"
+                prefix="R$"
+                onChange={e => setNewPrice(e.target.value)}
+              />{' '}
             </S.InnerNavWrapper>
           </S.InnerContainer>
           <S.RadioContainer>
@@ -123,11 +137,11 @@ const SideBar: React.FC<SideNavProps> = ({
           <S.InnerContainer>
             <S.InnerNavWrapper>
               <S.NavInfo>Área Min (m2)</S.NavInfo>
-              <S.QuantityInput placeholder="" />
+              <S.QuantityInput placeholder="" type="tel" />
             </S.InnerNavWrapper>
             <S.InnerNavWrapper>
               <S.NavInfo>Área Max (m2)</S.NavInfo>
-              <S.QuantityInput placeholder="" />
+              <S.QuantityInput placeholder="" type="tel" />
             </S.InnerNavWrapper>
           </S.InnerContainer>
         </S.NavWrapper>

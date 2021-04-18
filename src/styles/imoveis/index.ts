@@ -1,20 +1,19 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Button from '../../components/Buttons/PrimaryBtn'
 import Radio from '../../components/Radio'
-interface DisplayProps {
-  isDisplayed: boolean
-}
 
+interface SwitchProps {
+  isToggled: boolean
+}
 export const Container = styled.div`
   display: flex;
 `
-export const Content = styled.div<DisplayProps>`
+export const Content = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   @media (max-width: 678px) {
-    display: ${({ isDisplayed }) => (isDisplayed ? 'flex' : 'none')};
   }
 `
 export const Menu = styled.div`
@@ -64,7 +63,7 @@ export const Btn = styled(Button)`
   /* padding: 10px 20px 10px 20px; */
 `
 
-export const LabelOn = styled.label`
+export const LabelOn = styled.label<SwitchProps>`
   background: ${props => props.theme.colors.primary};
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
@@ -74,11 +73,23 @@ export const LabelOn = styled.label`
   font-size: 16px;
   color: ${props => props.theme.colors.textPrimary};
   cursor: pointer;
+  ${props =>
+    props.isToggled &&
+    css`
+      background: ${props => props.theme.colors.textPrimary};
+      color: ${props => props.theme.colors.primary};
+    `}
 `
-export const LabelOff = styled(LabelOn)`
+export const LabelOff = styled(LabelOn)<SwitchProps>`
   background: ${props => props.theme.colors.textPrimary};
   color: ${props => props.theme.colors.primary};
   cursor: pointer;
+  ${props =>
+    props.isToggled &&
+    css`
+      background: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.textPrimary};
+    `}
 `
 export const MenuText = styled.text`
   font-style: normal;

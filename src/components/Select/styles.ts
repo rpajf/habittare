@@ -8,6 +8,7 @@ export const SelectContainer = styled.div`
     background: ${props => props.theme.colors.textPrimary};
     position: relative;
     font-weight: 300;
+    /* outline: none; */
     font-size: 16px;
     line-height: 24px;
 
@@ -16,7 +17,7 @@ export const SelectContainer = styled.div`
     -webkit-appearance: none;
     appearance: none;
     :focus {
-      outline: 0;
+      outline: none;
     }
     option {
       position: absolute;

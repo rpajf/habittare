@@ -84,7 +84,13 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
     setLoadedProperties(data)
   }
 
+  const [isOpen, setOpen] = useState<boolean>(false)
+  const [isToggled, setToggle] = useState<boolean>(false)
   const showSidebar = () => setOpen(!isOpen)
+
+  const handleSwitch = () => {
+    setToggle(!isToggled)
+  }
 
   function onClick(radioValue) {
     console.log(radioValue)
@@ -111,24 +117,28 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
           subtipo={subtipo}
           setSubtipo={setSubtipo}
         />
-        <S.Content isDisplayed={!isOpen} className="w-full md:w-4/6">
+        <S.Content className="w-full md:w-4/6">
           <S.Menu className="w-full">
             <S.MenuItensWrapper>
               <S.MenuOrganizer>
-                <S.LabelOn>Comprar</S.LabelOn>
-                <S.LabelOff>Alugar</S.LabelOff>
+                <S.LabelOn isToggled={isToggled} onClick={handleSwitch}>
+                  Comprar
+                </S.LabelOn>
+                <S.LabelOff isToggled={isToggled} onClick={handleSwitch}>
+                  Alugar
+                </S.LabelOff>
               </S.MenuOrganizer>
               <S.MenuOrganizer>
-                <S.MenuText>Ordenar por:</S.MenuText>
-                <S.FilterText>Relevância</S.FilterText>
+                {/* <S.MenuText>Ordenar por:</S.MenuText>
+                <S.FilterText>Relevância</S.FilterText> */}
                 <S.Btn>Ver no Mapa</S.Btn>
               </S.MenuOrganizer>
             </S.MenuItensWrapper>
             <S.MenuText>Imóveis para comprar</S.MenuText>
-            <S.MenuOrganizer>
+            {/* <S.MenuOrganizer>
               <S.MenuBtn>Comprar</S.MenuBtn>
               <S.MenuBtn>Residencial</S.MenuBtn>
-            </S.MenuOrganizer>
+            </S.MenuOrganizer> */}
           </S.Menu>
           {loadedProperties.map(property => (
             <ImoveisListCard key={property.codigo} property={property} />

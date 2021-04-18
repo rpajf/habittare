@@ -7,6 +7,7 @@ import Burguer from '@/components/BurguerMenu/Burger'
 import { useOnClickOutside } from '@/hooks/clickOutside'
 import Menu from '@/components/BurguerMenu/Menu'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 const Header: React.FC = () => {
   const [checked, setActive] = useState<boolean>(false)
 
@@ -34,8 +35,12 @@ const Header: React.FC = () => {
     >
       <S.HeaderContent className="container mx-auto justify-around md:justify-between">
         <S.TitleWrapper isOpen={isOpen}>
-          <S.HomeTitle>HABITTARE</S.HomeTitle>
-          <S.SubTitle>IMOBILIARIA</S.SubTitle>
+          <Image
+            src="/assets/logo-white.png"
+            width={184}
+            height={54}
+            alt="Habittare Imobiliaria"
+          />
         </S.TitleWrapper>
         <S.HeaderMenu>
           <S.MenuItem>

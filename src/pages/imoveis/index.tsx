@@ -8,14 +8,42 @@ import databaseMiddleware from '@/middlewares/db'
 import ImoveisListCard from '@/components/ImoveisListCard'
 import SideNav from '@/components/CollapseSideBar/SideNav'
 import ShowSideNav from '@/components/CollapseSideBar'
-import { getAllProperties } from '@/services/properties'
+import { getAllPropertiesWithFilter } from '@/services/properties'
 import { PropertyType } from '@/models/Property'
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
-export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+import { _returnStringOfQuery } from '@/utils/api/helpers'
+
+export interface Filter {
+  tipoContrato?: string
+  subtipo?: string
+  // tipoContrato?: string
+}
+
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  res,
+  query
+}) => {
   const handler = nextConnect().use(databaseMiddleware)
   try {
     await handler.run(req, res)
-    const properties = await getAllProperties()
+
+    const { tipoContrato, subtipo } = query
+
+    const filter: Filter = {}
+
+    if (tipoContrato) {
+      filter.tipoContrato =
+        typeof tipoContrato === 'string' ? tipoContrato : tipoContrato[0]
+    }
+
+    if (subtipo) {
+      filter.subtipo = typeof subtipo === 'string' ? subtipo : subtipo[0]
+    }
+
+    const properties = await getAllPropertiesWithFilter(filter)
 
     return {
       props: {
@@ -30,14 +58,31 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
 interface ImoveisListProps {
   properties: [PropertyType]
-  isDisplayed: boolean
 }
 
-const ImoveisList: React.FC<ImoveisListProps> = ({
-  properties,
-  isDisplayed
-}) => {
+const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
+  const router = useRouter()
+  const query = router.query
+
+  const loadedLocation = _returnStringOfQuery(query.location)
+  const loadedTipoContrato = _returnStringOfQuery(query.tipoContrato)
+  const loadedSubtipo = _returnStringOfQuery(query.subtipo)
+
   const [isOpen, setOpen] = useState<boolean>(false)
+  const [loadedProperties, setLoadedProperties] = useState<[PropertyType]>(
+    properties
+  )
+
+  const [location, setLocation] = useState(loadedLocation)
+  const [tipoContrato, setTipoContrato] = useState(loadedTipoContrato)
+  const [subtipo, setSubtipo] = useState(loadedSubtipo)
+
+  const fetchProps = async () => {
+    const { data } = await axios.get('api/imoveis', {
+      params: { subtipo: 'Duplex' }
+    })
+    setLoadedProperties(data)
+  }
 
   const showSidebar = () => setOpen(!isOpen)
 
@@ -56,9 +101,19 @@ const ImoveisList: React.FC<ImoveisListProps> = ({
     <S.Container>
       <S.InnerContent className="container mx-auto flex flex-col md:flex-row justify-between">
         <ShowSideNav isOpen={isOpen} setOpen={setOpen} />
-        <SideNav isOpen={isOpen} setOpen={setOpen} />
+        <SideNav
+          isOpen={isOpen}
+          setOpen={setOpen}
+          location={location}
+          setLocation={setLocation}
+          tipoContrato={tipoContrato}
+          setTipoContrato={setTipoContrato}
+          subtipo={subtipo}
+          setSubtipo={setSubtipo}
+        />
         <S.Content isDisplayed={!isOpen} className="w-full md:w-4/6">
           <S.Menu className="w-full">
+            <button onClick={fetchProps}> carregar propriedades</button>
             <S.MenuItensWrapper>
               <S.MenuOrganizer>
                 <S.LabelOn>Comprar</S.LabelOn>
@@ -76,7 +131,7 @@ const ImoveisList: React.FC<ImoveisListProps> = ({
               <S.MenuBtn>Residencial</S.MenuBtn>
             </S.MenuOrganizer>
           </S.Menu>
-          {properties.map(property => (
+          {loadedProperties.map(property => (
             <ImoveisListCard key={property.codigo} property={property} />
           ))}
         </S.Content>

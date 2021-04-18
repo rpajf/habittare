@@ -18,6 +18,7 @@ export function _mountQueryNumber(
 
 export interface FilterType {
   tipo?: string | Record<string, unknown>
+  subtipo?: string | Record<string, unknown>
   mobiliado?: string | Record<string, unknown>
   dormitorios?: string | Record<string, unknown>
   suites?: string | Record<string, unknown>
@@ -32,6 +33,7 @@ export function _mountFilters(query: NextApiRequest['query']): FilterType {
   const filter: FilterType = {}
 
   const tipo = _returnStringOfQuery(query.tipo)
+  const subtipo = _returnStringOfQuery(query.subtipo)
   const mobiliado = _returnStringOfQuery(query.mobiliado)
   const dormitorios = _returnStringOfQuery(query.dormitorios)
   const suites = _returnStringOfQuery(query.suites)
@@ -42,6 +44,7 @@ export function _mountFilters(query: NextApiRequest['query']): FilterType {
   const bairro = _returnStringOfQuery(query.bairro)
 
   if (tipo) filter.tipo = tipo
+  if (subtipo) filter.subtipo = subtipo
   if (mobiliado) filter.mobiliado = _mountQueryNumber(mobiliado)
   if (dormitorios) filter.dormitorios = _mountQueryNumber(dormitorios)
   if (suites) filter.suites = _mountQueryNumber(suites)

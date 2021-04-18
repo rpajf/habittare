@@ -7,8 +7,23 @@ import { set } from 'mongoose'
 interface SideNavProps {
   isOpen: boolean
   setOpen: (newValue: boolean) => void
+  location: string
+  setLocation: (value: string) => void
+  tipoContrato: string
+  setTipoContrato: (value: string) => void
+  subtipo: string
+  setSubtipo: (value: string) => void
 }
-const SideBar: React.FC<SideNavProps> = ({ isOpen, setOpen }) => {
+const SideBar: React.FC<SideNavProps> = ({
+  isOpen,
+  setOpen,
+  location,
+  setLocation,
+  tipoContrato,
+  setTipoContrato,
+  subtipo,
+  setSubtipo
+}) => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
@@ -28,7 +43,11 @@ const SideBar: React.FC<SideNavProps> = ({ isOpen, setOpen }) => {
       <S.SideNav isOpen={isOpen} className="w-full md:w-2/6">
         <S.NavWrapper>
           <S.NavInfo>Localização ou código</S.NavInfo>
-          <S.NavInput placeholder="Bairro, endereço ou código" />
+          <S.NavInput
+            placeholder="Bairro, endereço ou código"
+            value={location}
+            onChange={e => setLocation(e.target.value)}
+          />
           <S.NavInfo>Tipo de Imóvel</S.NavInfo>
           <S.NavInput placeholder="Selecione um tipo de imovel" />
           <S.InnerContainer>

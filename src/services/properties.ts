@@ -1,13 +1,13 @@
 import Property, { PropertyType } from '@/models/Property'
 import { Document, Query } from 'mongoose'
 
+import { Filter } from '@/pages/imoveis'
+
 export async function getAllProperties(): Promise<any> {
   return Property.find({}).exec()
 }
 
-export async function getAllPropertiesWithFilter(
-  filter: Record<string, unknown>
-): Promise<any> {
+export async function getAllPropertiesWithFilter(filter: Filter): Promise<any> {
   return Property.find(filter).exec()
 }
 

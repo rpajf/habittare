@@ -6,11 +6,13 @@ import { PropertyType } from '@/models/Property'
 import Select from '@/components/Select'
 import Radio from '@/components/Radio'
 import CurrencyInput from '@/components/Input/index'
+import { useRouter } from 'next/router'
 
 interface PropertyProps {
   property: PropertyType
 }
 const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
+  const router = useRouter()
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
   const [newPrice, setNewPrice] = useState<string>('')
@@ -18,6 +20,8 @@ const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
 
   const [rooms, setRooms] = useState<number>(0)
   const [baths, setBaths] = useState<number>(0)
+  const [location, setLocation] = useState<string>('')
+  const [type, setType] = useState<string>('')
 
   const handleSwitch = () => {
     setToggle(!isToggled)
@@ -37,7 +41,7 @@ const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
-  const findOnPriceRange = (e: React.ChangeEvent) => {}
+  // const findOnPriceRange = (e: React.ChangeEvent) => {}
 
   function onRoomClick(value: string) {
     setRooms(Number(value))
@@ -47,7 +51,15 @@ const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
     setBaths(Number(value))
   }
   function onSubmit() {
-    console.log(mockedRadioValuesArray.filter(obj => obj.radioValue))
+    const data = {
+      tipoContrato: !isToggled ? 'Compra' : 'Locação',
+      subtipo: type,
+      location: location
+    }
+    return router.push({
+      pathname: '/imoveis',
+      query: data
+    })
   }
 
   return (
@@ -60,11 +72,29 @@ const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
           Alugar
         </S.SwitchLabel2>
         <S.SelectDiv className="w-full">
-          <Select />
+          <S.SelectContainer className="w-full">
+            <select
+              defaultValue=""
+              className="w-full"
+              onChange={e => setType(e.target.value)}
+            >
+              <option disabled value="">
+                Tipo de imovel
+              </option>
+
+              <option value="Apartamento">Apartamento</option>
+              <option value="Duplex">Duplex</option>
+              <option value="Casa de Condomínio">Casa de Condomínio</option>
+            </select>
+            <span />
+          </S.SelectContainer>
         </S.SelectDiv>
 
         {/* </S.SwitchDiv> */}
-        <S.MainInput placeholder="Onde você quer morar(bairro, endereço ou codigo)?" />
+        <S.MainInput
+          placeholder="Onde você quer morar(bairro, endereço ou codigo)?"
+          onChange={e => setLocation(e.target.value)}
+        />
         <S.SearchButton type="submit" onClick={onSubmit}>
           Buscar
         </S.SearchButton>

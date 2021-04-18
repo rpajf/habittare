@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from '@/styles/imoveis'
 import { GetServerSideProps } from 'next'
 import nextConnect from 'next-connect'
@@ -74,22 +74,29 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
   )
 
   const [location, setLocation] = useState(loadedLocation)
-  const [tipoContrato, setTipoContrato] = useState(loadedTipoContrato)
+  // const [tipoContrato, setTipoContrato] = useState(loadedTipoContrato === 'Compra' ? true : false)
   const [subtipo, setSubtipo] = useState(loadedSubtipo)
 
-  const fetchProps = async () => {
-    const { data } = await axios.get('api/imoveis', {
-      params: { subtipo, tipoContrato }
-    })
-    setLoadedProperties(data)
-  }
+  const [isToggled, setToggle] = useState<boolean>(
+    loadedTipoContrato === 'Locação'
+  )
 
-  const [isOpen, setOpen] = useState<boolean>(false)
-  const [isToggled, setToggle] = useState<boolean>(false)
   const showSidebar = () => setOpen(!isOpen)
 
   const handleSwitch = () => {
     setToggle(!isToggled)
+  }
+
+  useEffect(() => {
+    fetchProps()
+  }, [subtipo, isToggled])
+
+  const fetchProps = async () => {
+    const tipoContrato = !isToggled ? 'Compra' : 'Locação'
+    const { data } = await axios.get('api/imoveis', {
+      params: { subtipo, tipoContrato }
+    })
+    setLoadedProperties(data)
   }
 
   function onClick(radioValue) {
@@ -112,8 +119,6 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
           setOpen={setOpen}
           location={location}
           setLocation={setLocation}
-          tipoContrato={tipoContrato}
-          setTipoContrato={setTipoContrato}
           subtipo={subtipo}
           setSubtipo={setSubtipo}
         />

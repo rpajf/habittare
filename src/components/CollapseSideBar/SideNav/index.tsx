@@ -20,8 +20,6 @@ const SideBar: React.FC<SideNavProps> = ({
   setOpen,
   location,
   setLocation,
-  tipoContrato,
-  setTipoContrato,
   subtipo,
   setSubtipo
 }) => {
@@ -53,8 +51,23 @@ const SideBar: React.FC<SideNavProps> = ({
           />
           {/* <S.NavInfo>Tipo de Imóvel</S.NavInfo> */}
           {/* <S.NavInput placeholder="Selecione um tipo de imovel" /> */}
+
           <S.SelectDiv className="w-full">
-            <Select />
+            <select
+              defaultValue=""
+              className="w-full"
+              value={subtipo}
+              onChange={e => setSubtipo(e.target.value)}
+            >
+              <option disabled value="">
+                Tipo de imovel
+              </option>
+
+              <option value="Apartamento">Apartamento</option>
+              <option value="Duplex">Duplex</option>
+              <option value="Casa de Condomínio">Casa de Condomínio</option>
+            </select>
+            <span />
           </S.SelectDiv>
           <S.InnerContainer>
             <S.InnerNavWrapper>

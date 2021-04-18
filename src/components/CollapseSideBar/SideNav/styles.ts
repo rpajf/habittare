@@ -152,27 +152,50 @@ export const NavIcon = styled.span<SideNavProps>`
     height: 30px;
   }
 `
+
 export const SelectDiv = styled.div`
-  background: ${props => props.theme.colors.textPrimary};
-  border-radius: 5px;
-  margin: 5px 0 5px 0;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  font-weight: 300;
-  font-size: 16px;
-  text-align: center;
-  color: #8a8a8a;
-  @media (max-width: 480px) {
-    font-size: 8px;
-    line-height: 0;
-    border-radius: 5px;
-    justify-content: center;
-    text-align: center;
-    flex: 1;
-    border: 1px solid #8a8a8a;
-  }
+  position: relative;
+  padding: 10px 15px 10px 10px;
+
   select {
-    padding: 0;
+    background: ${props => props.theme.colors.textPrimary};
+    position: relative;
+    font-weight: 300;
+    /* outline: none; */
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #8a8a8a;
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    :focus {
+      outline: none;
+    }
+    option {
+      position: absolute;
+      transition: ease-in 1100ms;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  span {
+    margin-left: 10px;
+    width: 0;
+    height: 0;
+    top: 45%;
+    right: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-top: 5px solid #000;
+    position: absolute;
+    :hover {
+      cursor: none;
+    }
+  }
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: center;
   }
 `

@@ -1,14 +1,19 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import * as S from './styles'
+import { PropertyType } from '@/models/Property'
 
 import Select from '@/components/Select'
 import Radio from '@/components/Radio'
 import CurrencyInput from '@/components/Input/index'
 
-const FindPropertyWithFilter: React.FC = () => {
+interface PropertyProps {
+  property: PropertyType
+}
+const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)
+  const [newPrice, setNewPrice] = useState<string>('')
   const [checked, setChecked] = useState<boolean>(false)
 
   const [rooms, setRooms] = useState<number>(0)
@@ -32,6 +37,7 @@ const FindPropertyWithFilter: React.FC = () => {
   function onClick(radioValue) {
     console.log(radioValue)
   }
+  const findOnPriceRange = (e: React.ChangeEvent) => {}
 
   function onRoomClick(value: string) {
     setRooms(Number(value))
@@ -75,11 +81,19 @@ const FindPropertyWithFilter: React.FC = () => {
         <S.ContentWrapper className="flex-col md:flex-row">
           <S.InfoWrapper>
             <S.MenuContentText>Preço min</S.MenuContentText>
-            <CurrencyInput mask="currency" prefix="R$" />
+            <CurrencyInput
+              mask="currency"
+              prefix="R$"
+              onChange={e => setNewPrice(e.target.value)}
+            />
           </S.InfoWrapper>
           <S.InfoWrapper>
             <S.MenuContentText>Preço max</S.MenuContentText>
-            <CurrencyInput mask="currency" prefix="R$" />
+            <CurrencyInput
+              mask="currency"
+              prefix="R$"
+              onChange={e => setNewPrice(e.target.value)}
+            />
           </S.InfoWrapper>
           <S.InfoWrapper>
             <S.MenuContentText>Qtd de dormitorios</S.MenuContentText>

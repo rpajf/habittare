@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin: 0 auto;
   max-width: 1250px;
   width: 100%;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     padding: 15px;
     width: 100vw;
     display: flex;
@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -26,7 +26,7 @@ export const InnerContainer = styled.div`
 
   /* align-items: center;
   justify-content: space-around; */
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     flex-direction: column;
   }
 `
@@ -54,7 +54,7 @@ export const ContentText = styled.text`
   font-size: 18px;
   line-height: 28px;
   color: #000000;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     width: 90vw;
 
     line-height: 22px;
@@ -89,8 +89,8 @@ export const SideContent = styled.div`
   max-width: 500px;
   width: 100%;
   align-items: center;
-  @media (min-width: 310px) and (max-width: 480px) {
-    margin-top: 40px;
+  @media (min-width: 310px) and (max-width: 530px) {
+    margin-top: 30px;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -98,10 +98,10 @@ export const SideContent = styled.div`
 `
 export const IconWrapper = styled.div`
   display: flex;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     flex-direction: column;
     :first-child {
-      margin-top: 50px;
+      margin-top: 20px;
     }
   }
 `
@@ -115,7 +115,7 @@ export const IconBorder = styled.div`
   border-color: #eddbfb;
   border-width: 16px;
   border-style: solid;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     display: block;
     height: 99px;
     border-width: 14px;
@@ -130,7 +130,7 @@ export const FooterContent = styled.div`
   margin-top: -40px;
   max-width: 600px;
   width: 100%;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     flex-wrap: wrap;
 
     margin: 0;
@@ -142,8 +142,9 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   max-width: 1050px;
   width: 100%;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     flex-wrap: wrap;
+    margin-top: 20px;
     align-items: center;
     max-width: 567px;
     justify-content: center;
@@ -152,11 +153,11 @@ export const FooterWrapper = styled.div`
 export const HeadText = styled.h1`
   font-size: 36px;
   font-weight: 500;
-  /* text-align: center; */
+
   margin: 20px 0 25px 0;
   line-height: 38px;
   color: ${props => props.theme.colors.primary};
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     font-size: 30px;
     margin: 0;
   }
@@ -169,7 +170,7 @@ export const FooterSubtitle = styled.h3`
   :first-child {
     margin-top: 10px;
   }
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     font-size: 26px;
     margin: 0;
   }
@@ -179,7 +180,7 @@ export const FooterText = styled.p`
   margin-top: 15px;
   line-height: 22px;
   color: ${props => props.theme.colors.primary};
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     line-height: 18px;
     font-size: 16px;
   }
@@ -191,7 +192,7 @@ export const MapDiv = styled.div`
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  @media (min-width: 310px) and (max-width: 480px) {
+  @media (min-width: 310px) and (max-width: 530px) {
     margin: 35px auto;
     height: 200px;
     width: 200px;

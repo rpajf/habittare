@@ -6,6 +6,7 @@ import * as S from './styles'
 
 import { FormHandles } from '@unform/core'
 import { Form } from '@unform/web'
+import axios from 'axios'
 
 interface FormData {
   name: string
@@ -14,8 +15,14 @@ const checkValues = ['whatsup', 'telefone']
 const MyForm: React.FC = ({ ...rest }) => {
   const formRef = useRef<FormHandles>(null)
 
-  const handleSubmit = (data: FormData) => {
-    console.log(data)
+  const handleSubmit = async (data: FormData) => {
+    const response = await axios.post('/api/contato', {
+      data
+    })
+
+    alert(response.data.message)
+
+    formRef.current.reset()
   }
   return (
     <S.Container className="mx-auto" {...rest}>
@@ -28,6 +35,7 @@ const MyForm: React.FC = ({ ...rest }) => {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           placeholder="Nome"
           style={{ color: '#222' }}
+          required
         />
 
         <UnformInput
@@ -36,6 +44,7 @@ const MyForm: React.FC = ({ ...rest }) => {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           placeholder="E-mail"
           style={{ color: '#222' }}
+          required
         />
         <UnformInput
           name="phone"
@@ -43,6 +52,7 @@ const MyForm: React.FC = ({ ...rest }) => {
           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           placeholder="Telefone"
           style={{ color: '#222' }}
+          required
         />
         <label>
           <UnformTextArea
@@ -51,6 +61,7 @@ const MyForm: React.FC = ({ ...rest }) => {
             placeholder="Olá, estou interessado no Apt Condominio"
             rows={8}
             style={{ color: '#222' }}
+            required
           />
         </label>
 

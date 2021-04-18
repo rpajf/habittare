@@ -79,7 +79,7 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
 
   const fetchProps = async () => {
     const { data } = await axios.get('api/imoveis', {
-      params: { subtipo: 'Duplex' }
+      params: { subtipo, tipoContrato }
     })
     setLoadedProperties(data)
   }
@@ -113,7 +113,6 @@ const ImoveisList: React.FC<ImoveisListProps> = ({ properties }) => {
         />
         <S.Content isDisplayed={!isOpen} className="w-full md:w-4/6">
           <S.Menu className="w-full">
-            <button onClick={fetchProps}> carregar propriedades</button>
             <S.MenuItensWrapper>
               <S.MenuOrganizer>
                 <S.LabelOn>Comprar</S.LabelOn>

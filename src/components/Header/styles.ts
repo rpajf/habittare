@@ -6,11 +6,14 @@ interface HeaderProps {
 export const Container = styled.header<HeaderProps>`
   background: ${({ isOpen }) => (!isOpen ? '#5743D9' : 'none')};
 `
-export const HeaderContent = styled.div`
+export const HeaderContent = styled.div<HeaderProps>`
   display: flex;
   padding: 25px 0px;
   flex: 1;
   align-items: center;
+  @media (min-width: 320px) and (max-width: 578px) {
+    display: ${({ isOpen }) => (!isOpen ? 'flex' : 'none')};
+  }
 `
 export const HomeTitle = styled.text`
   font-size: 36px;
@@ -20,10 +23,9 @@ export const HomeTitle = styled.text`
     font-size: 22px;
   }
 `
-export const TitleWrapper = styled.div<HeaderProps>`
+export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  display: ${({ isOpen }) => (!isOpen ? 'flex' : 'none')};
 `
 export const SubTitle = styled.text`
   font-size: 14px;

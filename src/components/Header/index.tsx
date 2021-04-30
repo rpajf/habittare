@@ -33,8 +33,11 @@ const Header: React.FC = () => {
       isOpen={isOpen}
       className="flex flex-row justify-center items-center"
     >
-      <S.HeaderContent className="container mx-auto justify-around md:justify-between">
-        <S.TitleWrapper isOpen={isOpen}>
+      <S.HeaderContent
+        className="container mx-auto justify-around md:justify-between"
+        isOpen={isOpen}
+      >
+        <S.TitleWrapper>
           <Image
             src="/assets/logo-white.png"
             width={184}

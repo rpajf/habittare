@@ -8,10 +8,7 @@ import Radio from '@/components/Radio'
 import CurrencyInput from '@/components/Input/index'
 import { useRouter } from 'next/router'
 
-interface PropertyProps {
-  property: PropertyType
-}
-const FindPropertyWithFilter: React.FC<PropertyProps> = ({ property }) => {
+const FindPropertyWithFilter: React.FC = () => {
   const router = useRouter()
   const [isToggled, setToggle] = useState<boolean>(false)
   const [isActive, setActive] = useState<boolean>(false)

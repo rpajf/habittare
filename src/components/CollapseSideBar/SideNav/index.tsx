@@ -10,8 +10,6 @@ interface SideNavProps {
   setOpen: (newValue: boolean) => void
   location: string
   setLocation: (value: string) => void
-  tipoContrato: string
-  setTipoContrato: (value: string) => void
   subtipo: string
   setSubtipo: (value: string) => void
 }
@@ -52,22 +50,19 @@ const SideBar: React.FC<SideNavProps> = ({
           {/* <S.NavInfo>Tipo de Imóvel</S.NavInfo> */}
           {/* <S.NavInput placeholder="Selecione um tipo de imovel" /> */}
 
+          <S.NavInfo>Tipo de imovel</S.NavInfo>
           <S.SelectDiv className="w-full">
             <select
               defaultValue=""
               className="w-full"
               value={subtipo}
               onChange={e => setSubtipo(e.target.value)}
+              placeholder="Selecione um tipo de imovel"
             >
-              <option disabled value="">
-                Tipo de imovel
-              </option>
-
               <option value="Apartamento">Apartamento</option>
               <option value="Duplex">Duplex</option>
               <option value="Casa de Condomínio">Casa de Condomínio</option>
             </select>
-            <span />
           </S.SelectDiv>
           <S.InnerContainer>
             <S.InnerNavWrapper>

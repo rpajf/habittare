@@ -3,7 +3,6 @@ import Radio from '@/components/Radio'
 
 interface SideNavProps {
   isOpen: boolean
-  setOpen: (newValue: boolean) => void
 }
 
 const appearFromLeft = keyframes`
@@ -157,26 +156,24 @@ export const SelectDiv = styled.div`
   position: relative;
   padding: 10px 15px 10px 10px;
 
-  select {
-    background: ${props => props.theme.colors.textPrimary};
-    position: relative;
-    font-weight: 300;
-    /* outline: none; */
-    font-size: 16px;
-    line-height: 24px;
+  background: ${props => props.theme.colors.textPrimary};
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  outline: none;
+  padding: 9px 0 6px 6px;
+  border: none;
 
-    color: #8a8a8a;
+  select {
+    outline: none;
     border: none;
-    -webkit-appearance: none;
-    appearance: none;
-    :focus {
-      outline: none;
+    ::placeholder {
+      color: #c9c9c9;
     }
-    option {
-      position: absolute;
-      transition: ease-in 1100ms;
-      width: 100%;
-      max-width: 400px;
+
+    :focus,
+    options:focus {
+      outline: none;
+      border: none;
     }
   }
   span {

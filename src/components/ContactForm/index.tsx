@@ -60,6 +60,7 @@ const ContactForm: React.FC = () => {
           <label className="block w-full my-2 md:mx-2">
             <span className="text-gray-700">Como podemos lhe ajudar?</span>
             <UnformTextArea
+              rows={5}
               name="textarea"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             />
